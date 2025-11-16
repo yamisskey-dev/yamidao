@@ -1,4 +1,5 @@
 import { Heart, Github } from 'lucide-react'
+import Image from 'next/image'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -10,9 +11,13 @@ export function Footer() {
           {/* ロゴ・説明 */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center">
-                <span className="text-white font-bold text-xl">Y</span>
-              </div>
+              <Image
+                src="https://raw.githubusercontent.com/yamisskey-dev/yamisskey-assets/main/yami-dao/yami-dao-icon.svg"
+                alt="YAMI DAO Logo"
+                width={40}
+                height={40}
+                className="w-10 h-10"
+              />
               <h3 className="text-xl font-bold">YAMI DAO</h3>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">

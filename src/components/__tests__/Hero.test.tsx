@@ -7,9 +7,9 @@ describe('Hero', () => {
     expect(screen.getByText('YAMI DAO')).toBeInTheDocument()
   })
 
-  it('サブタイトルが表示される', () => {
+  it('ロゴが表示される', () => {
     render(<Hero />)
-    expect(screen.getByText('Mental Health Tech Collective')).toBeInTheDocument()
+    expect(screen.getByAltText('YAMI DAO Logo')).toBeInTheDocument()
   })
 
   it('メインメッセージが表示される', () => {

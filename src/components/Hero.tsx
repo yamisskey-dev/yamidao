@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function Hero() {
   return (
@@ -20,9 +21,15 @@ export function Hero() {
               YAMI DAO
             </span>
           </h1>
-          <p className="text-2xl md:text-3xl font-semibold mb-4 text-foreground">
-            Mental Health Tech Collective
-          </p>
+          <div className="flex justify-center">
+            <Image
+              src="https://raw.githubusercontent.com/yamisskey-dev/yamisskey-assets/main/yami-dao/yami-dao-icon.svg"
+              alt="YAMI DAO Logo"
+              width={120}
+              height={120}
+              className="w-24 h-24 md:w-32 md:h-32"
+            />
+          </div>
         </div>
 
         <div className="mb-12 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
