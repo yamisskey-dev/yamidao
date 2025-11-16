@@ -1,0 +1,371 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #FFF5FC;
+  --color-foreground: #391E60;
+
+  --color-card: #FCFAFF;
+  --color-card-foreground: #391E60;
+
+  --color-popover: #FEF4FE;
+  --color-popover-foreground: #391E60;
+
+  --color-primary: #966BFF;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #DB9DFF;
+  --color-secondary-foreground: #ffffff;
+
+  --color-muted: #FFF5FC;
+  --color-muted-foreground: #563399;
+
+  --color-accent: #966BFF;
+  --color-accent-foreground: #ffffff;
+
+  --color-success: #86efac;
+  --color-success-foreground: #ffffff;
+
+  --color-warm: #fad25a;
+  --color-warm-foreground: #2C1B0E;
+
+  --color-destructive: #eb5050;
+  --color-destructive-foreground: #ffffff;
+
+  --color-border: #DBA5FF;
+  --color-input: #DBA5FF;
+  --color-ring: #966BFF;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* YAMI DAO - NGO Light Theme */
+  --background: #FFF5FC;
+  --foreground: #391E60;
+
+  --card: #FCFAFF;
+  --card-foreground: #391E60;
+
+  --popover: #FEF4FE;
+  --popover-foreground: #391E60;
+
+  --primary: #966BFF;
+  --primary-foreground: #ffffff;
+
+  --secondary: #DB9DFF;
+  --secondary-foreground: #ffffff;
+
+  --muted: #FFF5FC;
+  --muted-foreground: #563399;
+
+  --accent: #966BFF;
+  --accent-foreground: #ffffff;
+
+  --success: #86efac;
+  --success-foreground: #ffffff;
+
+  --warm: #fad25a;
+  --warm-foreground: #2C1B0E;
+
+  --destructive: #eb5050;
+  --destructive-foreground: #ffffff;
+
+  --border: #DBA5FF;
+  --input: #DBA5FF;
+  --ring: #966BFF;
+
+  --chart-1: #966BFF;
+  --chart-2: #DB9DFF;
+  --chart-3: #93d7ff;
+  --chart-4: #86efac;
+  --chart-5: #fad25a;
+
+  --sidebar: #FBF0FF;
+  --sidebar-foreground: #391E60;
+  --sidebar-primary: #966BFF;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #FFF5FC;
+  --sidebar-accent-foreground: #391E60;
+  --sidebar-border: #DBA5FF;
+  --sidebar-ring: #966BFF;
+}
+
+.dark {
+  /* ダークモード - DXM Dark Theme */
+  --background: #130E26;
+  --foreground: #C2CBE0;
+
+  --card: #100B22;
+  --card-foreground: #C2CBE0;
+
+  --popover: #100B22;
+  --popover-foreground: #C2CBE0;
+
+  --primary: #A374FF;
+  --primary-foreground: #ffffff;
+
+  --secondary: #B32DB6;
+  --secondary-foreground: #ffffff;
+
+  --muted: #170F2A;
+  --muted-foreground: #8B94A8;
+
+  --accent: #A374FF;
+  --accent-foreground: #ffffff;
+
+  --success: #79ffc2;
+  --success-foreground: #0D0920;
+
+  --warm: #ffaf63;
+  --warm-foreground: #0D0920;
+
+  --destructive: #ff66c2;
+  --destructive-foreground: #ffffff;
+
+  --border: #A374FF40;
+  --input: #A374FF40;
+  --ring: #A374FF;
+
+  --chart-1: #A374FF;
+  --chart-2: #B32DB6;
+  --chart-3: #966BFF;
+  --chart-4: #79ffc2;
+  --chart-5: #ffaf63;
+
+  --sidebar: #170F2A;
+  --sidebar-foreground: #C2CBE0;
+  --sidebar-primary: #A374FF;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #100B22;
+  --sidebar-accent-foreground: #C2CBE0;
+  --sidebar-border: #A374FF40;
+  --sidebar-ring: #A374FF;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* DAO/コミュニティスタイル */
+@layer components {
+  /* グラスモーフィズム効果 */
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .dark .glass {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* ソフトシャドウ - オープンな雰囲気 */
+  .soft-shadow {
+    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.1),
+                0 2px 4px -1px rgba(99, 102, 241, 0.06);
+  }
+
+  .soft-shadow:hover {
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.15),
+                0 4px 6px -2px rgba(99, 102, 241, 0.1);
+  }
+
+  /* グラデーション背景 - コミュニティの温かさ */
+  .gradient-bg {
+    background: linear-gradient(
+      135deg,
+      rgba(99, 102, 241, 0.05) 0%,
+      rgba(139, 92, 246, 0.05) 50%,
+      rgba(6, 182, 212, 0.05) 100%
+    );
+  }
+
+  /* カード - 協調的なデザイン */
+  .dao-card {
+    @apply bg-card border border-border rounded-lg p-6 transition-all duration-300;
+    @apply hover:border-primary/50 hover:shadow-lg;
+  }
+
+  /* DAO特有のボタンスタイル */
+  .dao-btn-primary {
+    @apply px-6 py-3 rounded-lg bg-primary text-primary-foreground;
+    @apply hover:bg-primary/90 transition-all duration-300;
+    @apply shadow-md hover:shadow-lg;
+  }
+
+  .dao-btn-secondary {
+    @apply px-6 py-3 rounded-lg border-2 border-primary text-primary;
+    @apply hover:bg-primary hover:text-primary-foreground;
+    @apply transition-all duration-300;
+  }
+
+  /* タグ - プロジェクトの技術スタック */
+  .tech-tag {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm;
+    @apply bg-primary/10 text-primary border border-primary/20;
+    @apply hover:bg-primary/20 transition-colors duration-200;
+  }
+
+  /* バッジ - ステータス表示 */
+  .status-badge {
+    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .status-badge-active {
+    @apply bg-success/10 text-success border border-success/20;
+  }
+
+  .status-badge-pending {
+    @apply bg-warm/10 text-warm border border-warm/20;
+  }
+
+  /* セクション区切り */
+  .section-divider {
+    @apply h-1 w-20 bg-gradient-to-r from-primary via-secondary to-accent rounded-full;
+  }
+}
+
+/* アニメーション */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+/* スムーズなスクロール */
+html {
+  scroll-behavior: smooth;
+}
+
+/* フォーカス状態の改善 */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* セクション遷移アニメーション */
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out;
+}
+
+/* ホバー時のリフト効果 */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -4px rgba(99, 102, 241, 0.15);
+}
+
+/* スクロールバー - 控えめなスタイル */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+  border: 2px solid var(--background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* プログレスバー - ロードマップ用 */
+.progress-bar {
+  @apply h-2 bg-muted rounded-full overflow-hidden;
+}
+
+.progress-bar-fill {
+  @apply h-full bg-gradient-to-r from-primary via-secondary to-accent;
+  @apply transition-all duration-500 ease-out;
+}
+
+/* タイムライン - ロードマップ用 */
+.timeline-item::before {
+  content: '';
+  @apply absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent;
+}
+
+.timeline-dot {
+  @apply w-3 h-3 rounded-full bg-primary border-2 border-background;
+  @apply absolute left-0 top-2 -translate-x-1/2;
+}
+
+/* 統計表示 - Hero用 */
+.stat-item {
+  @apply flex flex-col items-center gap-2 p-4;
+}
+
+.stat-value {
+  @apply text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+}
+
+.stat-label {
+  @apply text-sm text-muted-foreground;
+}
