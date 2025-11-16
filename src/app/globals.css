@@ -1,9 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme {
+  /* YAMI DAO - NGO Light Theme (デフォルト) */
   --color-background: #FFF5FC;
   --color-foreground: #391E60;
 
@@ -26,10 +25,10 @@
   --color-accent-foreground: #ffffff;
 
   --color-success: #86efac;
-  --color-success-foreground: #ffffff;
+  --color-success-foreground: #2F1853;
 
-  --color-warm: #fad25a;
-  --color-warm-foreground: #2C1B0E;
+  --color-warn: #fad25a;
+  --color-warn-foreground: #3C2B1A;
 
   --color-destructive: #eb5050;
   --color-destructive-foreground: #ffffff;
@@ -44,169 +43,132 @@
   --radius-xl: 1rem;
 }
 
-:root {
-  --radius: 0.5rem;
+/* YAMI DAO - DXM Dark Theme */
+@layer base {
+  .dark {
+    --color-background: #130E26;
+    --color-foreground: #C2CBE0;
 
-  /* YAMI DAO - NGO Light Theme */
-  --background: #FFF5FC;
-  --foreground: #391E60;
+    --color-card: #100B22;
+    --color-card-foreground: #C2CBE0;
 
-  --card: #FCFAFF;
-  --card-foreground: #391E60;
+    --color-popover: #100B22;
+    --color-popover-foreground: #C2CBE0;
 
-  --popover: #FEF4FE;
-  --popover-foreground: #391E60;
+    --color-primary: #A374FF;
+    --color-primary-foreground: #ffffff;
 
-  --primary: #966BFF;
-  --primary-foreground: #ffffff;
+    --color-secondary: #B32DB6;
+    --color-secondary-foreground: #ffffff;
 
-  --secondary: #DB9DFF;
-  --secondary-foreground: #ffffff;
+    --color-muted: #170F2A;
+    --color-muted-foreground: #8B94A8;
 
-  --muted: #FFF5FC;
-  --muted-foreground: #563399;
+    --color-accent: #A374FF;
+    --color-accent-foreground: #ffffff;
 
-  --accent: #966BFF;
-  --accent-foreground: #ffffff;
+    --color-success: #79ffc2;
+    --color-success-foreground: #0D0920;
 
-  --success: #86efac;
-  --success-foreground: #ffffff;
+    --color-warn: #ffaf63;
+    --color-warn-foreground: #0D0920;
 
-  --warm: #fad25a;
-  --warm-foreground: #2C1B0E;
+    --color-destructive: #ff66c2;
+    --color-destructive-foreground: #ffffff;
 
-  --destructive: #eb5050;
-  --destructive-foreground: #ffffff;
+    --color-border: rgba(163, 116, 255, 0.25);
+    --color-input: rgba(163, 116, 255, 0.25);
+    --color-ring: #A374FF;
+  }
 
-  --border: #DBA5FF;
-  --input: #DBA5FF;
-  --ring: #966BFF;
+  @media (prefers-color-scheme: dark) {
+    :root:not(.light) {
+      --color-background: #130E26;
+      --color-foreground: #C2CBE0;
 
-  --chart-1: #966BFF;
-  --chart-2: #DB9DFF;
-  --chart-3: #93d7ff;
-  --chart-4: #86efac;
-  --chart-5: #fad25a;
+      --color-card: #100B22;
+      --color-card-foreground: #C2CBE0;
 
-  --sidebar: #FBF0FF;
-  --sidebar-foreground: #391E60;
-  --sidebar-primary: #966BFF;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #FFF5FC;
-  --sidebar-accent-foreground: #391E60;
-  --sidebar-border: #DBA5FF;
-  --sidebar-ring: #966BFF;
-}
+      --color-popover: #100B22;
+      --color-popover-foreground: #C2CBE0;
 
-.dark {
-  /* ダークモード - DXM Dark Theme */
-  --background: #130E26;
-  --foreground: #C2CBE0;
+      --color-primary: #A374FF;
+      --color-primary-foreground: #ffffff;
 
-  --card: #100B22;
-  --card-foreground: #C2CBE0;
+      --color-secondary: #B32DB6;
+      --color-secondary-foreground: #ffffff;
 
-  --popover: #100B22;
-  --popover-foreground: #C2CBE0;
+      --color-muted: #170F2A;
+      --color-muted-foreground: #8B94A8;
 
-  --primary: #A374FF;
-  --primary-foreground: #ffffff;
+      --color-accent: #A374FF;
+      --color-accent-foreground: #ffffff;
 
-  --secondary: #B32DB6;
-  --secondary-foreground: #ffffff;
+      --color-success: #79ffc2;
+      --color-success-foreground: #0D0920;
 
-  --muted: #170F2A;
-  --muted-foreground: #8B94A8;
+      --color-warn: #ffaf63;
+      --color-warn-foreground: #0D0920;
 
-  --accent: #A374FF;
-  --accent-foreground: #ffffff;
+      --color-destructive: #ff66c2;
+      --color-destructive-foreground: #ffffff;
 
-  --success: #79ffc2;
-  --success-foreground: #0D0920;
-
-  --warm: #ffaf63;
-  --warm-foreground: #0D0920;
-
-  --destructive: #ff66c2;
-  --destructive-foreground: #ffffff;
-
-  --border: #A374FF40;
-  --input: #A374FF40;
-  --ring: #A374FF;
-
-  --chart-1: #A374FF;
-  --chart-2: #B32DB6;
-  --chart-3: #966BFF;
-  --chart-4: #79ffc2;
-  --chart-5: #ffaf63;
-
-  --sidebar: #170F2A;
-  --sidebar-foreground: #C2CBE0;
-  --sidebar-primary: #A374FF;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #100B22;
-  --sidebar-accent-foreground: #C2CBE0;
-  --sidebar-border: #A374FF40;
-  --sidebar-ring: #A374FF;
+      --color-border: rgba(163, 116, 255, 0.25);
+      --color-input: rgba(163, 116, 255, 0.25);
+      --color-ring: #A374FF;
+    }
+  }
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--color-border);
+    outline-color: color-mix(in srgb, var(--color-ring) 50%, transparent);
   }
+
   body {
-    @apply bg-background text-foreground;
+    color: var(--color-foreground);
+    /* Misskeyスタイル - グラデーション背景 */
+    background: linear-gradient(145deg, #FFF2FF, #F5F2FF);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  .dark body {
+    background: radial-gradient(ellipse at top, rgba(163, 116, 255, 0.15), transparent 50%),
+                radial-gradient(ellipse at bottom, rgba(179, 45, 182, 0.15), transparent 50%),
+                #130E26;
+    background-attachment: fixed;
   }
 }
 
-/* DAO/コミュニティスタイル */
+/* DAO/コミュニティスタイル - NGO Light Theme */
 @layer components {
-  /* Misskeyスタイル - グラスモーフィズム効果 */
+  /* NGO - グラスモーフィズム効果 */
   .glass {
-    background: rgba(252, 249, 255, 0.85);
+    background: rgba(252, 249, 255, 0.85); /* NGO panel */
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(219, 165, 255, 0.45);
+    border: 1px solid rgba(219, 165, 255, 0.45); /* NGO inputBorder */
   }
 
-  .dark .glass {
-    background: rgba(16, 11, 34, 0.86);
-    border: 1px solid rgba(163, 116, 255, 0.25);
-  }
-
-  /* Misskeyスタイル - ボタングラデーション */
+  /* NGO - ボタングラデーション */
   .misskey-button-gradient {
-    background: linear-gradient(172deg, #FF9DFF, #A398FF 45%, #7D66FF);
+    background: linear-gradient(172deg, #FF9DFF, #A398FF 45%, #7D66FF); /* NGO buttonBgGradient */
   }
 
-  .dark .misskey-button-gradient {
-    background: linear-gradient(135deg, #B32DB6, #966BFF, #4B38A5);
-  }
-
-  /* Misskeyスタイル - ヘッダーグラデーション */
+  /* NGO - ヘッダーグラデーション */
   .misskey-header-gradient {
-    background: linear-gradient(98deg, #E5B8FF, #DB9DFF 40%, #D192FF);
+    background: linear-gradient(98deg, #E5B8FF, #DB9DFF 40%, #D192FF); /* NGO headerGradient */
   }
 
-  .dark .misskey-header-gradient {
-    background: linear-gradient(135deg, #B32DB6, #966BFF, #4B38A5);
-  }
-
-  /* Misskeyスタイル - ナビゲーショングラデーション */
+  /* NGO - ナビゲーショングラデーション */
   .misskey-nav-gradient {
-    background: linear-gradient(98deg, #E5B8FF, #DB9DFF 40%, #D192FF);
+    background: linear-gradient(98deg, #E5B8FF, #DB9DFF 40%, #D192FF); /* NGO navGradient */
   }
 
-  .dark .misskey-nav-gradient {
-    background: linear-gradient(135deg, #4B28B5, #3B59C9, #2B8AC9);
-  }
-
-  /* ソフトシャドウ - Misskeyスタイル */
+  /* NGO - シャドウ効果 */
   .soft-shadow {
-    box-shadow: 0 4px 6px -1px rgba(147, 137, 255, 0.45);
-  }
-
-  .dark .soft-shadow {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 6px -1px rgba(147, 137, 255, 0.45); /* NGO shadow */
   }
 
   .soft-shadow:hover {
@@ -214,51 +176,93 @@
                 0 4px 6px -2px rgba(150, 107, 255, 0.2);
   }
 
+  /* NGO - グラデーション背景 */
+  .gradient-bg {
+    background: linear-gradient(145deg, #FFF2FF, #F5F2FF); /* NGO bgGradient */
+  }
+}
+
+/* DXM Dark Theme */
+@layer components {
+  .dark .glass {
+    background: rgba(16, 11, 34, 0.86); /* DXM panel */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(163, 116, 255, 0.25); /* DXM divider */
+  }
+
+  .dark .misskey-button-gradient {
+    background: linear-gradient(135deg, #B32DB6, #966BFF, #4B38A5); /* DXM buttonBgGradient */
+  }
+
+  .dark .misskey-header-gradient {
+    background: linear-gradient(135deg, #B32DB6, #966BFF, #4B38A5); /* DXM headerGradient */
+  }
+
+  .dark .misskey-nav-gradient {
+    background: linear-gradient(135deg, #4B28B5, #3B59C9, #2B8AC9); /* DXM navGradient */
+  }
+
+  .dark .soft-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5); /* DXM shadow */
+  }
+
   .dark .soft-shadow:hover {
     box-shadow: 0 10px 15px -3px rgba(163, 116, 255, 0.4),
                 0 4px 6px -2px rgba(163, 116, 255, 0.3);
   }
 
-  /* グラデーション背景 - Misskeyスタイル */
-  .gradient-bg {
-    background: linear-gradient(145deg, #FFF2FF, #F5F2FF);
-  }
-
   .dark .gradient-bg {
-    background: rgba(19, 14, 38, 0.94);
+    background: rgba(19, 14, 38, 0.94); /* DXM bg */
   }
+}
 
-  /* カード - 協調的なデザイン */
+/* NGO - カード */
+@layer components {
   .dao-card {
-    @apply bg-card border border-border rounded-lg p-6 transition-all duration-300;
-    @apply hover:border-primary/50 hover:shadow-lg;
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    transition: all 0.3s;
   }
 
-  /* DAO特有のボタンスタイル - Misskeyグラデーション適用 */
+  .dao-card:hover {
+    border-color: rgba(150, 107, 255, 0.5); /* NGO inputBorderHover */
+    box-shadow: 0 10px 15px -3px rgba(147, 137, 255, 0.3); /* NGO shadow */
+  }
+}
+
+/* DXM - カード */
+@layer components {
+  .dark .dao-card:hover {
+    border-color: rgba(163, 116, 255, 0.3); /* DXM inputBorderHover */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5); /* DXM shadow */
+  }
+}
+
+/* NGO - ボタン */
+@layer components {
   .dao-btn-primary {
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     color: white;
-    background: linear-gradient(172deg, #FF9DFF, #A398FF 45%, #7D66FF);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background: linear-gradient(172deg, #FF9DFF, #A398FF 45%, #7D66FF); /* NGO buttonBgGradient */
+    box-shadow: 0 4px 6px -1px rgba(147, 137, 255, 0.3);
     transition: all 0.3s;
-  }
-
-  .dark .dao-btn-primary {
-    background: linear-gradient(135deg, #B32DB6, #966BFF, #4B38A5);
   }
 
   .dao-btn-primary:hover {
     opacity: 0.9;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(147, 137, 255, 0.4);
   }
 
+  /* NGO - セカンダリボタン */
   .dao-btn-secondary {
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
-    border: 2px solid var(--primary);
-    color: var(--primary);
-    background: transparent;
+    border: 2px solid #966BFF; /* NGO accent */
+    color: #966BFF;
+    background: rgba(219, 165, 255, 0.3); /* NGO buttonBg */
     transition: all 0.3s;
   }
 
@@ -267,34 +271,78 @@
     color: white;
     border-color: transparent;
   }
+}
+
+/* DXM - ボタンスタイル */
+@layer components {
+  .dark .dao-btn-primary {
+    background: linear-gradient(135deg, #B32DB6, #966BFF, #4B38A5); /* DXM buttonBgGradient */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  }
+
+  .dark .dao-btn-primary:hover {
+    opacity: 0.9;
+    box-shadow: 0 10px 15px -3px rgba(163, 116, 255, 0.4);
+  }
+
+  .dark .dao-btn-secondary {
+    border-color: #A374FF; /* DXM accent */
+    color: #A374FF;
+    background: rgba(163, 116, 255, 0.2); /* DXM buttonBg */
+  }
 
   .dark .dao-btn-secondary:hover {
     background: linear-gradient(135deg, #B32DB6, #966BFF, #4B38A5);
+    color: white;
+    border-color: transparent;
   }
 
   /* タグ - プロジェクトの技術スタック */
   .tech-tag {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-sm;
-    @apply bg-primary/10 text-primary border border-primary/20;
-    @apply hover:bg-primary/20 transition-colors duration-200;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+    color: var(--color-primary);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
+    transition: background-color 0.2s;
+  }
+
+  .tech-tag:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
   }
 
   /* バッジ - ステータス表示 */
   .status-badge {
-    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
   }
 
   .status-badge-active {
-    @apply bg-success/10 text-success border border-success/20;
+    background-color: color-mix(in srgb, var(--color-success) 10%, transparent);
+    color: var(--color-success);
+    border: 1px solid color-mix(in srgb, var(--color-success) 20%, transparent);
   }
 
   .status-badge-pending {
-    @apply bg-warm/10 text-warm border border-warm/20;
+    background-color: color-mix(in srgb, var(--color-warn) 10%, transparent);
+    color: var(--color-warn);
+    border: 1px solid color-mix(in srgb, var(--color-warn) 20%, transparent);
   }
 
   /* セクション区切り */
   .section-divider {
-    @apply h-1 w-20 bg-gradient-to-r from-primary via-secondary to-accent rounded-full;
+    height: 0.25rem;
+    width: 5rem;
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary), var(--color-accent));
+    border-radius: 9999px;
   }
 }
 
@@ -397,34 +445,61 @@ html {
 
 /* プログレスバー - ロードマップ用 */
 .progress-bar {
-  @apply h-2 bg-muted rounded-full overflow-hidden;
+  height: 0.5rem;
+  background-color: var(--color-muted);
+  border-radius: 9999px;
+  overflow: hidden;
 }
 
 .progress-bar-fill {
-  @apply h-full bg-gradient-to-r from-primary via-secondary to-accent;
-  @apply transition-all duration-500 ease-out;
+  height: 100%;
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary), var(--color-accent));
+  transition: all 0.5s ease-out;
 }
 
 /* タイムライン - ロードマップ用 */
 .timeline-item::before {
   content: '';
-  @apply absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0.125rem;
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary), var(--color-accent));
 }
 
 .timeline-dot {
-  @apply w-3 h-3 rounded-full bg-primary border-2 border-background;
-  @apply absolute left-0 top-2 -translate-x-1/2;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-background);
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  transform: translateX(-50%);
 }
 
 /* 統計表示 - Hero用 */
 .stat-item {
-  @apply flex flex-col items-center gap-2 p-4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
 }
 
 .stat-value {
-  @apply text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  font-size: 1.875rem;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .stat-label {
-  @apply text-sm text-muted-foreground;
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
 }
