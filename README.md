@@ -110,6 +110,14 @@ pnpm lint
    - **Root directory**: (空白)
    - **Environment variables**: 必要に応じて設定
 
+5. **互換性フラグの設定（重要）**:
+   - プロジェクト作成後、**Settings** → **Functions** に移動
+   - **Compatibility Flags** セクションで以下を追加:
+     - Production環境: `nodejs_compat`
+     - Preview環境: `nodejs_compat`
+   - **Compatibility Date**: `2025-11-16` (または最新の日付)
+   - 設定後、保存して再デプロイ
+
 #### 自動デプロイ
 
 `main` ブランチへのプッシュで自動的にビルド・デプロイされます。
