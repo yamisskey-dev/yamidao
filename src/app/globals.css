@@ -161,37 +161,71 @@
 
 /* DAO/コミュニティスタイル */
 @layer components {
-  /* グラスモーフィズム効果 */
+  /* Misskeyスタイル - グラスモーフィズム効果 */
   .glass {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(252, 249, 255, 0.85);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(219, 165, 255, 0.45);
   }
 
   .dark .glass {
-    background: rgba(30, 41, 59, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(16, 11, 34, 0.86);
+    border: 1px solid rgba(163, 116, 255, 0.25);
   }
 
-  /* ソフトシャドウ - オープンな雰囲気 */
+  /* Misskeyスタイル - ボタングラデーション */
+  .misskey-button-gradient {
+    background: linear-gradient(172deg, #FF9DFF, #A398FF 45%, #7D66FF);
+  }
+
+  .dark .misskey-button-gradient {
+    background: linear-gradient(135deg, #B32DB6, #966BFF, #4B38A5);
+  }
+
+  /* Misskeyスタイル - ヘッダーグラデーション */
+  .misskey-header-gradient {
+    background: linear-gradient(98deg, #E5B8FF, #DB9DFF 40%, #D192FF);
+  }
+
+  .dark .misskey-header-gradient {
+    background: linear-gradient(135deg, #B32DB6, #966BFF, #4B38A5);
+  }
+
+  /* Misskeyスタイル - ナビゲーショングラデーション */
+  .misskey-nav-gradient {
+    background: linear-gradient(98deg, #E5B8FF, #DB9DFF 40%, #D192FF);
+  }
+
+  .dark .misskey-nav-gradient {
+    background: linear-gradient(135deg, #4B28B5, #3B59C9, #2B8AC9);
+  }
+
+  /* ソフトシャドウ - Misskeyスタイル */
   .soft-shadow {
-    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.1),
-                0 2px 4px -1px rgba(99, 102, 241, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(147, 137, 255, 0.45);
+  }
+
+  .dark .soft-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
   }
 
   .soft-shadow:hover {
-    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.15),
-                0 4px 6px -2px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 10px 15px -3px rgba(150, 107, 255, 0.3),
+                0 4px 6px -2px rgba(150, 107, 255, 0.2);
   }
 
-  /* グラデーション背景 - コミュニティの温かさ */
+  .dark .soft-shadow:hover {
+    box-shadow: 0 10px 15px -3px rgba(163, 116, 255, 0.4),
+                0 4px 6px -2px rgba(163, 116, 255, 0.3);
+  }
+
+  /* グラデーション背景 - Misskeyスタイル */
   .gradient-bg {
-    background: linear-gradient(
-      135deg,
-      rgba(99, 102, 241, 0.05) 0%,
-      rgba(139, 92, 246, 0.05) 50%,
-      rgba(6, 182, 212, 0.05) 100%
-    );
+    background: linear-gradient(145deg, #FFF2FF, #F5F2FF);
+  }
+
+  .dark .gradient-bg {
+    background: rgba(19, 14, 38, 0.94);
   }
 
   /* カード - 協調的なデザイン */
@@ -200,17 +234,42 @@
     @apply hover:border-primary/50 hover:shadow-lg;
   }
 
-  /* DAO特有のボタンスタイル */
+  /* DAO特有のボタンスタイル - Misskeyグラデーション適用 */
   .dao-btn-primary {
-    @apply px-6 py-3 rounded-lg bg-primary text-primary-foreground;
-    @apply hover:bg-primary/90 transition-all duration-300;
-    @apply shadow-md hover:shadow-lg;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    color: white;
+    background: linear-gradient(172deg, #FF9DFF, #A398FF 45%, #7D66FF);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s;
+  }
+
+  .dark .dao-btn-primary {
+    background: linear-gradient(135deg, #B32DB6, #966BFF, #4B38A5);
+  }
+
+  .dao-btn-primary:hover {
+    opacity: 0.9;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 
   .dao-btn-secondary {
-    @apply px-6 py-3 rounded-lg border-2 border-primary text-primary;
-    @apply hover:bg-primary hover:text-primary-foreground;
-    @apply transition-all duration-300;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+    transition: all 0.3s;
+  }
+
+  .dao-btn-secondary:hover {
+    background: linear-gradient(172deg, #FF9DFF, #A398FF 45%, #7D66FF);
+    color: white;
+    border-color: transparent;
+  }
+
+  .dark .dao-btn-secondary:hover {
+    background: linear-gradient(135deg, #B32DB6, #966BFF, #4B38A5);
   }
 
   /* タグ - プロジェクトの技術スタック */
