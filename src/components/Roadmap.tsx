@@ -16,7 +16,7 @@ export function Roadmap() {
         {/* タイムライン */}
         <div className="relative" data-testid="timeline">
           {/* タイムライン背景線 */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent"></div>
+          <div className="absolute left-8 md:left-1/2 top-32 md:top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent"></div>
 
           {/* Phase 1 */}
           <div className="relative mb-16 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
