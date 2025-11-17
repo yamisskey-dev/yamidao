@@ -1,4 +1,4 @@
-import { Heart, Github } from 'lucide-react'
+import { Heart, MessageCircle, Users, MessageSquare, Cloud } from 'lucide-react'
 import Image from 'next/image'
 
 export function Footer() {
@@ -92,18 +92,45 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* ソーシャル */}
+          {/* コミュニティ */}
           <div>
             <h4 className="font-semibold mb-4">コミュニティ</h4>
             <div className="space-y-3">
               <a
-                href="https://github.com/yamisskey-dev"
+                href="https://yami.ski"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                <Github className="h-4 w-4" />
-                <span>yamisskey-dev</span>
+                <Cloud className="h-4 w-4" />
+                <span>Misskey</span>
+              </a>
+              <a
+                href="https://discord.gg/WMgzEBvr8b"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                <MessageCircle className="h-4 w-4" />
+                <span>Discord</span>
+              </a>
+              <a
+                href="https://vrc.group/YMSKY.5787"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Users className="h-4 w-4" />
+                <span>VRChat</span>
+              </a>
+              <a
+                href="https://chat.yami.ski"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                <MessageSquare className="h-4 w-4" />
+                <span>Element</span>
               </a>
             </div>
           </div>
