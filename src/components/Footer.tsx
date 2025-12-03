@@ -1,4 +1,4 @@
-import { Heart, MessageCircle, Users, MessageSquare, Cloud } from 'lucide-react'
+import { Heart, MessageCircle, Users, MessageSquare, Cloud, Vote, Shield } from 'lucide-react'
 import Image from 'next/image'
 
 export function Footer() {
@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="py-12 px-4 md:px-8 border-t border-border bg-muted/30">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* ロゴ・説明 */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -131,6 +131,31 @@ export function Footer() {
               >
                 <MessageSquare className="h-4 w-4" />
                 <span>Element</span>
+              </a>
+            </div>
+          </div>
+
+          {/* ガバナンス */}
+          <div>
+            <h4 className="font-semibold mb-4">ガバナンス</h4>
+            <div className="space-y-3">
+              <a
+                href="https://snapshot.org/#/s:yamidao.eth"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Vote className="h-4 w-4" />
+                <span>Snapshot</span>
+              </a>
+              <a
+                href="https://app.safe.global/spaces?spaceId=3989"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Shield className="h-4 w-4" />
+                <span>Safe</span>
               </a>
             </div>
           </div>

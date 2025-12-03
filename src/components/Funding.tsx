@@ -1,4 +1,4 @@
-import { Wallet, Shield, Eye, Users, HelpCircle, TrendingUp } from 'lucide-react'
+import { Wallet, Shield, Eye, Users, HelpCircle, TrendingUp, ExternalLink } from 'lucide-react'
 
 export function Funding() {
   return (
@@ -159,6 +159,15 @@ export function Funding() {
                   <span>Snapshotの投票結果に基づいて資金を執行</span>
                 </li>
               </ul>
+              <a
+                href="https://app.safe.global/spaces?spaceId=3989"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="dao-btn-secondary inline-flex items-center gap-2 mt-4"
+              >
+                <ExternalLink className="h-4 w-4" />
+                YAMI DAO Safe を見る
+              </a>
             </div>
 
             {/* Snapshot説明 */}
@@ -182,6 +191,15 @@ export function Funding() {
                   <span>投票履歴は全て公開、改ざん不可能</span>
                 </li>
               </ul>
+              <a
+                href="https://snapshot.org/#/s:yamidao.eth"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="dao-btn-secondary inline-flex items-center gap-2 mt-4"
+              >
+                <ExternalLink className="h-4 w-4" />
+                YAMI DAO Snapshot を見る
+              </a>
             </div>
 
             {/* 資金の使途 */}

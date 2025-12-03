@@ -271,7 +271,7 @@ export function Governance() {
           </p>
           <div className="flex gap-4 justify-center">
             <a
-              href="https://snapshot.org"
+              href="https://snapshot.org/#/s:yamidao.eth"
               target="_blank"
               rel="noopener noreferrer"
               className="dao-btn-secondary inline-flex items-center gap-2"
@@ -280,7 +280,7 @@ export function Governance() {
               Snapshot
             </a>
             <a
-              href="https://app.safe.global"
+              href="https://app.safe.global/spaces?spaceId=3989"
               target="_blank"
               rel="noopener noreferrer"
               className="dao-btn-secondary inline-flex items-center gap-2"
