@@ -44,16 +44,10 @@ export function Hero() {
         {/* CTAボタン */}
         <div className="flex flex-wrap gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <Link
-            href="#about"
+            href="#join"
             className="dao-btn-primary"
           >
-            プロジェクトを見る
-          </Link>
-          <Link
-            href="#join"
-            className="dao-btn-secondary"
-          >
-            DAOに参加
+            参加する
           </Link>
         </div>
       </div>

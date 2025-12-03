@@ -38,15 +38,7 @@ export function Footer() {
                   href="#about"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  About DAO
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#projects"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Projects
+                  About
                 </a>
               </li>
               <li>
@@ -55,22 +47,6 @@ export function Footer() {
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Governance
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#funding"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Funding
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#members"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Members
                 </a>
               </li>
               <li>
@@ -86,7 +62,7 @@ export function Footer() {
                   href="#join"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Join
+                  参加する
                 </a>
               </li>
             </ul>
