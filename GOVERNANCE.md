@@ -54,7 +54,7 @@ YAMI DAOにおける提案・投票のガイドラインです。
 ## リンク
 
 - [Snapshot (yamidao.eth)](https://snapshot.org/#/s:yamidao.eth)
-- [Safe (Treasury)](https://app.safe.global/spaces?spaceId=3989)
+- [Safe (Treasury)](https://app.safe.global/home?safe=oeth:0x9D315c45B721132674D1aBED44F642b2dE24A1c2)
 - [YAMI DAO Website](https://dao.yami.ski)
 
 ---

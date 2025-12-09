@@ -79,7 +79,7 @@ export function Governance() {
                 マルチシグウォレットで資金を管理。複数人の承認が必要です。
               </p>
               <a
-                href="https://app.safe.global/spaces?spaceId=3989"
+                href="https://app.safe.global/home?safe=oeth:0x9D315c45B721132674D1aBED44F642b2dE24A1c2"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="dao-btn-secondary inline-flex items-center gap-2 text-sm"

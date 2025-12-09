@@ -125,7 +125,7 @@ export function Footer() {
                 <span>Snapshot</span>
               </a>
               <a
-                href="https://app.safe.global/spaces?spaceId=3989"
+                href="https://app.safe.global/home?safe=oeth:0x9D315c45B721132674D1aBED44F642b2dE24A1c2"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
