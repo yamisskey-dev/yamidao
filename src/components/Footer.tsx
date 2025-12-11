@@ -62,7 +62,7 @@ export function Footer() {
                   href="#join"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  参加する
+                  Join
                 </a>
               </li>
             </ul>

@@ -6,7 +6,7 @@ export function Join() {
       <div className="max-w-6xl mx-auto">
         {/* セクションヘッダー */}
         <div className="mb-12 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">参加する</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Join</h2>
           <div className="section-divider mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl">
             プライバシーを守りながら、あなたの形で貢献できます
