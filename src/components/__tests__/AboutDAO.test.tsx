@@ -9,7 +9,8 @@ describe('AboutDAO', () => {
 
   it('YAMI DAOのビジョンが表示される', () => {
     render(<AboutDAO />)
-    expect(screen.getByText(/やみすきーエコシステムのガバナンスDAO/)).toBeInTheDocument()
+    expect(screen.getByText(/YAMIエコシステム/)).toBeInTheDocument()
+    expect(screen.getByText(/のガバナンスDAO/)).toBeInTheDocument()
   })
 
   it('組織のミッションが表示される', () => {

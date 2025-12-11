@@ -24,7 +24,7 @@ export function Footer() {
               Mental Health Tech Collective
             </p>
             <p className="text-xs text-muted-foreground">
-              やみすきーエコシステムのガバナンスを
+              YAMIエコシステムのガバナンスを
               分散型で運営するオープンソース・Web3 DAOです。
             </p>
           </div>
