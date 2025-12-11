@@ -22,30 +22,39 @@ export function AboutDAO() {
           </p>
         </div>
 
-        {/* コアバリュー（コンパクト版） */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <div className="dao-card text-center hover-lift">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-3">
-              <Shield className="h-6 w-6 text-primary" />
+        {/* コアバリュー（基盤型） */}
+        <div className="rounded-lg border border-border overflow-hidden animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          {/* 上層: 目指すもの */}
+          <div className="p-4 bg-card/50">
+            <span className="text-xs font-mono font-semibold text-muted-foreground">Values Layer</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+              <div className="dao-card border-l-2 border-l-accent hover-lift">
+                <div className="flex items-center gap-3 mb-2">
+                  <Heart className="h-5 w-5 text-accent shrink-0" />
+                  <h4 className="font-semibold text-sm">メンタルファースト</h4>
+                </div>
+                <p className="text-xs text-muted-foreground">ユーザーの心の安全を最優先に設計・運営方針を決定</p>
+              </div>
+              <div className="dao-card border-l-2 border-l-primary hover-lift">
+                <div className="flex items-center gap-3 mb-2">
+                  <Shield className="h-5 w-5 text-primary shrink-0" />
+                  <h4 className="font-semibold text-sm">プライバシーファースト</h4>
+                </div>
+                <p className="text-xs text-muted-foreground">個人情報を収集しない技術・運営を選択</p>
+              </div>
             </div>
-            <h4 className="font-semibold mb-1">Privacy by Design</h4>
-            <p className="text-sm text-muted-foreground">プライバシーを第一に</p>
           </div>
 
-          <div className="dao-card text-center hover-lift">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-secondary/10 mb-3">
-              <Users className="h-6 w-6 text-secondary" />
+          {/* 下層: それを実現する手段 */}
+          <div className="p-4 bg-secondary/5 border-t border-dashed border-secondary/20">
+            <span className="text-xs font-mono font-semibold text-muted-foreground">Foundation Layer</span>
+            <div className="dao-card border-l-2 border-l-secondary mt-3 hover-lift">
+              <div className="flex items-center gap-3 mb-2">
+                <Users className="h-5 w-5 text-secondary shrink-0" />
+                <h4 className="font-semibold text-sm">コミュニティ主導</h4>
+              </div>
+              <p className="text-xs text-muted-foreground">コミュニティ主導だからこそ、メンタルファーストとプライバシーファーストを守れる</p>
             </div>
-            <h4 className="font-semibold mb-1">Decentralized</h4>
-            <p className="text-sm text-muted-foreground">分散型ガバナンス</p>
-          </div>
-
-          <div className="dao-card text-center hover-lift">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 mb-3">
-              <Heart className="h-6 w-6 text-accent" />
-            </div>
-            <h4 className="font-semibold mb-1">Mental Health First</h4>
-            <p className="text-sm text-muted-foreground">メンタルヘルスを最優先</p>
           </div>
         </div>
       </div>
