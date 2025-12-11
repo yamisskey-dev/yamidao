@@ -78,16 +78,16 @@ export function Join() {
               </div>
               <h3 className="text-xl font-semibold mb-3">サポーター</h3>
               <p className="text-muted-foreground text-sm mb-4">
-                Snapshotで投票・提案に参加
+                Guildでメンバーシップを取得
               </p>
               <a
-                href="https://snapshot.org/#/s:yamidao.eth"
+                href="https://guild.xyz/yamidao"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="dao-btn-primary w-full inline-flex items-center justify-center gap-2"
               >
                 <ExternalLink className="h-4 w-4" />
-                Snapshot
+                Guild
               </a>
             </div>
           </div>

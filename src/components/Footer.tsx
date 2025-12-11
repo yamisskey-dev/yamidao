@@ -1,4 +1,4 @@
-import { Heart, MessageCircle, Users, MessageSquare, Cloud, Vote, Shield } from 'lucide-react'
+import { Heart, MessageCircle, Users, MessageSquare, Cloud, Vote, Shield, KeyRound, Send } from 'lucide-react'
 import Image from 'next/image'
 
 export function Footer() {
@@ -108,6 +108,15 @@ export function Footer() {
                 <MessageSquare className="h-4 w-4" />
                 <span>Element</span>
               </a>
+              <a
+                href="https://x.com/yamidao_eth"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Send className="h-4 w-4" />
+                <span>X</span>
+              </a>
             </div>
           </div>
 
@@ -132,6 +141,15 @@ export function Footer() {
               >
                 <Shield className="h-4 w-4" />
                 <span>Safe</span>
+              </a>
+              <a
+                href="https://guild.xyz/yamidao"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                <KeyRound className="h-4 w-4" />
+                <span>Guild</span>
               </a>
             </div>
           </div>
