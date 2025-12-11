@@ -1,4 +1,4 @@
-import { Code, Users, Heart, Github, ExternalLink, Shield } from 'lucide-react'
+import { Code, Users, Link2, Github, ExternalLink, Shield } from 'lucide-react'
 
 export function Join() {
   return (
@@ -26,13 +26,13 @@ export function Join() {
 
         {/* 3つの参加パス */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {/* 開発者 */}
+          {/* つくる */}
           <div className="dao-card hover-lift animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
                 <Code className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">開発者</h3>
+              <h3 className="text-xl font-semibold mb-3">つくる</h3>
               <p className="text-muted-foreground text-sm mb-4">
                 コード・ドキュメント・翻訳で貢献
               </p>
@@ -48,13 +48,13 @@ export function Join() {
             </div>
           </div>
 
-          {/* ユーザー */}
+          {/* つかう */}
           <div className="dao-card hover-lift animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary/10 mb-4">
                 <Users className="h-8 w-8 text-secondary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">ユーザー</h3>
+              <h3 className="text-xl font-semibold mb-3">つかう</h3>
               <p className="text-muted-foreground text-sm mb-4">
                 やみすきーに登録してフィードバック
               </p>
@@ -70,15 +70,15 @@ export function Join() {
             </div>
           </div>
 
-          {/* サポーター */}
+          {/* つなぐ */}
           <div className="dao-card hover-lift animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-4">
-                <Heart className="h-8 w-8 text-accent" />
+                <Link2 className="h-8 w-8 text-accent" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">サポーター</h3>
+              <h3 className="text-xl font-semibold mb-3">つなぐ</h3>
               <p className="text-muted-foreground text-sm mb-4">
-                Guildでメンバーシップを取得
+                ウォレット接続でメンバーシップ取得
               </p>
               <a
                 href="https://guild.xyz/yamidao"
