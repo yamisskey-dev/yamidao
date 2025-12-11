@@ -16,9 +16,7 @@ export function AboutDAO() {
         {/* ビジョン・ミッション（統合・簡潔化） */}
         <div className="dao-card glass mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            YAMI DAOは、やみすきーとその関連プロジェクトを分散型ガバナンスで運営する組織です。
-            メンタルヘルスに配慮したプライバシー保護型のソーシャルメディアを、
-            コミュニティ主導で持続可能に運営することを目指しています。
+            やみすきー運営部とyamisskey-devのガバナンス基盤。メンタルファーストとプライバシーファーストを、コミュニティ主導で守ります。
           </p>
         </div>
 
