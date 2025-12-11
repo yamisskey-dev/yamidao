@@ -1,4 +1,4 @@
-import { Vote, ExternalLink, Network, Github, Shield, Users, Wallet } from 'lucide-react'
+import { Vote, ExternalLink, Github, Shield, Users, Wallet, Server, Code, Layers } from 'lucide-react'
 
 export function Governance() {
   return (
@@ -13,33 +13,45 @@ export function Governance() {
           </p>
         </div>
 
-        {/* 組織体系 */}
+        {/* 組織構成（基盤型） */}
         <div className="mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
           <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-            <Network className="h-5 w-5 text-primary" />
+            <Layers className="h-5 w-5 text-primary" />
             組織構成
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="dao-card">
-              <div className="flex items-center justify-between mb-2">
-                <h4 className="font-semibold">YAMI DAO</h4>
-                <span className="text-sm text-primary">統括</span>
+
+          <div className="rounded-lg border border-border overflow-hidden">
+            {/* 上層: Operations */}
+            <div className="p-4 bg-card/50">
+              <span className="text-xs font-mono font-semibold text-muted-foreground">Operations Layer</span>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+                <div className="dao-card border-l-2 border-l-primary">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Server className="h-5 w-5 text-primary shrink-0" />
+                    <h4 className="font-semibold text-sm">やみすきー運営部</h4>
+                  </div>
+                  <p className="text-xs text-muted-foreground">サーバー運営・モデレーション / 非公開・限られたメンバーで迅速に判断</p>
+                </div>
+                <div className="dao-card border-l-2 border-l-success">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Code className="h-5 w-5 text-success shrink-0" />
+                    <h4 className="font-semibold text-sm">yamisskey-dev</h4>
+                  </div>
+                  <p className="text-xs text-muted-foreground">開発・技術判断 / 公開・コアチーム + コントリビューターがPR・Issueで議論</p>
+                </div>
               </div>
-              <p className="text-sm text-muted-foreground">予算配分・方針決定・Treasury管理</p>
             </div>
-            <div className="dao-card">
-              <div className="flex items-center justify-between mb-2">
-                <h4 className="font-semibold">やみすきー運営部</h4>
-                <span className="text-sm text-secondary">運営</span>
+
+            {/* 下層: Foundation */}
+            <div className="p-4 bg-secondary/5 border-t border-dashed border-secondary/20">
+              <span className="text-xs font-mono font-semibold text-muted-foreground">Foundation Layer</span>
+              <div className="dao-card border-l-2 border-l-secondary mt-3">
+                <div className="flex items-center gap-3 mb-2">
+                  <Vote className="h-5 w-5 text-secondary shrink-0" />
+                  <h4 className="font-semibold text-sm">YAMI DAO</h4>
+                </div>
+                <p className="text-xs text-muted-foreground">予算配分・重大方針・紛争解決 / 公開・全メンバーがSnapshot投票で決定</p>
               </div>
-              <p className="text-sm text-muted-foreground">サーバー運営・モデレーション</p>
-            </div>
-            <div className="dao-card">
-              <div className="flex items-center justify-between mb-2">
-                <h4 className="font-semibold">yamisskey-dev</h4>
-                <span className="text-sm text-accent">開発</span>
-              </div>
-              <p className="text-sm text-muted-foreground">Yamisskey開発・技術判断</p>
             </div>
           </div>
         </div>
