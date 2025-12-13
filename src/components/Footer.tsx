@@ -108,6 +108,13 @@ export function Footer() {
                 <MessageSquare className="h-4 w-4" />
                 <span>Element</span>
               </a>
+            </div>
+          </div>
+
+          {/* ガバナンス */}
+          <div>
+            <h4 className="font-semibold mb-4">ガバナンス</h4>
+            <div className="space-y-3">
               <a
                 href="https://x.com/yamidao_eth"
                 target="_blank"
@@ -117,13 +124,6 @@ export function Footer() {
                 <Send className="h-4 w-4" />
                 <span>X</span>
               </a>
-            </div>
-          </div>
-
-          {/* ガバナンス */}
-          <div>
-            <h4 className="font-semibold mb-4">ガバナンス</h4>
-            <div className="space-y-3">
               <a
                 href="https://snapshot.org/#/s:yamidao.eth"
                 target="_blank"
