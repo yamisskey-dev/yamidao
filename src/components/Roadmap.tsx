@@ -1,4 +1,4 @@
-import { Rocket, Coins, Vote, CheckCircle, Clock } from 'lucide-react'
+import { Rocket, Coins, Vote, CheckCircle, Circle } from 'lucide-react'
 
 export function Roadmap() {
   return (
@@ -23,9 +23,9 @@ export function Roadmap() {
             <div className="md:flex md:items-start md:gap-8">
               <div className="md:w-1/2 md:text-right md:pr-8">
                 <div className="mb-4 md:mb-0">
-                  <div className="inline-flex items-center gap-2 status-badge status-badge-active mb-2">
+                  <div className="inline-flex items-center gap-2 status-badge status-badge-completed mb-2">
                     <CheckCircle className="h-4 w-4" />
-                    進行中
+                    完了
                   </div>
                   <h3 className="text-2xl font-bold text-primary mb-1">Phase 1</h3>
                   <p className="text-sm text-muted-foreground">2025 Q1-Q2</p>
@@ -41,7 +41,7 @@ export function Roadmap() {
                     <h4 className="font-semibold">DAO立ち上げ</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">
-                    現在はメンバーの自己負担で運営中
+                    メンバーの自己負担で運営開始
                   </p>
                   <ul className="space-y-1 text-sm text-muted-foreground">
                     <li className="flex items-center gap-2">
@@ -49,7 +49,7 @@ export function Roadmap() {
                       <span>ウェブサイト・コミュニティ基盤</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <Clock className="h-4 w-4 text-warm flex-shrink-0" />
+                      <CheckCircle className="h-4 w-4 text-success flex-shrink-0" />
                       <span>yamisskey-dev 継続開発</span>
                     </li>
                   </ul>
@@ -63,8 +63,9 @@ export function Roadmap() {
             <div className="md:flex md:items-start md:gap-8">
               <div className="md:w-1/2 md:text-right md:pr-8">
                 <div className="mb-4 md:mb-0">
-                  <div className="inline-flex items-center gap-2 status-badge status-badge-pending mb-2">
-                    予定
+                  <div className="inline-flex items-center gap-2 status-badge status-badge-active mb-2">
+                    <CheckCircle className="h-4 w-4" />
+                    進行中
                   </div>
                   <h3 className="text-2xl font-bold text-secondary mb-1">Phase 2</h3>
                   <p className="text-sm text-muted-foreground">2025 Q3-Q4</p>
@@ -83,9 +84,18 @@ export function Roadmap() {
                     Snapshot・Safeを本格運用し、コミュニティ主導のガバナンスを開始
                   </p>
                   <ul className="space-y-1 text-sm text-muted-foreground">
-                    <li>• Snapshot統合（オフチェーン投票）</li>
-                    <li>• Safe統合（Treasury管理）</li>
-                    <li>• ウォレット接続・提案システム</li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-success shrink-0" />
+                      <span>Snapshot統合（オフチェーン投票）</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-success shrink-0" />
+                      <span>Safe統合（Treasury管理）</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
+                      <span>ウォレット接続・提案システム</span>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -114,9 +124,18 @@ export function Roadmap() {
                     <h4 className="font-semibold">フルDAO化</h4>
                   </div>
                   <ul className="space-y-1 text-sm text-muted-foreground">
-                    <li>• オンチェーン投票</li>
-                    <li>• コントリビューター報酬自動配布</li>
-                    <li>• エコシステム拡大</li>
+                    <li className="flex items-center gap-2">
+                      <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
+                      <span>オンチェーン投票</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
+                      <span>コントリビューター報酬自動配布</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
+                      <span>エコシステム拡大</span>
+                    </li>
                   </ul>
                 </div>
               </div>
