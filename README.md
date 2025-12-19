@@ -48,21 +48,19 @@ pnpm dev
 
 ```
 src/
-├── app/              # Next.js App Router
-│   ├── layout.tsx    # ルートレイアウト
-│   ├── page.tsx      # ホームページ
-│   └── not-found.tsx # 404ページ
-└── components/       # Reactコンポーネント
-    ├── Hero.tsx      # ヒーローセクション
-    ├── AboutDAO.tsx  # DAOについて
-    ├── Projects.tsx  # プロジェクト紹介
-    ├── Governance.tsx # ガバナンス
-    ├── Funding.tsx   # 資金調達
-    ├── Members.tsx   # メンバー
-    ├── Roadmap.tsx   # ロードマップ
-    ├── Join.tsx      # 参加方法
-    ├── Footer.tsx    # フッター
-    └── __tests__/    # コンポーネントテスト
+├── app/                  # Next.js App Router
+│   ├── layout.tsx        # ルートレイアウト
+│   ├── page.tsx          # ホームページ
+│   └── not-found.tsx     # 404ページ
+└── components/           # Reactコンポーネント
+    ├── Hero.tsx          # ヒーローセクション
+    ├── AboutDAO.tsx      # DAOについて
+    ├── Governance.tsx    # ガバナンス・トレジャリー
+    ├── Roadmap.tsx       # ロードマップ
+    ├── Join.tsx          # 参加方法
+    ├── Footer.tsx        # フッター
+    ├── ThemeProvider.tsx # テーマプロバイダー
+    └── __tests__/        # コンポーネントテスト
 ```
 
 ### テスト
