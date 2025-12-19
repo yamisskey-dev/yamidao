@@ -94,7 +94,7 @@ export function Roadmap() {
                     </li>
                     <li className="flex items-center gap-2">
                       <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
-                      <span>ウォレット接続・提案システム</span>
+                      <span>Misskey認証によるメンバー確認</span>
                     </li>
                   </ul>
                 </div>
