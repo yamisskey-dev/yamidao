@@ -7,43 +7,47 @@ describe('Governance', () => {
     expect(screen.getByRole('heading', { name: /Governance/i })).toBeInTheDocument()
   })
 
-  it('Phase 2実装予定のメッセージが表示される', () => {
+  it('組織構成が表示される', () => {
     render(<Governance />)
-    expect(screen.getAllByText(/Phase 2/).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/準備中/).length).toBeGreaterThan(0)
+    expect(screen.getByText(/組織構成/)).toBeInTheDocument()
+    expect(screen.getByText(/やみすきー運営部/)).toBeInTheDocument()
+    expect(screen.getByText(/yamisskey-dev/)).toBeInTheDocument()
+    expect(screen.getByText(/YAMI DAO/)).toBeInTheDocument()
   })
 
-  it('提案システムの説明が表示される', () => {
+  it('Web3インフラが表示される', () => {
     render(<Governance />)
-    expect(screen.getAllByText(/投票/).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/提案/).length).toBeGreaterThan(0)
+    expect(screen.getByText(/透明性のインフラ/)).toBeInTheDocument()
   })
 
-  it('将来実装される機能の説明が表示される', () => {
+  it('Snapshotへのリンクが表示される', () => {
     render(<Governance />)
-    expect(screen.getAllByText(/ガバナンストークン/).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/ガバナンス/).length).toBeGreaterThan(0)
+    const snapshotLink = screen.getByRole('link', { name: /Snapshot を見る/i })
+    expect(snapshotLink).toHaveAttribute('href', 'https://snapshot.org/#/s:yamidao.eth')
+  })
+
+  it('Safeへのリンクが表示される', () => {
+    render(<Governance />)
+    const safeLink = screen.getByRole('link', { name: /Safe を見る/i })
+    expect(safeLink).toHaveAttribute('href', expect.stringContaining('app.safe.global'))
+  })
+
+  it('透明性の二重保証が表示される', () => {
+    render(<Governance />)
+    expect(screen.getByText(/透明性の二重保証/)).toBeInTheDocument()
+    expect(screen.getByText(/GitHub（技術）/)).toBeInTheDocument()
+    expect(screen.getByText(/Snapshot（組織・資金）/)).toBeInTheDocument()
+  })
+
+  it('資金運用方針が表示される', () => {
+    render(<Governance />)
+    expect(screen.getByText(/資金運用方針/)).toBeInTheDocument()
+    expect(screen.getByText(/完全非営利/)).toBeInTheDocument()
   })
 
   it('セクションIDがgovernanceである', () => {
     const { container } = render(<Governance />)
     const section = container.querySelector('#governance')
     expect(section).toBeInTheDocument()
-  })
-
-  it('Snapshotへのリンクまたは説明が表示される', () => {
-    render(<Governance />)
-    expect(screen.getAllByText(/Snapshot/).length).toBeGreaterThan(0)
-  })
-
-  it('組織体系にメンバー数が表示される', () => {
-    render(<Governance />)
-    expect(screen.getAllByText(/YAMI DAO/).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/やみすきー運営部/).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/yamisskey-dev/).length).toBeGreaterThan(0)
-    // メンバー数が表示される (1人, 4人, 3人)
-    expect(screen.getByText('1人')).toBeInTheDocument()
-    expect(screen.getByText('4人')).toBeInTheDocument()
-    expect(screen.getByText('3人')).toBeInTheDocument()
   })
 })

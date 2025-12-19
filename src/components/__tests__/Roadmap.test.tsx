@@ -30,21 +30,24 @@ describe('Roadmap', () => {
     expect(screen.getAllByText(/2025/).length).toBeGreaterThan(0)
   })
 
-  it('トークン関連のマイルストーンが表示される', () => {
+  it('Snapshot統合が表示される', () => {
     render(<Roadmap />)
-    expect(screen.getAllByText(/トークン/).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/ガバナンス/).length).toBeGreaterThan(0)
+    expect(screen.getByText(/Snapshot統合/)).toBeInTheDocument()
+  })
+
+  it('Safe統合が表示される', () => {
+    render(<Roadmap />)
+    expect(screen.getByText(/Safe統合/)).toBeInTheDocument()
+  })
+
+  it('Misskey認証が表示される', () => {
+    render(<Roadmap />)
+    expect(screen.getByText(/Misskey認証/)).toBeInTheDocument()
   })
 
   it('セクションIDがroadmapである', () => {
     const { container } = render(<Roadmap />)
     const section = container.querySelector('#roadmap')
     expect(section).toBeInTheDocument()
-  })
-
-  it('タイムライン要素が表示される', () => {
-    const { container } = render(<Roadmap />)
-    const timeline = container.querySelector('[data-testid="timeline"]')
-    expect(timeline).toBeInTheDocument()
   })
 })

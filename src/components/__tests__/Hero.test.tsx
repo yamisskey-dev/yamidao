@@ -14,19 +14,24 @@ describe('Hero', () => {
 
   it('メインメッセージが表示される', () => {
     render(<Hero />)
-    expect(screen.getByText(/プライバシー/)).toBeInTheDocument()
+    expect(screen.getByText(/プライバシー保護/)).toBeInTheDocument()
     expect(screen.getByText(/メンタルヘルス/)).toBeInTheDocument()
   })
 
-  it('アクションボタンが表示される', () => {
+  it('参加ボタンが表示される', () => {
     render(<Hero />)
-    expect(screen.getByRole('link', { name: /プロジェクトを見る/ })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /DAOに参加/ })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /参加する/ })).toBeInTheDocument()
   })
 
   it('セクションIDがheroである', () => {
     const { container } = render(<Hero />)
     const section = container.querySelector('#hero')
     expect(section).toBeInTheDocument()
+  })
+
+  it('オープンソースとWeb3の理念が表示される', () => {
+    render(<Hero />)
+    expect(screen.getByText(/オープンソース/)).toBeInTheDocument()
+    expect(screen.getByText(/Web3/)).toBeInTheDocument()
   })
 })

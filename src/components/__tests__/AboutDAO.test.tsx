@@ -4,26 +4,25 @@ import { AboutDAO } from '../AboutDAO'
 describe('AboutDAO', () => {
   it('セクションタイトルが表示される', () => {
     render(<AboutDAO />)
-    expect(screen.getByRole('heading', { name: /About DAO/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /About/i })).toBeInTheDocument()
   })
 
-  it('YAMI DAOのビジョンが表示される', () => {
+  it('YAMIエコシステムへのリンクが表示される', () => {
     render(<AboutDAO />)
-    expect(screen.getByText(/YAMIエコシステム/)).toBeInTheDocument()
-    expect(screen.getByText(/のガバナンスDAO/)).toBeInTheDocument()
+    const ecosystemLink = screen.getByRole('link', { name: /YAMIエコシステム/i })
+    expect(ecosystemLink).toHaveAttribute('href', 'https://hub.yami.ski/guides/ecosystem/')
   })
 
-  it('組織のミッションが表示される', () => {
+  it('ビジョン・ミッションが表示される', () => {
     render(<AboutDAO />)
-    expect(screen.getAllByText(/プライバシー保護/).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/分散型ガバナンス/).length).toBeGreaterThan(0)
+    expect(screen.getByText(/やみすきー運営部とyamisskey-devのガバナンス基盤/)).toBeInTheDocument()
   })
 
   it('コアバリューが表示される', () => {
     render(<AboutDAO />)
-    expect(screen.getByText(/Privacy by Design/)).toBeInTheDocument()
-    expect(screen.getByText(/Decentralized Governance/)).toBeInTheDocument()
-    expect(screen.getByText(/Mental Health First/)).toBeInTheDocument()
+    expect(screen.getAllByText(/メンタルファースト/).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/プライバシーファースト/).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/コミュニティ主導/).length).toBeGreaterThan(0)
   })
 
   it('セクションIDがaboutである', () => {

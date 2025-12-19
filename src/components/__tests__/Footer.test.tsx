@@ -7,18 +7,6 @@ describe('Footer', () => {
     expect(screen.getAllByText(/YAMI DAO/i).length).toBeGreaterThan(0)
   })
 
-  it('GitHubリンクが表示される', () => {
-    const { container } = render(<Footer />)
-    const githubLinks = container.querySelectorAll('a[href*="github.com"]')
-    expect(githubLinks.length).toBeGreaterThan(0)
-  })
-
-  it('yamisskey-dev organizationへのリンクが表示される', () => {
-    render(<Footer />)
-    const orgLink = screen.getByRole('link', { name: /yamisskey-dev/i })
-    expect(orgLink).toHaveAttribute('href', 'https://github.com/yamisskey-dev')
-  })
-
   it('コピーライトが表示される', () => {
     render(<Footer />)
     const currentYear = new Date().getFullYear()
@@ -48,9 +36,23 @@ describe('Footer', () => {
     expect(footer).toBeInTheDocument()
   })
 
-  it('Fundingセクションへのリンクが表示される', () => {
+  it('ナビゲーションリンクが表示される', () => {
     render(<Footer />)
-    const fundingLink = screen.getByRole('link', { name: /Funding/i })
-    expect(fundingLink).toHaveAttribute('href', '#funding')
+    expect(screen.getByRole('link', { name: /About/i })).toHaveAttribute('href', '#about')
+    expect(screen.getByRole('link', { name: /Governance/i })).toHaveAttribute('href', '#governance')
+    expect(screen.getByRole('link', { name: /Roadmap/i })).toHaveAttribute('href', '#roadmap')
+    expect(screen.getByRole('link', { name: /Join/i })).toHaveAttribute('href', '#join')
+  })
+
+  it('コミュニティリンクが表示される', () => {
+    render(<Footer />)
+    expect(screen.getByRole('link', { name: /Misskey/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Discord/i })).toBeInTheDocument()
+  })
+
+  it('ガバナンスリンクが表示される', () => {
+    render(<Footer />)
+    expect(screen.getByRole('link', { name: /Snapshot/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Safe/i })).toBeInTheDocument()
   })
 })

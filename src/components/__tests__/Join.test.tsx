@@ -4,53 +4,54 @@ import { Join } from '../Join'
 describe('Join', () => {
   it('セクションタイトルが表示される', () => {
     render(<Join />)
-    expect(screen.getByRole('heading', { name: /Join YAMI DAO/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Join/i })).toBeInTheDocument()
   })
 
-  it('開発者向けの参加パスが表示される', () => {
+  it('プライバシー方針が表示される', () => {
     render(<Join />)
-    expect(screen.getAllByText(/開発者/).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/コントリビュート/).length).toBeGreaterThan(0)
+    expect(screen.getByText(/匿名で参加可能/)).toBeInTheDocument()
+    expect(screen.getByText(/ウォレットアドレスやGitHubアカウント/)).toBeInTheDocument()
   })
 
-  it('ユーザー向けの参加パスが表示される', () => {
+  it('つくるパスが表示される', () => {
     render(<Join />)
-    expect(screen.getAllByText(/ユーザー/).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/インスタンス/).length).toBeGreaterThan(0)
+    expect(screen.getByText(/つくる/)).toBeInTheDocument()
+    expect(screen.getByText(/コード・ドキュメント・翻訳/)).toBeInTheDocument()
   })
 
-  it('サポーター向けの参加パスが表示される', () => {
+  it('つかうパスが表示される', () => {
     render(<Join />)
-    expect(screen.getAllByText(/サポーター/).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/投票/).length).toBeGreaterThan(0)
+    expect(screen.getByText(/つかう/)).toBeInTheDocument()
+    expect(screen.getByText(/やみすきーに登録/)).toBeInTheDocument()
   })
 
-  it('yamisskey-devへのリンクが表示される', () => {
+  it('つなぐパスが表示される', () => {
     render(<Join />)
-    const githubLink = screen.getByRole('link', { name: /yamisskey-dev.*貢献/i })
-    expect(githubLink).toHaveAttribute('href', expect.stringContaining('github.com'))
+    expect(screen.getByText(/つなぐ/)).toBeInTheDocument()
+    expect(screen.getByText(/メンバーシップ取得/)).toBeInTheDocument()
   })
 
-  it('Yamisskeyへのリンクが表示される', () => {
+  it('GitHubへのリンクが表示される', () => {
     render(<Join />)
-    expect(screen.getAllByText(/Yamisskey/i).length).toBeGreaterThan(0)
+    const githubLink = screen.getByRole('link', { name: /GitHub/i })
+    expect(githubLink).toHaveAttribute('href', 'https://github.com/yamisskey-dev')
   })
 
-  it('参加方法の説明が表示される', () => {
+  it('やみすきーへのリンクが表示される', () => {
     render(<Join />)
-    expect(screen.getByText(/3つのパス/i)).toBeInTheDocument()
+    const yamiLink = screen.getByRole('link', { name: /やみすきー/i })
+    expect(yamiLink).toHaveAttribute('href', 'https://yami.ski')
+  })
+
+  it('Guildへのリンクが表示される', () => {
+    render(<Join />)
+    const guildLink = screen.getByRole('link', { name: /Guild/i })
+    expect(guildLink).toHaveAttribute('href', 'https://guild.xyz/yamidao')
   })
 
   it('セクションIDがjoinである', () => {
     const { container } = render(<Join />)
     const section = container.querySelector('#join')
     expect(section).toBeInTheDocument()
-  })
-
-  it('各パスにアイコンが表示される', () => {
-    const { container } = render(<Join />)
-    // 開発者、ユーザー、サポーターのカードが3つ存在する
-    const pathCards = container.querySelectorAll('[data-testid="join-path"]')
-    expect(pathCards.length).toBe(3)
   })
 })
