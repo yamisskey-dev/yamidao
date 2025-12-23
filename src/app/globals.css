@@ -37,10 +37,11 @@
   --color-input: #DBA5FF;
   --color-ring: #966BFF;
 
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
+  /* Guild風 - 大きめ角丸 */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
 }
 
 /* YAMI DAO - DXM Dark Theme */
@@ -216,85 +217,75 @@
   }
 }
 
-/* NGO - カード */
+/* カード - Guild風 大きめ角丸 + ホバーで透明度変化 */
 @layer components {
   .dao-card {
     background-color: var(--color-card);
     border: 1px solid var(--color-border);
-    border-radius: 0.5rem;
+    border-radius: var(--radius-md);
     padding: 1.5rem;
-    transition: all 0.3s;
+    transition: all 0.2s ease;
   }
 
   .dao-card:hover {
-    border-color: rgba(150, 107, 255, 0.5); /* NGO inputBorderHover */
-    box-shadow: 0 10px 15px -3px rgba(147, 137, 255, 0.3); /* NGO shadow */
+    background-color: color-mix(in srgb, var(--color-card) 90%, var(--color-primary));
+    border-color: rgba(150, 107, 255, 0.5);
+    transform: translateY(-2px);
   }
-}
 
-/* DXM - カード */
-@layer components {
   .dark .dao-card:hover {
-    border-color: rgba(163, 116, 255, 0.3); /* DXM inputBorderHover */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5); /* DXM shadow */
+    background-color: color-mix(in srgb, var(--color-card) 85%, var(--color-primary));
+    border-color: rgba(163, 116, 255, 0.4);
   }
 }
 
-/* NGO - ボタン */
+/* ボタン - Guild風 大きめ角丸 + ホバーで透明度変化 */
 @layer components {
   .dao-btn-primary {
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
     color: white;
-    background: linear-gradient(172deg, #FF9DFF, #A398FF 45%, #7D66FF); /* NGO buttonBgGradient */
-    box-shadow: 0 4px 6px -1px rgba(147, 137, 255, 0.3);
-    transition: all 0.3s;
+    font-weight: 500;
+    background: linear-gradient(172deg, #FF9DFF, #A398FF 45%, #7D66FF);
+    transition: all 0.2s ease;
   }
 
   .dao-btn-primary:hover {
-    opacity: 0.9;
-    box-shadow: 0 10px 15px -3px rgba(147, 137, 255, 0.4);
+    opacity: 0.85;
+    transform: translateY(-1px);
   }
 
-  /* NGO - セカンダリボタン */
+  .dao-btn-primary:active {
+    opacity: 0.95;
+    transform: translateY(0);
+  }
+
   .dao-btn-secondary {
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    border: 2px solid #966BFF; /* NGO accent */
-    color: #966BFF;
-    background: rgba(219, 165, 255, 0.3); /* NGO buttonBg */
-    transition: all 0.3s;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    color: var(--color-primary);
+    background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+    font-weight: 500;
+    transition: all 0.2s ease;
   }
 
   .dao-btn-secondary:hover {
-    background: linear-gradient(172deg, #FF9DFF, #A398FF 45%, #7D66FF);
-    color: white;
-    border-color: transparent;
+    background: color-mix(in srgb, var(--color-primary) 20%, transparent);
+    border-color: var(--color-primary);
   }
-}
 
-/* DXM - ボタンスタイル */
-@layer components {
   .dark .dao-btn-primary {
-    background: linear-gradient(135deg, #B32DB6, #966BFF, #4B38A5); /* DXM buttonBgGradient */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-  }
-
-  .dark .dao-btn-primary:hover {
-    opacity: 0.9;
-    box-shadow: 0 10px 15px -3px rgba(163, 116, 255, 0.4);
+    background: linear-gradient(135deg, #B32DB6, #966BFF, #4B38A5);
   }
 
   .dark .dao-btn-secondary {
-    border-color: #A374FF; /* DXM accent */
-    color: #A374FF;
-    background: rgba(163, 116, 255, 0.2); /* DXM buttonBg */
+    color: var(--color-primary);
+    background: color-mix(in srgb, var(--color-primary) 15%, transparent);
   }
 
   .dark .dao-btn-secondary:hover {
-    background: linear-gradient(135deg, #B32DB6, #966BFF, #4B38A5);
-    color: white;
-    border-color: transparent;
+    background: color-mix(in srgb, var(--color-primary) 25%, transparent);
   }
 
   /* タグ - プロジェクトの技術スタック */
