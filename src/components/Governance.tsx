@@ -14,7 +14,7 @@ export function Governance() {
         </div>
 
         {/* 組織構成（基盤型） */}
-        <div className="mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+        <div className="mb-12 animate-fade-in-up">
           <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
             <Layers className="h-5 w-5 text-primary" />
             組織構成
@@ -57,7 +57,7 @@ export function Governance() {
         </div>
 
         {/* Web3インフラ */}
-        <div className="mb-12 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <div className="mb-12 animate-fade-in-up">
           <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
             <Shield className="h-5 w-5 text-secondary" />
             透明性のインフラ
@@ -104,7 +104,7 @@ export function Governance() {
         </div>
 
         {/* 透明性の仕組み */}
-        <div className="dao-card glass mb-12 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+        <div className="dao-card glass mb-12 animate-fade-in-up">
           <h3 className="text-lg font-semibold mb-4">透明性の二重保証</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -129,7 +129,7 @@ export function Governance() {
         </div>
 
         {/* 資金運用方針 */}
-        <div className="animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        <div className="animate-fade-in-up">
           <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
             <Users className="h-5 w-5 text-accent" />
             資金運用方針

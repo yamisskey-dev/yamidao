@@ -19,7 +19,7 @@ export function Roadmap() {
           <div className="absolute left-8 md:left-1/2 top-24 md:top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent"></div>
 
           {/* Phase 1 */}
-          <div className="relative mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          <div className="relative mb-12 animate-fade-in-up">
             <div className="md:flex md:items-start md:gap-8">
               <div className="md:w-1/2 md:text-right md:pr-8">
                 <div className="mb-4 md:mb-0">
@@ -59,7 +59,7 @@ export function Roadmap() {
           </div>
 
           {/* Phase 2 */}
-          <div className="relative mb-12 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="relative mb-12 animate-fade-in-up">
             <div className="md:flex md:items-start md:gap-8">
               <div className="md:w-1/2 md:text-right md:pr-8">
                 <div className="mb-4 md:mb-0">
@@ -103,7 +103,7 @@ export function Roadmap() {
           </div>
 
           {/* Phase 3 */}
-          <div className="relative animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <div className="relative animate-fade-in-up">
             <div className="md:flex md:items-start md:gap-8">
               <div className="md:w-1/2 md:text-right md:pr-8">
                 <div className="mb-4 md:mb-0">

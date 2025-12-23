@@ -42,7 +42,7 @@ export default function Home() {
           </div>
 
           {/* Value Props */}
-          <div className="mb-12 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          <div className="mb-12 max-w-2xl mx-auto animate-fade-in-up">
             <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20">
                 <Heart className="h-4 w-4" />
@@ -60,7 +60,7 @@ export default function Home() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="flex flex-wrap gap-4 justify-center animate-fade-in-up">
             <Link
               href="/app"
               className="dao-btn-primary inline-flex items-center gap-2 text-lg py-3 px-8"

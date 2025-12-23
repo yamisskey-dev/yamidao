@@ -14,14 +14,14 @@ export function AboutDAO() {
         </div>
 
         {/* ビジョン・ミッション（統合・簡潔化） */}
-        <div className="dao-card glass mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+        <div className="dao-card glass mb-12 animate-fade-in-up">
           <p className="text-lg text-muted-foreground leading-relaxed">
             やみすきー運営部とyamisskey-devのガバナンス基盤。メンタルファーストとプライバシーファーストを、コミュニティ主導で守ります。
           </p>
         </div>
 
         {/* コアバリュー（基盤型） */}
-        <div className="rounded-lg border border-border overflow-hidden animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <div className="rounded-lg border border-border overflow-hidden animate-fade-in-up">
           {/* 上層: 目指すもの */}
           <div className="p-4 bg-card/50">
             <span className="text-xs font-mono font-semibold text-muted-foreground">Values Layer</span>

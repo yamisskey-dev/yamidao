@@ -18,7 +18,7 @@ export default function AppPage() {
           </div>
 
           {/* Connect Wallet Card */}
-          <div className="dao-card glass mb-8 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          <div className="dao-card glass mb-8 animate-fade-in-up">
             <div className="text-center py-8">
               <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 mb-6">
                 <Wallet className="h-10 w-10 text-primary" />
@@ -40,7 +40,7 @@ export default function AppPage() {
           {/* Features Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {/* Snapshot Voting */}
-            <div className="dao-card hover-lift animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <div className="dao-card hover-lift animate-fade-in-up">
               <div className="flex items-center gap-3 mb-4">
                 <Vote className="h-6 w-6 text-primary" />
                 <h3 className="text-lg font-semibold">Snapshot投票</h3>
@@ -60,7 +60,7 @@ export default function AppPage() {
             </div>
 
             {/* Safe Treasury */}
-            <div className="dao-card hover-lift animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <div className="dao-card hover-lift animate-fade-in-up">
               <div className="flex items-center gap-3 mb-4">
                 <Shield className="h-6 w-6 text-success" />
                 <h3 className="text-lg font-semibold">Safe Treasury</h3>
@@ -81,7 +81,7 @@ export default function AppPage() {
           </div>
 
           {/* Coming Soon: Misskey Auth */}
-          <div className="dao-card border-dashed animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <div className="dao-card border-dashed animate-fade-in-up">
             <div className="flex items-start gap-4">
               <div className="shrink-0">
                 <Cloud className="h-8 w-8 text-secondary" />

@@ -14,7 +14,7 @@ export function Join() {
         </div>
 
         {/* プライバシー方針（簡潔版） */}
-        <div className="dao-card glass mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+        <div className="dao-card glass mb-12 animate-fade-in-up">
           <div className="flex items-center gap-3 mb-3">
             <Shield className="h-5 w-5 text-primary" />
             <h3 className="text-lg font-semibold">匿名で参加可能</h3>
@@ -27,7 +27,7 @@ export function Join() {
         {/* 3つの参加パス */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {/* つくる */}
-          <div className="dao-card hover-lift animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="dao-card hover-lift animate-fade-in-up">
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
                 <Code className="h-8 w-8 text-primary" />
@@ -49,7 +49,7 @@ export function Join() {
           </div>
 
           {/* つかう */}
-          <div className="dao-card hover-lift animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <div className="dao-card hover-lift animate-fade-in-up">
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary/10 mb-4">
                 <Users className="h-8 w-8 text-secondary" />
@@ -71,7 +71,7 @@ export function Join() {
           </div>
 
           {/* つなぐ */}
-          <div className="dao-card hover-lift animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <div className="dao-card hover-lift animate-fade-in-up">
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-4">
                 <Link2 className="h-8 w-8 text-accent" />
