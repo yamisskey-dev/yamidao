@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -25,6 +25,31 @@ export function Navbar() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const closeMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(false)
+  }, [])
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isMobileMenuOpen) {
+        closeMobileMenu()
+      }
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [isMobileMenuOpen, closeMobileMenu])
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
 
   return (
     <nav
@@ -54,16 +79,21 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={`relative text-sm font-medium transition-colors hover:text-primary py-1 ${
                   pathname === link.href ? 'text-primary' : 'text-muted-foreground'
                 }`}
               >
                 {link.label}
+                {pathname === link.href && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
+                )}
               </Link>
             ))}
             <Link
               href="/app"
-              className="dao-btn-primary text-sm py-2 px-4"
+              className={`dao-btn-primary text-sm py-2 px-4 ${
+                pathname === '/app' ? 'ring-2 ring-primary ring-offset-2 ring-offset-background' : ''
+              }`}
             >
               Launch App
             </Link>
@@ -74,6 +104,8 @@ export function Navbar() {
             className="md:hidden p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMobileMenuOpen ? (
               <X className="h-6 w-6" />
@@ -85,24 +117,33 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border/50">
+          <div
+            id="mobile-menu"
+            className="md:hidden py-4 border-t border-border/50"
+            role="menu"
+          >
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                  role="menuitem"
+                  className={`text-sm font-medium transition-colors hover:text-primary flex items-center gap-2 ${
                     pathname === link.href ? 'text-primary' : 'text-muted-foreground'
                   }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={closeMobileMenu}
                 >
+                  {pathname === link.href && (
+                    <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+                  )}
                   {link.label}
                 </Link>
               ))}
               <Link
                 href="/app"
+                role="menuitem"
                 className="dao-btn-primary text-sm py-2 px-4 text-center"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={closeMobileMenu}
               >
                 Launch App
               </Link>
