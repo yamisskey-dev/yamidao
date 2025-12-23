@@ -10,7 +10,7 @@ export default function AppPage() {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12 animate-fade-in-up">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">YAMI DAO App</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">App</h1>
             <div className="section-divider mx-auto mb-8"></div>
             <p className="text-xl text-muted-foreground">
               ウォレット接続でDAOに参加
