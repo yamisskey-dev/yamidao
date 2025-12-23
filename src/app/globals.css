@@ -504,6 +504,20 @@ html {
   color: var(--color-muted-foreground);
 }
 
+/* Navbar */
+.navbar-transparent {
+  background: transparent;
+}
+
+.navbar-scrolled {
+  background: rgba(252, 249, 255, 0.8);
+  backdrop-filter: blur(12px);
+}
+
+.dark .navbar-scrolled {
+  background: rgba(16, 11, 34, 0.85);
+}
+
 /* GitHub Corner */
 .github-corner {
   position: fixed;
