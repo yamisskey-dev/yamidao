@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Heart, MessageCircle, Users, MessageSquare, Cloud, Vote, Shield, KeyRound, Send } from 'lucide-react'
 import Image from 'next/image'
 
@@ -34,36 +35,36 @@ export function Footer() {
             <h4 className="font-semibold mb-4">リンク</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a
-                  href="#about"
+                <Link
+                  href="/about"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#governance"
+                <Link
+                  href="/governance"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Governance
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#roadmap"
+                <Link
+                  href="/roadmap"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Roadmap
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#join"
+                <Link
+                  href="/join"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Join
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

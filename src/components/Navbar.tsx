@@ -3,10 +3,20 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Wallet } from 'lucide-react'
+import { usePathname } from 'next/navigation'
+import { Menu, X } from 'lucide-react'
+
+const navLinks = [
+  { href: '/about', label: 'About' },
+  { href: '/governance', label: 'Governance' },
+  { href: '/roadmap', label: 'Roadmap' },
+  { href: '/join', label: 'Join' },
+]
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,12 +48,67 @@ export function Navbar() {
             <span className="font-bold text-lg">YAMI DAO</span>
           </Link>
 
-          {/* Connect Wallet Button */}
-          <button className="dao-btn-primary flex items-center gap-2 text-sm py-2 px-4">
-            <Wallet className="h-4 w-4" />
-            <span>Connect</span>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-sm font-medium transition-colors hover:text-primary ${
+                  pathname === link.href ? 'text-primary' : 'text-muted-foreground'
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="/app"
+              className="dao-btn-primary text-sm py-2 px-4"
+            >
+              Launch App
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
+
+        {/* Mobile Navigation */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden py-4 border-t border-border/50">
+            <div className="flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                    pathname === link.href ? 'text-primary' : 'text-muted-foreground'
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link
+                href="/app"
+                className="dao-btn-primary text-sm py-2 px-4 text-center"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Launch App
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   )
