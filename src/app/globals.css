@@ -335,6 +335,39 @@
     background: linear-gradient(to right, var(--color-primary), var(--color-secondary), var(--color-accent));
     border-radius: 9999px;
   }
+
+  /* テキストリンク */
+  .text-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .text-link:hover {
+    border-bottom-color: var(--color-primary);
+  }
+
+  /* 外部リンク（アイコン付き） */
+  .external-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .external-link:hover {
+    opacity: 0.8;
+  }
+
+  .external-link::after {
+    content: '↗';
+    font-size: 0.75em;
+    opacity: 0.7;
+  }
 }
 
 /* アニメーション */

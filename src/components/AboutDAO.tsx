@@ -9,7 +9,7 @@ export function AboutDAO() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">About</h2>
           <div className="section-divider mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl">
-            <a href="https://hub.yami.ski/guides/ecosystem/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">YAMIエコシステム</a>のガバナンスDAO
+            <a href="https://hub.yami.ski/guides/ecosystem/" target="_blank" rel="noopener noreferrer" className="external-link">YAMIエコシステム</a>のガバナンスDAO
           </p>
         </div>
 
