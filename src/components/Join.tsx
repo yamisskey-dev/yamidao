@@ -1,4 +1,4 @@
-import { Code, Users, Github, ExternalLink, Cloud } from 'lucide-react'
+import { Code, Users, Github, ExternalLink, Wallet, Shield, Cloud } from 'lucide-react'
 
 export function Join() {
   return (
@@ -36,50 +36,77 @@ export function Join() {
           </div>
         </div>
 
-        {/* 今すぐできる参加方法 */}
-        <div className="animate-fade-in-up">
-          <h3 className="text-lg font-semibold mb-6 text-center text-muted-foreground">今すぐ参加できます</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="dao-card hover-lift">
-              <div className="flex items-center gap-4">
-                <div className="shrink-0 inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
-                  <Code className="h-6 w-6 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <h4 className="font-semibold mb-1">コントリビュート</h4>
-                  <p className="text-xs text-muted-foreground">コード・ドキュメント・翻訳</p>
-                </div>
-                <a
-                  href="https://github.com/yamisskey-dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="dao-btn-secondary inline-flex items-center gap-2 text-sm shrink-0"
-                >
-                  <Github className="h-4 w-4" />
-                  GitHub
-                </a>
-              </div>
+        {/* 匿名で参加可能 */}
+        <div className="dao-card glass mb-12 animate-fade-in-up">
+          <div className="flex items-center gap-3 mb-4">
+            <Shield className="h-6 w-6 text-primary" />
+            <h3 className="text-lg font-semibold">匿名で参加可能</h3>
+          </div>
+          <p className="text-muted-foreground">
+            ウォレットアドレスやGitHubアカウントのみで参加できます。実名・メールアドレスは不要です。
+          </p>
+        </div>
+
+        {/* 3つの参加方法 */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-up">
+          {/* つくる */}
+          <div className="dao-card glass">
+            <div className="flex items-center gap-3 mb-4">
+              <Code className="h-6 w-6 text-primary" />
+              <h3 className="text-lg font-semibold">つくる</h3>
             </div>
-            <div className="dao-card hover-lift">
-              <div className="flex items-center gap-4">
-                <div className="shrink-0 inline-flex items-center justify-center w-12 h-12 rounded-full bg-secondary/10">
-                  <Users className="h-6 w-6 text-secondary" />
-                </div>
-                <div className="flex-1">
-                  <h4 className="font-semibold mb-1">フィードバック</h4>
-                  <p className="text-xs text-muted-foreground">やみすきーを使って改善に貢献</p>
-                </div>
-                <a
-                  href="https://yami.ski"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="dao-btn-secondary inline-flex items-center gap-2 text-sm shrink-0"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                  やみすきー
-                </a>
-              </div>
+            <p className="text-sm text-muted-foreground mb-6">
+              コード・ドキュメント・翻訳で貢献
+            </p>
+            <a
+              href="https://github.com/yamisskey-dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="dao-btn-primary inline-flex items-center gap-2"
+            >
+              <Github className="h-4 w-4" />
+              GitHub
+            </a>
+          </div>
+
+          {/* つかう */}
+          <div className="dao-card glass">
+            <div className="flex items-center gap-3 mb-4">
+              <Users className="h-6 w-6 text-secondary" />
+              <h3 className="text-lg font-semibold">つかう</h3>
             </div>
+            <p className="text-sm text-muted-foreground mb-6">
+              やみすきーに登録してフィードバック
+            </p>
+            <a
+              href="https://yami.ski"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="dao-btn-primary inline-flex items-center gap-2"
+            >
+              <ExternalLink className="h-4 w-4" />
+              やみすきー
+            </a>
+          </div>
+
+          {/* つなぐ */}
+          <div className="dao-card glass">
+            <div className="flex items-center gap-3 mb-4">
+              <Wallet className="h-6 w-6 text-accent" />
+              <h3 className="text-lg font-semibold">つなぐ</h3>
+            </div>
+            <p className="text-sm text-muted-foreground mb-6">
+              ウォレット接続でメンバーシップ取得
+            </p>
+            <a
+              href="https://guild.xyz/yamidao"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="dao-btn-primary inline-flex items-center gap-2"
+            >
+              <ExternalLink className="h-4 w-4" />
+              Guild
+            </a>
           </div>
         </div>
       </div>
