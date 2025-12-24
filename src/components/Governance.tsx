@@ -60,43 +60,47 @@ export function Governance() {
         {/* Snapshot + Treasury 並列表示 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in-up">
           {/* Snapshot */}
-          <div className="dao-card glass">
-            <div className="flex items-center gap-3 mb-4">
-              <Vote className="h-6 w-6 text-primary" />
-              <h3 className="text-lg font-semibold">Snapshot</h3>
+          <div className="dao-card hover-lift">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                <Vote className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Snapshot</h3>
+              <p className="text-muted-foreground text-sm mb-4">
+                ガス代無料のオフチェーン投票
+              </p>
+              <a
+                href="https://snapshot.org/#/s:yamidao.eth"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="dao-btn-primary w-full inline-flex items-center justify-center gap-2"
+              >
+                <ExternalLink className="h-4 w-4" />
+                Snapshot
+              </a>
             </div>
-            <p className="text-sm text-muted-foreground mb-6">
-              ガス代無料のオフチェーン投票。1人1票で提案・投票ができます。
-            </p>
-            <a
-              href="https://snapshot.org/#/s:yamidao.eth"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="dao-btn-primary inline-flex items-center gap-2"
-            >
-              <ExternalLink className="h-4 w-4" />
-              Snapshot
-            </a>
           </div>
 
           {/* Treasury */}
-          <div className="dao-card glass">
-            <div className="flex items-center gap-3 mb-4">
-              <Shield className="h-6 w-6 text-secondary" />
-              <h3 className="text-lg font-semibold">Treasury</h3>
+          <div className="dao-card hover-lift">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary/10 mb-4">
+                <Shield className="h-8 w-8 text-secondary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Treasury</h3>
+              <p className="text-muted-foreground text-sm mb-4">
+                Safeマルチシグで透明な資金管理
+              </p>
+              <a
+                href="https://app.safe.global/home?safe=oeth:0x9D315c45B721132674D1aBED44F642b2dE24A1c2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="dao-btn-primary w-full inline-flex items-center justify-center gap-2"
+              >
+                <ExternalLink className="h-4 w-4" />
+                Safe
+              </a>
             </div>
-            <p className="text-sm text-muted-foreground mb-6">
-              Safeマルチシグウォレットで全取引履歴を公開しています。
-            </p>
-            <a
-              href="https://app.safe.global/home?safe=oeth:0x9D315c45B721132674D1aBED44F642b2dE24A1c2"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="dao-btn-primary inline-flex items-center gap-2"
-            >
-              <ExternalLink className="h-4 w-4" />
-              Safe
-            </a>
           </div>
         </div>
       </div>
