@@ -1,4 +1,4 @@
-import { Vote, ExternalLink, Shield, Wallet } from 'lucide-react'
+import { Vote, ExternalLink, Shield, Wallet, Scale } from 'lucide-react'
 
 export function Governance() {
   return (
@@ -11,6 +11,28 @@ export function Governance() {
           <p className="text-xl text-muted-foreground max-w-3xl">
             透明で分散型の意思決定と資金管理
           </p>
+        </div>
+
+        {/* 意思決定方針 */}
+        <div className="dao-card glass mb-12 animate-fade-in-up">
+          <div className="flex items-center gap-3 mb-4">
+            <Scale className="h-6 w-6 text-primary" />
+            <h3 className="text-lg font-semibold">意思決定方針</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="font-semibold mb-2">投票ルール</h4>
+              <p className="text-sm text-muted-foreground">
+                1人1票、平等な投票権。トークン保有量による重み付けはありません。
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-2">提案プロセス</h4>
+              <p className="text-sm text-muted-foreground">
+                現在ホワイトリスト制。Misskey認証によるSybil対策後、自動で追加予定。
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* 資金運用方針 */}
