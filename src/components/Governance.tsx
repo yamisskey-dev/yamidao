@@ -59,13 +59,13 @@ export function Governance() {
 
         {/* Snapshot + Treasury 並列表示 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in-up">
-          {/* Snapshot */}
+          {/* きめる */}
           <div className="dao-card hover-lift">
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
                 <Vote className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Snapshot</h3>
+              <h3 className="text-xl font-semibold mb-3">きめる</h3>
               <p className="text-muted-foreground text-sm mb-4">
                 ガス代無料のオフチェーン投票
               </p>
@@ -81,13 +81,13 @@ export function Governance() {
             </div>
           </div>
 
-          {/* Treasury */}
+          {/* まもる */}
           <div className="dao-card hover-lift">
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary/10 mb-4">
                 <Shield className="h-8 w-8 text-secondary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Treasury</h3>
+              <h3 className="text-xl font-semibold mb-3">まもる</h3>
               <p className="text-muted-foreground text-sm mb-4">
                 Safeマルチシグで透明な資金管理
               </p>
