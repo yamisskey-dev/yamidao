@@ -13,29 +13,6 @@ export function Join() {
           </p>
         </div>
 
-        {/* Misskeyアカウントで参加（メイン） */}
-        <div className="dao-card glass mb-12 animate-fade-in-up">
-          <div className="text-center py-6">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
-              <Cloud className="h-8 w-8 text-primary" />
-            </div>
-            <h3 className="text-2xl font-semibold mb-3">MisskeyアカウントでDAOに参加</h3>
-            <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-              やみすきーのアカウントでYAMI DAOメンバーになれます。匿名で参加可能です。
-            </p>
-            <button
-              className="dao-btn-primary inline-flex items-center gap-2 text-lg py-3 px-8 opacity-50 cursor-not-allowed"
-              disabled
-            >
-              <Cloud className="h-5 w-5" />
-              Coming Soon
-            </button>
-            <p className="text-xs text-muted-foreground mt-4">
-              Misskey認証によるDAO参加機能を開発中
-            </p>
-          </div>
-        </div>
-
         {/* プライバシー方針（簡潔版） */}
         <div className="dao-card glass mb-12 animate-fade-in-up">
           <div className="flex items-center gap-3 mb-3">
@@ -114,6 +91,18 @@ export function Join() {
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Misskeyアカウントで参加（Coming Soon） */}
+        <div className="dao-card glass animate-fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <Cloud className="h-5 w-5 text-primary" />
+            <h3 className="text-lg font-semibold">Misskey認証で参加</h3>
+            <span className="text-xs bg-muted px-2 py-1 rounded-full text-muted-foreground">Coming Soon</span>
+          </div>
+          <p className="text-muted-foreground text-sm">
+            やみすきーアカウントでDAOメンバーになれる機能を開発中です。
+          </p>
         </div>
 
       </div>
