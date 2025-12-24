@@ -1,4 +1,4 @@
-import { Code, Users, Github, ExternalLink, Shield, Vote, Cloud } from 'lucide-react'
+import { Code, Users, Github, ExternalLink, Cloud } from 'lucide-react'
 
 export function Join() {
   return (
@@ -36,29 +36,7 @@ export function Join() {
           </div>
         </div>
 
-        {/* メンバーができること */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 animate-fade-in-up">
-          <div className="dao-card hover-lift">
-            <div className="flex items-center gap-3 mb-3">
-              <Vote className="h-5 w-5 text-primary" />
-              <h4 className="font-semibold">提案・投票</h4>
-            </div>
-            <p className="text-sm text-muted-foreground">
-              DAOの提案に投票。1人1票の公平な意思決定。
-            </p>
-          </div>
-          <div className="dao-card hover-lift">
-            <div className="flex items-center gap-3 mb-3">
-              <Shield className="h-5 w-5 text-secondary" />
-              <h4 className="font-semibold">匿名で参加</h4>
-            </div>
-            <p className="text-sm text-muted-foreground">
-              Misskeyアカウントのみで参加。実名・メールアドレス不要。
-            </p>
-          </div>
-        </div>
-
-        {/* 他の参加方法 */}
+        {/* 今すぐできる参加方法 */}
         <div className="animate-fade-in-up">
           <h3 className="text-lg font-semibold mb-6 text-center text-muted-foreground">今すぐ参加できます</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
