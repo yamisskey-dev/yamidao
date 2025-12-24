@@ -21,12 +21,8 @@ export function Footer() {
               />
               <h3 className="text-xl font-bold">YAMI DAO</h3>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Mental Health Tech Collective
-            </p>
-            <p className="text-xs text-muted-foreground">
-              YAMIエコシステムのガバナンスを
-              分散型で運営するオープンソース・Web3 DAOです。
             </p>
           </div>
 
@@ -48,6 +44,14 @@ export function Footer() {
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Governance
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/treasury"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Treasury
                 </Link>
               </li>
               <li>

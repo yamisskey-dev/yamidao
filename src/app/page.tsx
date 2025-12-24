@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Navbar } from '@/components/Navbar'
 import { GitHubCorner } from '@/components/GitHubCorner'
-import { ArrowRight, Shield, Heart, Users, Rocket } from 'lucide-react'
+import { ArrowRight, Rocket } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -39,24 +39,6 @@ export default function Home() {
             <p className="text-xl md:text-2xl text-muted-foreground mb-2">
               Mental Health Tech Collective
             </p>
-          </div>
-
-          {/* Value Props */}
-          <div className="mb-12 max-w-2xl mx-auto animate-fade-in-up">
-            <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20">
-                <Heart className="h-4 w-4" />
-                メンタルファースト
-              </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary border border-secondary/20">
-                <Shield className="h-4 w-4" />
-                プライバシーファースト
-              </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent border border-accent/20">
-                <Users className="h-4 w-4" />
-                コミュニティ主導
-              </span>
-            </div>
           </div>
 
           {/* CTA Buttons */}
