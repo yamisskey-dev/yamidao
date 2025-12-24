@@ -1,4 +1,4 @@
-import { Vote, ExternalLink, Shield } from 'lucide-react'
+import { Vote, ExternalLink, Shield, Wallet } from 'lucide-react'
 
 export function Governance() {
   return (
@@ -11,6 +11,28 @@ export function Governance() {
           <p className="text-xl text-muted-foreground max-w-3xl">
             透明で分散型の意思決定と資金管理
           </p>
+        </div>
+
+        {/* 資金運用方針 */}
+        <div className="dao-card glass mb-12 animate-fade-in-up">
+          <div className="flex items-center gap-3 mb-4">
+            <Wallet className="h-6 w-6 text-accent" />
+            <h3 className="text-lg font-semibold">資金運用方針</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="font-semibold mb-2">完全非営利</h4>
+              <p className="text-sm text-muted-foreground">
+                収益化・見返り・特典は一切なし。支援の有無による待遇差もありません。
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-2">資金の使途</h4>
+              <p className="text-sm text-muted-foreground">
+                インフラ費・開発者報酬・コミュニティ支援に使用。Snapshotで決定。
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Snapshot + Treasury 並列表示 */}
