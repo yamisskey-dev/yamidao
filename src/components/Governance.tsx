@@ -29,7 +29,7 @@ export function Governance() {
             <div>
               <h4 className="font-semibold mb-2">提案プロセス</h4>
               <p className="text-sm text-muted-foreground">
-                現在ホワイトリスト制。Misskey認証によるSybil対策後、自動で追加予定。
+                現在ホワイトリスト制。Misskey認証によるSybil攻撃対策後、自動で追加予定。
               </p>
             </div>
           </div>
