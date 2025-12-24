@@ -9,9 +9,7 @@ import { Menu, X } from 'lucide-react'
 const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/governance', label: 'Governance' },
-  { href: '/treasury', label: 'Treasury' },
   { href: '/roadmap', label: 'Roadmap' },
-  { href: '/join', label: 'Join' },
 ]
 
 export function Navbar() {
@@ -91,12 +89,10 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              href="/app"
-              className={`dao-btn-primary text-sm py-2 px-4 ${
-                pathname === '/app' ? 'ring-2 ring-primary ring-offset-2 ring-offset-background' : ''
-              }`}
+              href="/join"
+              className="dao-btn-primary text-sm py-2 px-4"
             >
-              Launch App
+              Join
             </Link>
           </div>
 
@@ -141,12 +137,12 @@ export function Navbar() {
                 </Link>
               ))}
               <Link
-                href="/app"
+                href="/join"
                 role="menuitem"
-                className="dao-btn-primary text-sm py-2 px-4 text-center"
+                className="dao-btn-primary text-sm py-2 px-4 text-center mt-2"
                 onClick={closeMobileMenu}
               >
-                Launch App
+                Join
               </Link>
             </div>
           </div>

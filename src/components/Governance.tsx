@@ -1,4 +1,4 @@
-import { Vote, ExternalLink, Server, Code, Layers } from 'lucide-react'
+import { Vote, ExternalLink, Wallet, TrendingUp, Server, Code, Users } from 'lucide-react'
 
 export function Governance() {
   return (
@@ -13,49 +13,8 @@ export function Governance() {
           </p>
         </div>
 
-        {/* 組織構成（基盤型） */}
-        <div className="mb-12 animate-fade-in-up">
-          <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-            <Layers className="h-5 w-5 text-primary" />
-            組織構成
-          </h3>
-
-          <div className="rounded-lg border border-border overflow-hidden">
-            {/* 上層: Operations */}
-            <div className="p-4 bg-card/50">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <div className="dao-card border-l-2 border-l-primary">
-                  <div className="flex items-center gap-3 mb-2">
-                    <Server className="h-5 w-5 text-primary shrink-0" />
-                    <h4 className="font-semibold text-sm">やみすきー運営部</h4>
-                  </div>
-                  <p className="text-xs text-muted-foreground">サーバー運営・モデレーション / 非公開・限られたメンバーで迅速に判断</p>
-                </div>
-                <div className="dao-card border-l-2 border-l-success">
-                  <div className="flex items-center gap-3 mb-2">
-                    <Code className="h-5 w-5 text-success shrink-0" />
-                    <h4 className="font-semibold text-sm">yamisskey-dev</h4>
-                  </div>
-                  <p className="text-xs text-muted-foreground">開発・技術判断 / 公開・コアチーム + コントリビューターがPR・Issueで議論</p>
-                </div>
-              </div>
-            </div>
-
-            {/* 下層: Foundation */}
-            <div className="p-4 bg-secondary/5 border-t border-dashed border-secondary/20">
-              <div className="dao-card border-l-2 border-l-secondary">
-                <div className="flex items-center gap-3 mb-2">
-                  <Vote className="h-5 w-5 text-secondary shrink-0" />
-                  <h4 className="font-semibold text-sm">YAMI DAO</h4>
-                </div>
-                <p className="text-xs text-muted-foreground">予算配分・重大方針・紛争解決 / 公開・全メンバーがSnapshot投票で決定</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Snapshot投票 */}
-        <div className="dao-card glass animate-fade-in-up">
+        <div className="dao-card glass mb-12 animate-fade-in-up">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <div className="flex items-center gap-3 mb-2">
@@ -73,11 +32,79 @@ export function Governance() {
               className="dao-btn-primary inline-flex items-center gap-2 shrink-0"
             >
               <ExternalLink className="h-4 w-4" />
-              Snapshot を見る
+              Snapshot
             </a>
           </div>
         </div>
 
+        {/* 運用方針 */}
+        <div className="dao-card glass mb-12 animate-fade-in-up">
+          <div className="flex items-center gap-3 mb-4">
+            <Wallet className="h-6 w-6 text-secondary" />
+            <h3 className="text-lg font-semibold">完全非営利</h3>
+          </div>
+          <p className="text-muted-foreground">
+            収益化・見返り・特典は一切なし。すべての資金はSnapshotでの投票を経て使途が決定されます。
+          </p>
+        </div>
+
+        {/* 資金の使途 */}
+        <div className="mb-12 animate-fade-in-up">
+          <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+            <TrendingUp className="h-5 w-5 text-accent" />
+            資金の使途
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="dao-card hover-lift">
+              <div className="flex items-center gap-3 mb-3">
+                <Server className="h-5 w-5 text-primary" />
+                <h4 className="font-semibold">インフラ費用</h4>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                サーバー・ドメイン・ストレージ
+              </p>
+            </div>
+            <div className="dao-card hover-lift">
+              <div className="flex items-center gap-3 mb-3">
+                <Code className="h-5 w-5 text-success" />
+                <h4 className="font-semibold">開発者報酬</h4>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                コントリビューターへの報酬
+              </p>
+            </div>
+            <div className="dao-card hover-lift">
+              <div className="flex items-center gap-3 mb-3">
+                <Users className="h-5 w-5 text-accent" />
+                <h4 className="font-semibold">コミュニティ支援</h4>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                イベント・ドキュメント・翻訳
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Safeへのリンク */}
+        <div className="dao-card glass animate-fade-in-up">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Treasury</h3>
+              <p className="text-sm text-muted-foreground">
+                Safeマルチシグウォレットで全取引履歴を公開
+              </p>
+            </div>
+            <a
+              href="https://app.safe.global/home?safe=oeth:0x9D315c45B721132674D1aBED44F642b2dE24A1c2"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="dao-btn-primary inline-flex items-center gap-2 shrink-0"
+            >
+              <ExternalLink className="h-4 w-4" />
+              Safe
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   )

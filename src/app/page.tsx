@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Navbar } from '@/components/Navbar'
 import { GitHubCorner } from '@/components/GitHubCorner'
-import { ArrowRight, Rocket } from 'lucide-react'
+import { ArrowRight, Users } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -44,11 +44,11 @@ export default function Home() {
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 justify-center animate-fade-in-up">
             <Link
-              href="/app"
+              href="/join"
               className="dao-btn-primary inline-flex items-center gap-2 text-lg py-3 px-8"
             >
-              <Rocket className="h-5 w-5" />
-              Launch App
+              <Users className="h-5 w-5" />
+              Join
             </Link>
             <Link
               href="/about"

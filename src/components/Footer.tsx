@@ -48,14 +48,6 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/treasury"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Treasury
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/roadmap"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >

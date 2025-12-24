@@ -1,4 +1,4 @@
-import { Shield, Users, Heart } from 'lucide-react'
+import { Shield, Users, Heart, Server, Code, Vote, Layers } from 'lucide-react'
 
 export function AboutDAO() {
   return (
@@ -14,7 +14,7 @@ export function AboutDAO() {
         </div>
 
         {/* コアバリュー（階層型） */}
-        <div className="rounded-lg border border-border overflow-hidden animate-fade-in-up">
+        <div className="mb-12 rounded-lg border border-border overflow-hidden animate-fade-in-up">
           {/* 上層: 目指すもの */}
           <div className="p-4 bg-card/50">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -43,6 +43,47 @@ export function AboutDAO() {
                 <h4 className="font-semibold text-sm">コミュニティ主導</h4>
               </div>
               <p className="text-xs text-muted-foreground">コミュニティ主導だからこそ、メンタルファーストとプライバシーファーストを守れる</p>
+            </div>
+          </div>
+        </div>
+
+        {/* 組織構成 */}
+        <div className="animate-fade-in-up">
+          <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+            <Layers className="h-5 w-5 text-primary" />
+            組織構成
+          </h3>
+
+          <div className="rounded-lg border border-border overflow-hidden">
+            {/* 上層: Operations */}
+            <div className="p-4 bg-card/50">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="dao-card border-l-2 border-l-primary">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Server className="h-5 w-5 text-primary shrink-0" />
+                    <h4 className="font-semibold text-sm">やみすきー運営部</h4>
+                  </div>
+                  <p className="text-xs text-muted-foreground">サーバー運営・モデレーション</p>
+                </div>
+                <div className="dao-card border-l-2 border-l-success">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Code className="h-5 w-5 text-success shrink-0" />
+                    <h4 className="font-semibold text-sm">yamisskey-dev</h4>
+                  </div>
+                  <p className="text-xs text-muted-foreground">開発・技術判断</p>
+                </div>
+              </div>
+            </div>
+
+            {/* 下層: Foundation */}
+            <div className="p-4 bg-secondary/5 border-t border-dashed border-secondary/20">
+              <div className="dao-card border-l-2 border-l-secondary">
+                <div className="flex items-center gap-3 mb-2">
+                  <Vote className="h-5 w-5 text-secondary shrink-0" />
+                  <h4 className="font-semibold text-sm">YAMI DAO</h4>
+                </div>
+                <p className="text-xs text-muted-foreground">予算配分・重大方針・紛争解決</p>
+              </div>
             </div>
           </div>
         </div>
