@@ -6,7 +6,7 @@ export function Governance() {
       <div className="max-w-6xl mx-auto">
         {/* セクションヘッダー */}
         <div className="mb-12 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Governance</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">ガバナンス</h2>
           <div className="section-divider mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl">
             透明で分散型の意思決定と資金管理

@@ -37,7 +37,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-2">
-              Mental Health Tech Collective
+              メンタルヘルステック・コレクティブ
             </p>
           </div>
 
@@ -48,13 +48,13 @@ export default function Home() {
               className="dao-btn-primary inline-flex items-center gap-2 text-lg py-3 px-8"
             >
               <Users className="h-5 w-5" />
-              Join
+              参加する
             </Link>
             <Link
               href="/about"
               className="dao-btn-secondary inline-flex items-center gap-2 text-lg py-3 px-8"
             >
-              Learn More
+              詳しく見る
               <ArrowRight className="h-5 w-5" />
             </Link>
           </div>

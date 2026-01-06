@@ -22,7 +22,7 @@ export function Footer() {
               <h3 className="text-xl font-bold">YAMI DAO</h3>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Mental Health Tech Collective
+              メンタルヘルステック・コレクティブ
             </p>
           </div>
 
@@ -35,7 +35,7 @@ export function Footer() {
                   href="/about"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  About
+                  DAOについて
                 </Link>
               </li>
               <li>
@@ -43,7 +43,7 @@ export function Footer() {
                   href="/governance"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Governance
+                  ガバナンス
                 </Link>
               </li>
               <li>
@@ -51,7 +51,7 @@ export function Footer() {
                   href="/roadmap"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Roadmap
+                  ロードマップ
                 </Link>
               </li>
               <li>
@@ -59,7 +59,7 @@ export function Footer() {
                   href="/join"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Join
+                  参加する
                 </Link>
               </li>
             </ul>

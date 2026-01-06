@@ -6,7 +6,7 @@ export function AboutDAO() {
       <div className="max-w-6xl mx-auto">
         {/* セクションヘッダー */}
         <div className="mb-12 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">About</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">DAOについて</h2>
           <div className="section-divider mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl">
             <a href="https://hub.yami.ski/guides/ecosystem/" target="_blank" rel="noopener noreferrer" className="external-link">YAMIエコシステム</a>のガバナンスDAO

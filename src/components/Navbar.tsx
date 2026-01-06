@@ -7,9 +7,9 @@ import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
 const navLinks = [
-  { href: '/about', label: 'About' },
-  { href: '/governance', label: 'Governance' },
-  { href: '/roadmap', label: 'Roadmap' },
+  { href: '/about', label: 'DAOについて' },
+  { href: '/governance', label: 'ガバナンス' },
+  { href: '/roadmap', label: 'ロードマップ' },
 ]
 
 export function Navbar() {
@@ -92,7 +92,7 @@ export function Navbar() {
               href="/join"
               className="dao-btn-primary text-sm py-2 px-4"
             >
-              Join
+              参加する
             </Link>
           </div>
 
@@ -142,7 +142,7 @@ export function Navbar() {
                 className="dao-btn-primary text-sm py-2 px-4 text-center mt-2"
                 onClick={closeMobileMenu}
               >
-                Join
+                参加する
               </Link>
             </div>
           </div>

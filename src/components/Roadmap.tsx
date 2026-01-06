@@ -6,7 +6,7 @@ export function Roadmap() {
       <div className="max-w-6xl mx-auto">
         {/* セクションヘッダー */}
         <div className="mb-12 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Roadmap</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">ロードマップ</h2>
           <div className="section-divider mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl">
             2025年以降の開発計画
