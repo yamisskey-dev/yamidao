@@ -549,6 +549,13 @@ html {
   top: 0;
   right: 0;
   z-index: 50;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .github-corner {
+    display: block;
+  }
 }
 
 .github-corner-svg {
