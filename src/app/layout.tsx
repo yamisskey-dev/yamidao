@@ -11,7 +11,7 @@ const murecho = Murecho({
 
 export const metadata: Metadata = {
   title: "YAMI DAO",
-  description: "Mental Health Tech Collective - Privacy-focused DAO building open-source mental health technology",
+  description: "Open Mental Health - Privacy-focused DAO building open-source mental health technology",
   icons: {
     icon: [
       {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "YAMI DAO",
-    description: "Mental Health Tech Collective - Privacy-focused DAO building open-source mental health technology",
+    description: "Open Mental Health - Privacy-focused DAO building open-source mental health technology",
     url: "https://yamidao.yami.ski",
     siteName: "YAMI DAO",
     images: [
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "YAMI DAO",
-    description: "Mental Health Tech Collective - Privacy-focused DAO building open-source mental health technology",
+    description: "Open Mental Health - Privacy-focused DAO building open-source mental health technology",
     images: ["https://raw.githubusercontent.com/yamisskey-dev/yamisskey-assets/main/yami.ski/yami-logo.png"],
   },
 };

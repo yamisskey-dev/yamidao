@@ -37,7 +37,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-2">
-              メンタルヘルステック・コレクティブ
+              オープンメンタルヘルス
             </p>
           </div>
 

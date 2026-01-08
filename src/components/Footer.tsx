@@ -22,7 +22,7 @@ export function Footer() {
               <h3 className="text-xl font-bold">YAMI DAO</h3>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              メンタルヘルステック・コレクティブ
+              オープンメンタルヘルス
             </p>
           </div>
 

@@ -1,6 +1,6 @@
 # YAMI DAO
 
-**Mental Health Tech Collective**
+**Open Mental Health**
 
 プライバシー保護 × メンタルヘルス × オープンソース × Web3
 
