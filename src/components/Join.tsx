@@ -2,7 +2,7 @@ import { Code, Users, Link2, Github, ExternalLink, Shield, Cloud } from 'lucide-
 
 export function Join() {
   return (
-    <section id="join" className="py-16 px-4 md:px-8">
+    <section id="join" className="py-16 px-4 md:px-8 bg-primary/5">
       <div className="max-w-5xl mx-auto">
         {/* セクションヘッダー */}
         <div className="mb-12 animate-fade-in-up">
