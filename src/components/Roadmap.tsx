@@ -16,12 +16,12 @@ export function Roadmap() {
         {/* タイムライン */}
         <div className="relative">
           {/* タイムライン背景線 */}
-          <div className="absolute left-8 md:left-1/3 top-24 md:top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent"></div>
+          <div className="absolute left-8 md:left-[40%] top-24 md:top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent"></div>
 
           {/* Phase 1 */}
           <div className="relative mb-12 animate-fade-in-up">
             <div className="md:flex md:items-start md:gap-8">
-              <div className="md:w-1/3 md:text-right md:pr-8">
+              <div className="md:w-[40%] md:text-right md:pr-8">
                 <div className="mb-4 md:mb-0">
                   <div className="inline-flex items-center gap-2 status-badge status-badge-completed mb-2">
                     <CheckCircle className="h-4 w-4" />
@@ -32,7 +32,7 @@ export function Roadmap() {
                 </div>
               </div>
 
-              <div className="absolute left-8 md:left-1/3 w-6 h-6 rounded-full bg-primary border-4 border-background -translate-x-1/2"></div>
+              <div className="absolute left-8 md:left-[40%] w-6 h-6 rounded-full bg-primary border-4 border-background -translate-x-1/2"></div>
 
               <div className="md:w-2/5 ml-16 md:ml-0 md:pl-8">
                 <div className="dao-card">
@@ -61,7 +61,7 @@ export function Roadmap() {
           {/* Phase 2 */}
           <div className="relative mb-12 animate-fade-in-up">
             <div className="md:flex md:items-start md:gap-8">
-              <div className="md:w-1/3 md:text-right md:pr-8">
+              <div className="md:w-[40%] md:text-right md:pr-8">
                 <div className="mb-4 md:mb-0">
                   <div className="inline-flex items-center gap-2 status-badge status-badge-active mb-2">
                     <CheckCircle className="h-4 w-4" />
@@ -72,7 +72,7 @@ export function Roadmap() {
                 </div>
               </div>
 
-              <div className="absolute left-8 md:left-1/3 w-6 h-6 rounded-full bg-secondary border-4 border-background -translate-x-1/2"></div>
+              <div className="absolute left-8 md:left-[40%] w-6 h-6 rounded-full bg-secondary border-4 border-background -translate-x-1/2"></div>
 
               <div className="md:w-2/5 ml-16 md:ml-0 md:pl-8">
                 <div className="dao-card">
@@ -105,7 +105,7 @@ export function Roadmap() {
           {/* Phase 3 */}
           <div className="relative animate-fade-in-up">
             <div className="md:flex md:items-start md:gap-8">
-              <div className="md:w-1/3 md:text-right md:pr-8">
+              <div className="md:w-[40%] md:text-right md:pr-8">
                 <div className="mb-4 md:mb-0">
                   <div className="inline-flex items-center gap-2 status-badge status-badge-pending mb-2">
                     予定
@@ -115,7 +115,7 @@ export function Roadmap() {
                 </div>
               </div>
 
-              <div className="absolute left-8 md:left-1/3 w-6 h-6 rounded-full bg-accent border-4 border-background -translate-x-1/2"></div>
+              <div className="absolute left-8 md:left-[40%] w-6 h-6 rounded-full bg-accent border-4 border-background -translate-x-1/2"></div>
 
               <div className="md:w-2/5 ml-16 md:ml-0 md:pl-8">
                 <div className="dao-card">
