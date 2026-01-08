@@ -19,7 +19,7 @@ export default function Home() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="max-w-6xl mx-auto text-center relative">
+        <div className="max-w-5xl mx-auto text-center relative">
           {/* Logo & Title */}
           <div className="mb-8 animate-fade-in-up">
             <div className="flex justify-center mb-6">

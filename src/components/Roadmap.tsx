@@ -3,7 +3,7 @@ import { Rocket, Coins, Vote, CheckCircle, Circle } from 'lucide-react'
 export function Roadmap() {
   return (
     <section id="roadmap" className="py-16 px-4 md:px-8 bg-muted/20">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* セクションヘッダー */}
         <div className="mb-12 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">ロードマップ</h2>
