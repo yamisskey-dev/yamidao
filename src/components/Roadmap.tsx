@@ -96,6 +96,10 @@ export function Roadmap() {
                       <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
                       <span>Misskey認証によるメンバー確認</span>
                     </li>
+                    <li className="flex items-center gap-2">
+                      <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
+                      <span>匿名投票システム</span>
+                    </li>
                   </ul>
                 </div>
               </div>

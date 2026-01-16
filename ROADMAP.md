@@ -12,6 +12,7 @@
 - [x] Snapshot統合（オフチェーン投票）
 - [x] Safe統合（Treasury管理）
 - [ ] Misskey認証によるメンバー確認
+- [ ] Semaphoreによるゼロ知識証明（ZKP）匿名投票
 
 ### Misskey認証システム
 
@@ -32,6 +33,32 @@ OSSの理念に基づき、Misskeyアカウントを用いたメンバー認証�
 - ブラウザウォレット (MetaMask等)
 - モバイルウォレット (WalletConnect)
 - やみすきー系インスタンス (yami.ski, test.yami.ski等)
+
+### Semaphore ZKP匿名投票
+
+プライバシーファーストの理念を技術的に実現するため、ゼロ知識証明（ZKP）プロトコル「Semaphore」を導入予定。
+
+**目的:**
+- 投票者のウォレットアドレスを公開せずに投票権を証明
+- 「誰が何に投票したか」を追跡不可能にし、心理的安全性を確保
+- Sybil攻撃耐性を維持しつつ完全匿名投票を実現
+
+**技術構成:**
+- @semaphore-protocol/core (ZK証明生成)
+- @semaphore-protocol/contracts (Optimism上のグループ管理)
+- カスタムSnapshot Strategy (ZK証明検証)
+
+**フロー:**
+1. ユーザーがMiAuthでMisskeyアカウント認証
+2. サーバーでSemaphore identity commitmentを生成
+3. commitmentをSemaphoreグループに登録
+4. 投票時: ユーザーはローカルでZK証明を生成
+5. Snapshot StrategyでZK証明を検証し投票を受理
+
+**メンタルヘルスコミュニティにおける意義:**
+- 自分の意見表明が誰にも追跡されない安心感
+- センシティブなテーマでも率直な投票が可能
+- 匿名性による参加ハードルの低減
 
 ## Phase 3: フルDAO化 (2026以降) - 予定
 
@@ -56,6 +83,7 @@ OSSの理念に基づき、Misskeyアカウントを用いたメンバー認証�
 |------|------|---------|---------|
 | フロントエンド | Next.js 15 | + wagmi/viem | - |
 | 認証 | - | MiAuth | + SBT/EAS |
+| プライバシー | - | Semaphore (ZKP) | + zkSBT |
 | データベース | - | Cloudflare D1 | - |
-| 投票 | Snapshot (whitelist) | Snapshot (API Strategy) | オンチェーン |
+| 投票 | Snapshot (whitelist) | Snapshot (API Strategy + ZK証明) | オンチェーン |
 | Treasury | Safe | Safe | Safe + 自動化 |
