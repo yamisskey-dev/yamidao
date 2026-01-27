@@ -132,16 +132,16 @@ function BannerSection() {
         <Code className="h-5 w-5 text-primary" />
         <h3 className="text-lg font-semibold">パートナーバナー</h3>
       </div>
-      <p className="text-muted-foreground text-sm mb-6">
+      <p className="text-muted-foreground text-sm mb-4">
         パートナーサイトに掲載いただけるバナー素材です
       </p>
 
-      <div className="bg-muted/30 rounded-lg p-6 mb-4 flex items-center justify-center">
+      <div className="bg-muted/30 rounded-lg p-3 mb-4 flex items-center justify-center">
         <Image
           src={BANNER_URL}
           alt="YAMI DAO Banner"
-          width={480}
-          height={160}
+          width={240}
+          height={80}
           className="max-w-full h-auto"
           unoptimized
         />
