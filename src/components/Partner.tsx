@@ -1,6 +1,6 @@
 'use client'
 
-import { Handshake, ExternalLink, Code, Copy, Check } from 'lucide-react'
+import { Handshake, ExternalLink, Code, Copy, Check, Users, ShieldCheck, XCircle } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -16,19 +16,73 @@ export function Partner() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">パートナー</h2>
           <div className="section-divider mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl">
-            オープンメンタルヘルスの実現に向けて、共に歩む組織・団体を募集しています
+            金で買えない。追跡しない。載るのは仲間だけ。
           </p>
+        </div>
+
+        {/* 連携団体について */}
+        <div className="dao-card glass mb-8 animate-fade-in-up">
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            YAMI DAOでは、やみすきー上に連携団体の情報を掲載する仕組みがあります。
+            これは商業広告ではありません。居場所であり続けながら、必要なときに外部支援へつながれる導線を用意することが目的です。
+          </p>
+        </div>
+
+        {/* 掲載条件・基準 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="dao-card animate-fade-in-up">
+            <div className="flex items-center gap-3 mb-4">
+              <Users className="h-5 w-5 text-primary" />
+              <h3 className="text-lg font-semibold">掲載条件</h3>
+            </div>
+            <ul className="text-muted-foreground text-sm space-y-2">
+              <li>YAMI DAOに会員として参加すること</li>
+              <li>DAOの意思決定に参加し、責任を共有すること</li>
+              <li>掲載料は無料</li>
+            </ul>
+          </div>
+
+          <div className="dao-card animate-fade-in-up">
+            <div className="flex items-center gap-3 mb-4">
+              <ShieldCheck className="h-5 w-5 text-primary" />
+              <h3 className="text-lg font-semibold">掲載基準</h3>
+            </div>
+            <ul className="text-muted-foreground text-sm space-y-2">
+              <li>実在し、活動実績が確認できる団体</li>
+              <li>やみすきーの理念（当事者の居場所・プライバシー重視）を理解している</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* 対象外 */}
+        <div className="dao-card mb-8 animate-fade-in-up">
+          <div className="flex items-center gap-3 mb-4">
+            <XCircle className="h-5 w-5 text-muted-foreground" />
+            <h3 className="text-lg font-semibold">対象外</h3>
+          </div>
+          <p className="text-muted-foreground text-sm">
+            スピリチュアル・情報商材・マルチ等は対象外です。公的窓口の単純リスト掲載もしません（形だけの導線は作らない）。
+          </p>
+        </div>
+
+        {/* プライバシー */}
+        <div className="dao-card glass mb-8 animate-fade-in-up">
+          <h3 className="text-lg font-semibold mb-3">プライバシー</h3>
+          <ul className="text-muted-foreground text-sm space-y-2">
+            <li>トラッキング・外部スクリプト・Cookieは不使用</li>
+            <li>利用者情報は連携団体と一切共有しない</li>
+            <li>誰が見たか・誰が使ったかを運営は把握しない</li>
+          </ul>
         </div>
 
         {/* お問い合わせ */}
         <div className="dao-card mb-8 animate-fade-in-up">
           <div className="flex items-center gap-3 mb-4">
             <Handshake className="h-5 w-5 text-primary" />
-            <h3 className="text-lg font-semibold">パートナーシップのお問い合わせ</h3>
+            <h3 className="text-lg font-semibold">お問い合わせ</h3>
           </div>
-          <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-            YAMI DAOは、メンタルヘルスの課題に取り組む組織や、Web3/DAO領域で活動する団体との連携を歓迎します。
-            プライバシーを守りながら、コミュニティ主導で課題解決に取り組むという理念に共感いただける団体は、Xよりご連絡ください。
+          <p className="text-muted-foreground text-sm mb-6">
+            パートナーシップにご興味のある団体は、Xよりご連絡ください。
           </p>
           <a
             href="https://x.com/yamidao_eth"
