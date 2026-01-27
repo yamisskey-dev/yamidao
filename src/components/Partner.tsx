@@ -25,7 +25,6 @@ export function Partner() {
           <ul className="text-muted-foreground text-sm space-y-2">
             <li><span className="text-foreground font-medium">趣旨:</span> 掲載と引き換えに、外部支援窓口としての役割を担う</li>
             <li><span className="text-foreground font-medium">条件:</span> 実在確認・理念理解・プライバシー方針に同意</li>
-            <li><span className="text-foreground font-medium">対象外:</span> スピリチュアル・情報商材・マルチ・公的窓口リスト</li>
             <li><span className="text-foreground font-medium">掲載料:</span> 無料（広告ではない）</li>
           </ul>
         </div>
@@ -63,6 +62,13 @@ function BannerSection() {
   const embedCode = `<a href="${SITE_URL}" target="_blank" rel="noopener noreferrer">
   <img src="${BANNER_URL}" alt="YAMI DAO" width="480" height="160" />
 </a>`
+
+  const highlightHtml = (code: string) => {
+    return code
+      .replace(/(&lt;|<)(\/?[\w]+)/g, '$1<span class="text-pink-400">$2</span>')
+      .replace(/([\w-]+)(=)/g, '<span class="text-sky-400">$1</span>$2')
+      .replace(/(".*?")/g, '<span class="text-amber-400">$1</span>')
+  }
 
   const copyToClipboard = async () => {
     try {
@@ -104,7 +110,7 @@ function BannerSection() {
 
       <div className="relative">
         <pre className="bg-muted/50 rounded-lg p-4 text-xs overflow-x-auto">
-          <code className="text-muted-foreground">{embedCode}</code>
+          <code dangerouslySetInnerHTML={{ __html: highlightHtml(embedCode) }} />
         </pre>
         <button
           onClick={copyToClipboard}
