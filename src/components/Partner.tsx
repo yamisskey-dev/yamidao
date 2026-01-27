@@ -63,12 +63,13 @@ function BannerSection() {
   <img src="${BANNER_URL}" alt="YAMI DAO" width="480" height="160" />
 </a>`
 
-  const highlightHtml = (code: string) => {
-    return code
-      .replace(/(&lt;|<)(\/?[\w]+)/g, '$1<span class="text-pink-400">$2</span>')
-      .replace(/([\w-]+)(=)/g, '<span class="text-sky-400">$1</span>$2')
-      .replace(/(".*?")/g, '<span class="text-amber-400">$1</span>')
-  }
+  const tag = (s: string) => `<span style="color:#f472b6">${s}</span>`
+  const attr = (s: string) => `<span style="color:#38bdf8">${s}</span>`
+  const val = (s: string) => `<span style="color:#fbbf24">${s}</span>`
+
+  const highlightedCode = `&lt;${tag('a')} ${attr('href')}=${val(`"${SITE_URL}"`)} ${attr('target')}=${val('"_blank"')} ${attr('rel')}=${val('"noopener noreferrer"')}&gt;
+  &lt;${tag('img')} ${attr('src')}=${val(`"${BANNER_URL}"`)} ${attr('alt')}=${val('"YAMI DAO"')} ${attr('width')}=${val('"480"')} ${attr('height')}=${val('"160"')} /&gt;
+&lt;${tag('/a')}&gt;`
 
   const copyToClipboard = async () => {
     try {
@@ -110,7 +111,7 @@ function BannerSection() {
 
       <div className="relative">
         <pre className="bg-muted/50 rounded-lg p-4 text-xs overflow-x-auto">
-          <code dangerouslySetInnerHTML={{ __html: highlightHtml(embedCode) }} />
+          <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
         </pre>
         <button
           onClick={copyToClipboard}
