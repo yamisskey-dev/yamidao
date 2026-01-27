@@ -62,6 +62,14 @@ export function Footer() {
                   参加する
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/partner"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  パートナー
+                </Link>
+              </li>
             </ul>
           </div>
 

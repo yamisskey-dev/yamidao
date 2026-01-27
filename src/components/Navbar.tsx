@@ -10,6 +10,7 @@ const navLinks = [
   { href: '/about', label: 'DAOについて' },
   { href: '/governance', label: 'ガバナンス' },
   { href: '/roadmap', label: 'ロードマップ' },
+  { href: '/partner', label: 'パートナー' },
 ]
 
 export function Navbar() {
@@ -61,15 +62,14 @@ export function Navbar() {
       <div className="max-w-5xl mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center">
             <Image
-              src="https://raw.githubusercontent.com/yamisskey-dev/yamisskey-assets/main/yami-dao/yami-dao-icon.svg"
-              alt="YAMI DAO Logo"
-              width={32}
-              height={32}
-              className="w-8 h-8"
+              src="https://raw.githubusercontent.com/yamisskey-dev/yamisskey-assets/main/yami-dao/yami-dao-banner.svg"
+              alt="YAMI DAO"
+              width={144}
+              height={48}
+              className="h-10 w-auto"
             />
-            <span className="font-bold text-lg">YAMI DAO</span>
           </Link>
 
           {/* Desktop Navigation */}
