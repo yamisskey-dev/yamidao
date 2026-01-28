@@ -41,8 +41,8 @@ export async function verifyJWT(
       audience: JWT_AUDIENCE,
     });
     return payload as unknown as JWTPayload;
-  } catch (error) {
-    console.error("JWT verification failed:", error);
+  } catch {
+    // Silent fail - don't log JWT errors to prevent token leakage
     return null;
   }
 }
@@ -69,6 +69,8 @@ export function createTokenCookie(token: string, isProduction: boolean): string 
   }`;
 }
 
-export function createLogoutCookie(): string {
-  return "yamidao-token=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0";
+export function createLogoutCookie(isProduction = false): string {
+  return `yamidao-token=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0${
+    isProduction ? "; Secure" : ""
+  }`;
 }

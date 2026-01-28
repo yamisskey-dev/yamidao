@@ -194,9 +194,13 @@ export async function POST(req: NextRequest) {
       address: checksummedAddress,
     });
   } catch (error) {
-    console.error("Wallet verify error:", error);
+    // Log only error type to prevent signature/address leakage
+    console.error(
+      "Wallet verify error:",
+      error instanceof Error ? error.constructor.name : "unknown"
+    );
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Verification failed" },
       { status: 500 }
     );
   }

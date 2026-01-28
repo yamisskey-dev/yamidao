@@ -64,9 +64,13 @@ export async function POST(req: NextRequest) {
     try {
       userKeyResult = await client.getUserKey(server.appSecret, token);
     } catch (error) {
-      console.error("Failed to get userkey:", error);
+      // Log only error type to prevent credential/token leakage
+      console.error(
+        "Failed to get userkey:",
+        error instanceof Error ? error.constructor.name : "unknown"
+      );
       return NextResponse.json(
-        { error: "Failed to authenticate with Misskey" },
+        { error: "Authentication failed" },
         { status: 401 }
       );
     }
@@ -110,9 +114,13 @@ export async function POST(req: NextRequest) {
 
     return response;
   } catch (error) {
-    console.error("Callback error:", error);
+    // Log only error type to prevent token/credential leakage
+    console.error(
+      "Callback error:",
+      error instanceof Error ? error.constructor.name : "unknown"
+    );
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Authentication failed" },
       { status: 500 }
     );
   }

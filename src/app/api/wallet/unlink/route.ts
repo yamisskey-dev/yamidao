@@ -29,9 +29,13 @@ export async function DELETE(req: NextRequest) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Wallet unlink error:", error);
+    // Log only error type
+    console.error(
+      "Wallet unlink error:",
+      error instanceof Error ? error.constructor.name : "unknown"
+    );
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Failed to unlink wallet" },
       { status: 500 }
     );
   }

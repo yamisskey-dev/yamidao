@@ -102,13 +102,18 @@ export async function POST(req: NextRequest) {
           server = newServer;
         }
 
-        console.log(`Created new Misskey app for ${misskeyHost}`);
+        // App created successfully (no sensitive data logged)
       } catch (error) {
-        console.error("Failed to create Misskey app:", error);
-        const message =
-          error instanceof Error ? error.message : "Unknown error";
+        // Log sanitized error for debugging (no sensitive data)
+        console.error(
+          "Failed to create Misskey app for host:",
+          misskeyHost,
+          "- Error type:",
+          error instanceof Error ? error.constructor.name : "unknown"
+        );
+        // Return generic error to prevent information leakage
         return NextResponse.json(
-          { error: `Failed to create app on instance: ${message}` },
+          { error: "Failed to register application. Please try again later." },
           { status: 500 }
         );
       }
@@ -144,13 +149,17 @@ export async function POST(req: NextRequest) {
       serverId: server.id,
     });
 
-    console.log(`Created Misskey auth session for ${misskeyHost}`);
+    // Auth session created (no sensitive data logged)
 
     return NextResponse.json(authSession);
   } catch (error) {
-    console.error("Misskey login error:", error);
+    // Log only error type, not details that might contain sensitive data
+    console.error(
+      "Misskey login error:",
+      error instanceof Error ? error.constructor.name : "unknown"
+    );
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Authentication failed. Please try again." },
       { status: 500 }
     );
   }

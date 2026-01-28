@@ -49,9 +49,13 @@ export async function GET(req: NextRequest) {
       ethAddress: user.ethAddress,
     });
   } catch (error) {
-    console.error("Get user error:", error);
+    // Log only error type to prevent user data leakage
+    console.error(
+      "Get user error:",
+      error instanceof Error ? error.constructor.name : "unknown"
+    );
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Failed to get user info" },
       { status: 500 }
     );
   }
