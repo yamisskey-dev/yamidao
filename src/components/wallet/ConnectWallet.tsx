@@ -99,7 +99,6 @@ export function ConnectWallet() {
   useEffect(() => {
     if (isConnected && address && chain && !hasTriedAutoLink && !isLinking) {
       setHasTriedAutoLink(true);
-      // Small delay to ensure wallet is fully ready
       const timer = setTimeout(() => {
         handleLink();
       }, 500);
@@ -139,7 +138,7 @@ export function ConnectWallet() {
     );
   }
 
-  // State 2: Connected - show address and status
+  // State 2: Connected - show address and link/status
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between p-2.5 bg-muted/30 border border-border/50 rounded-lg">
@@ -157,24 +156,25 @@ export function ConnectWallet() {
           <X className="h-4 w-4" />
         </button>
       </div>
-      {isLinking && (
+      {isLinking ? (
         <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
           <Loader2 className="h-4 w-4 animate-spin" />
           署名を待っています...
         </div>
-      )}
-      {error && (
+      ) : (
         <div className="space-y-2">
-          <p className="text-xs text-destructive flex items-center gap-1">
-            <AlertCircle className="h-3 w-3" />
-            {error}
-          </p>
+          {error && (
+            <p className="text-xs text-destructive flex items-center gap-1">
+              <AlertCircle className="h-3 w-3" />
+              {error}
+            </p>
+          )}
           <button
             onClick={handleLink}
             disabled={isLinking}
             className="w-full flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50"
           >
-            再試行
+            署名してリンク
           </button>
         </div>
       )}
