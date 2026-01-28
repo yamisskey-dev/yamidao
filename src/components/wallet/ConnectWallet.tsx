@@ -2,6 +2,7 @@
 
 import { useAccount, useConnect, useDisconnect, useSignMessage } from "wagmi";
 import { useState, useMemo, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { Wallet, Loader2, X, AlertCircle } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { createSiweMessage } from "@/lib/wallet/siwe";
@@ -120,10 +121,13 @@ export function ConnectWallet() {
             {isConnecting ? (
               <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
             ) : connector.icon ? (
-              <img
+              <Image
                 src={connector.icon}
                 alt={connector.name}
-                className="h-5 w-5 rounded"
+                width={20}
+                height={20}
+                className="rounded"
+                unoptimized
               />
             ) : (
               <Wallet className="h-5 w-5 text-muted-foreground" />
