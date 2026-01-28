@@ -1,37 +1,66 @@
 import { NextRequest, NextResponse } from "next/server";
 import { eq, and, ne, lt } from "drizzle-orm";
-import { getAddress, verifyMessage } from "viem";
+import { getAddress, verifyMessage, isAddress, isHex } from "viem";
 import { getAppContext } from "@/lib/env";
 import { users, walletNonces } from "@/db/schema";
 import { getTokenFromCookie, verifyJWT } from "@/lib/auth/jwt";
 
+interface ParsedSiweMessage {
+  address: string;
+  nonce: string;
+  domain: string;
+  uri: string;
+}
+
 // Parse SIWE message without siwe library (Edge compatible)
-function parseSiweMessage(message: string): { address: string; nonce: string } | null {
+function parseSiweMessage(message: string): ParsedSiweMessage | null {
   try {
-    // SIWE message format has address after first line and nonce in the message
     const lines = message.split("\n");
 
-    // Find address (line starting with 0x)
+    // Extract domain from first line (format: "domain wants you to sign in...")
+    const domainMatch = lines[0]?.match(/^(.+) wants you to sign in/);
+    const domain = domainMatch ? domainMatch[1] : "";
+
+    // Find address (line starting with 0x, 42 chars)
     let address = "";
     for (const line of lines) {
-      if (line.startsWith("0x") && line.length === 42) {
-        address = line;
+      const trimmed = line.trim();
+      if (trimmed.startsWith("0x") && trimmed.length === 42) {
+        address = trimmed;
         break;
       }
     }
 
-    // Find nonce
-    const nonceMatch = message.match(/Nonce: ([a-fA-F0-9]+)/);
+    // Find URI
+    const uriMatch = message.match(/URI: (.+)/);
+    const uri = uriMatch ? uriMatch[1].trim() : "";
+
+    // Find nonce (32 hex chars)
+    const nonceMatch = message.match(/Nonce: ([a-fA-F0-9]{32})/);
     const nonce = nonceMatch ? nonceMatch[1] : "";
 
-    if (!address || !nonce) {
+    if (!address || !nonce || !domain || !uri) {
       return null;
     }
 
-    return { address, nonce };
+    // Validate address format
+    if (!isAddress(address)) {
+      return null;
+    }
+
+    return { address, nonce, domain, uri };
   } catch {
     return null;
   }
+}
+
+// Validate signature format
+function isValidSignature(signature: string): boolean {
+  if (!signature.startsWith("0x")) return false;
+  if (!isHex(signature)) return false;
+  // ECDSA signature: 65 bytes (130 hex chars) + 0x prefix = 132 chars
+  if (signature.length !== 132) return false;
+  return true;
 }
 
 export const runtime = "edge";
@@ -60,8 +89,16 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  // Validate signature format before processing
+  if (!isValidSignature(data.signature)) {
+    return NextResponse.json(
+      { error: "Invalid signature format" },
+      { status: 400 }
+    );
+  }
+
   try {
-    const { db, jwtSecret } = getAppContext();
+    const { db, jwtSecret, webUrl } = getAppContext();
 
     // Verify user is authenticated
     const token = getTokenFromCookie(req.headers.get("cookie"));
@@ -79,7 +116,16 @@ export async function POST(req: NextRequest) {
     if (!parsed) {
       return NextResponse.json({ error: "Invalid message format" }, { status: 400 });
     }
-    const { nonce, address } = parsed;
+    const { nonce, address, domain, uri } = parsed;
+
+    // Verify domain and URI match expected values (prevent replay attacks)
+    const expectedUrl = new URL(webUrl);
+    if (domain !== expectedUrl.host) {
+      return NextResponse.json({ error: "Invalid domain" }, { status: 400 });
+    }
+    if (!uri.startsWith(webUrl)) {
+      return NextResponse.json({ error: "Invalid URI" }, { status: 400 });
+    }
 
     // Verify nonce exists and belongs to this user
     const storedNonce = await db.query.walletNonces.findFirst({
