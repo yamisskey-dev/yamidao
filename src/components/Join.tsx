@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Code, Users, Link2, Github, ExternalLink, Shield } from 'lucide-react'
+import { Code, Users, Link2, Github, ExternalLink, Shield, Wallet } from 'lucide-react'
 import { useAuth } from '@/contexts/AuthContext'
 import { LoginForm } from '@/components/auth/LoginForm'
 
@@ -132,9 +132,15 @@ export function Join() {
                   <Users className="h-8 w-8 text-primary" />
                 </div>
               )}
-              <div>
+              <div className="flex-1 min-w-0">
                 <h3 className="text-xl font-bold">{user.displayName || user.account}</h3>
                 <p className="text-sm text-muted-foreground">{user.handle}</p>
+                {user.ethAddress && (
+                  <p className="flex items-center gap-1.5 text-xs text-muted-foreground mt-1">
+                    <Wallet className="h-3 w-3" />
+                    <span className="font-mono">{user.ethAddress}</span>
+                  </p>
+                )}
               </div>
             </div>
           </div>

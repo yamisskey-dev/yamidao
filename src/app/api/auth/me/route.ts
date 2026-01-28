@@ -46,6 +46,7 @@ export async function GET(req: NextRequest) {
       hostName: user.hostName,
       displayName: profile?.displayName,
       avatarUrl: profile?.avatarUrl,
+      ethAddress: user.ethAddress,
     });
   } catch (error) {
     console.error("Get user error:", error);

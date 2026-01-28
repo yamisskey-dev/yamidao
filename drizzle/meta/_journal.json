@@ -8,6 +8,13 @@
       "when": 1769568081549,
       "tag": "0000_sad_captain_britain",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1769572692038,
+      "tag": "0001_panoramic_sersi",
+      "breakpoints": true
     }
   ]
 }

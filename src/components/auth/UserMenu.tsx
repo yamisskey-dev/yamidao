@@ -2,13 +2,34 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { LogOut, User, ChevronDown } from "lucide-react";
+import { LogOut, User, ChevronDown, Wallet, Check, AlertCircle } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
+import { WalletProvider } from "@/components/wallet/WalletProvider";
+import { ConnectWallet } from "@/components/wallet/ConnectWallet";
 
 export function UserMenu() {
-  const { user, logout } = useAuth();
+  const { user, logout, refreshUser } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
+  const [isUnlinking, setIsUnlinking] = useState(false);
+  const [unlinkError, setUnlinkError] = useState<string | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  const handleUnlink = async () => {
+    setIsUnlinking(true);
+    setUnlinkError(null);
+    try {
+      const res = await fetch("/api/wallet/unlink", { method: "DELETE" });
+      if (res.ok) {
+        await refreshUser();
+      } else {
+        setUnlinkError("リンク解除に失敗しました");
+      }
+    } catch {
+      setUnlinkError("リンク解除に失敗しました");
+    } finally {
+      setIsUnlinking(false);
+    }
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -96,6 +117,43 @@ export function UserMenu() {
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* Wallet section */}
+          <div className="px-4 py-3 border-b border-border">
+            <div className="flex items-center gap-2 mb-2">
+              <Wallet className="h-4 w-4 text-muted-foreground" />
+              <span className="text-sm font-medium">ウォレット接続</span>
+            </div>
+            {user.ethAddress ? (
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-sm">
+                    <Check className="h-4 w-4 text-green-500" />
+                    <span className="font-mono text-muted-foreground">
+                      {user.ethAddress.slice(0, 6)}...{user.ethAddress.slice(-4)}
+                    </span>
+                  </div>
+                  <button
+                    onClick={handleUnlink}
+                    disabled={isUnlinking}
+                    className="text-xs text-destructive hover:underline disabled:opacity-50"
+                  >
+                    {isUnlinking ? "解除中..." : "リンク解除"}
+                  </button>
+                </div>
+                {unlinkError && (
+                  <p className="text-xs text-destructive flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" />
+                    {unlinkError}
+                  </p>
+                )}
+              </div>
+            ) : (
+              <WalletProvider>
+                <ConnectWallet />
+              </WalletProvider>
+            )}
           </div>
 
           {/* Logout */}

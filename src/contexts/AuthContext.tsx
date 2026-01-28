@@ -16,6 +16,7 @@ export interface User {
   hostName: string;
   displayName?: string;
   avatarUrl?: string;
+  ethAddress?: string | null;
 }
 
 interface AuthContextType {

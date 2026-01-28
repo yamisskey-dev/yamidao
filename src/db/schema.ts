@@ -20,6 +20,7 @@ export const users = sqliteTable("users", {
   serverId: text("server_id")
     .notNull()
     .references(() => servers.id),
+  ethAddress: text("eth_address").unique(), // linked ETH wallet address (checksummed)
   createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
   updatedAt: integer("updated_at", { mode: "timestamp" }).notNull(),
 });
@@ -46,6 +47,16 @@ export const authSessions = sqliteTable("auth_sessions", {
   createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
 });
 
+// WalletNonce - Temporary nonce storage for SIWE verification
+export const walletNonces = sqliteTable("wallet_nonces", {
+  id: text("id").primaryKey(), // nonce value
+  userId: text("user_id")
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  expiresAt: integer("expires_at", { mode: "timestamp" }).notNull(),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
+});
+
 // Type exports for use in application
 export type Server = typeof servers.$inferSelect;
 export type NewServer = typeof servers.$inferInsert;
@@ -55,3 +66,5 @@ export type Profile = typeof profiles.$inferSelect;
 export type NewProfile = typeof profiles.$inferInsert;
 export type AuthSession = typeof authSessions.$inferSelect;
 export type NewAuthSession = typeof authSessions.$inferInsert;
+export type WalletNonce = typeof walletNonces.$inferSelect;
+export type NewWalletNonce = typeof walletNonces.$inferInsert;
