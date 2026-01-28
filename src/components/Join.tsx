@@ -138,7 +138,9 @@ export function Join() {
                 {user.ethAddress && (
                   <p className="flex items-center gap-1.5 text-xs text-muted-foreground mt-1">
                     <Wallet className="h-3 w-3" />
-                    <span className="font-mono">{user.ethAddress}</span>
+                    <span className="font-mono">
+                      {user.ethAddress.slice(0, 6)}...{user.ethAddress.slice(-4)}
+                    </span>
                   </p>
                 )}
               </div>

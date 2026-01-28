@@ -97,6 +97,10 @@ export function Roadmap() {
                       <span>Misskey認証によるメンバー確認</span>
                     </li>
                     <li className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-success shrink-0" />
+                      <span>ETHウォレット連携（Snapshot投票用）</span>
+                    </li>
+                    <li className="flex items-center gap-2">
                       <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
                       <span>匿名投票システム</span>
                     </li>
