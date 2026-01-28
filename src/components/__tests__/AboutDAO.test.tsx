@@ -4,7 +4,7 @@ import { AboutDAO } from '../AboutDAO'
 describe('AboutDAO', () => {
   it('セクションタイトルが表示される', () => {
     render(<AboutDAO />)
-    expect(screen.getByRole('heading', { name: /About/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /DAOについて/i })).toBeInTheDocument()
   })
 
   it('YAMIエコシステムへのリンクが表示される', () => {
@@ -13,16 +13,18 @@ describe('AboutDAO', () => {
     expect(ecosystemLink).toHaveAttribute('href', 'https://hub.yami.ski/guides/ecosystem/')
   })
 
-  it('ビジョン・ミッションが表示される', () => {
-    render(<AboutDAO />)
-    expect(screen.getByText(/やみすきー運営部とyamisskey-devのガバナンス基盤/)).toBeInTheDocument()
-  })
-
   it('コアバリューが表示される', () => {
     render(<AboutDAO />)
     expect(screen.getAllByText(/メンタルファースト/).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/プライバシーファースト/).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/コミュニティ主導/).length).toBeGreaterThan(0)
+  })
+
+  it('組織構成が表示される', () => {
+    render(<AboutDAO />)
+    expect(screen.getByText(/組織構成/)).toBeInTheDocument()
+    expect(screen.getByText(/やみすきー運営部/)).toBeInTheDocument()
+    expect(screen.getByText(/yamisskey-dev/)).toBeInTheDocument()
   })
 
   it('セクションIDがaboutである', () => {

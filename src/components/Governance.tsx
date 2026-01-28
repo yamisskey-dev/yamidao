@@ -29,7 +29,7 @@ export function Governance() {
             <div>
               <h4 className="font-semibold mb-2">提案プロセス</h4>
               <p className="text-sm text-muted-foreground">
-                Misskey認証とETHウォレット連携でSybil攻撃対策済み。ホワイトリスト自動追加は準備中。
+                Misskey認証とETHウォレット連携でSybil攻撃対策済み。投票権は投票時に自動確認されます。
               </p>
             </div>
           </div>

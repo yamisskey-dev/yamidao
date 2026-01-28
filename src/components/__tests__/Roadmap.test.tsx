@@ -4,7 +4,7 @@ import { Roadmap } from '../Roadmap'
 describe('Roadmap', () => {
   it('セクションタイトルが表示される', () => {
     render(<Roadmap />)
-    expect(screen.getByRole('heading', { name: /Roadmap/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /ロードマップ/i })).toBeInTheDocument()
   })
 
   it('Phase 1のマイルストーンが表示される', () => {
@@ -16,7 +16,7 @@ describe('Roadmap', () => {
   it('Phase 2のマイルストーンが表示される', () => {
     render(<Roadmap />)
     expect(screen.getByText(/Phase 2/i)).toBeInTheDocument()
-    expect(screen.getByText(/Web3統合/)).toBeInTheDocument()
+    expect(screen.getByText(/認証・プライバシー/)).toBeInTheDocument()
   })
 
   it('Phase 3のマイルストーンが表示される', () => {
@@ -43,6 +43,11 @@ describe('Roadmap', () => {
   it('Misskey認証が表示される', () => {
     render(<Roadmap />)
     expect(screen.getByText(/Misskey認証/)).toBeInTheDocument()
+  })
+
+  it('ETHウォレット連携が表示される', () => {
+    render(<Roadmap />)
+    expect(screen.getByText(/ETHウォレット連携/)).toBeInTheDocument()
   })
 
   it('セクションIDがroadmapである', () => {

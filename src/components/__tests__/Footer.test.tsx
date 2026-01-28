@@ -15,7 +15,7 @@ describe('Footer', () => {
 
   it('DAO組織の説明が表示される', () => {
     render(<Footer />)
-    expect(screen.getByText(/Mental Health Tech/i)).toBeInTheDocument()
+    expect(screen.getByText(/オープンメンタルヘルス/i)).toBeInTheDocument()
   })
 
   it('全てのリンクがtarget="_blank"で開く', () => {
@@ -38,10 +38,10 @@ describe('Footer', () => {
 
   it('ナビゲーションリンクが表示される', () => {
     render(<Footer />)
-    expect(screen.getByRole('link', { name: /About/i })).toHaveAttribute('href', '#about')
-    expect(screen.getByRole('link', { name: /Governance/i })).toHaveAttribute('href', '#governance')
-    expect(screen.getByRole('link', { name: /Roadmap/i })).toHaveAttribute('href', '#roadmap')
-    expect(screen.getByRole('link', { name: /Join/i })).toHaveAttribute('href', '#join')
+    expect(screen.getByRole('link', { name: /DAOについて/i })).toHaveAttribute('href', '/about')
+    expect(screen.getByRole('link', { name: /ガバナンス/i })).toHaveAttribute('href', '/governance')
+    expect(screen.getByRole('link', { name: /ロードマップ/i })).toHaveAttribute('href', '/roadmap')
+    expect(screen.getByRole('link', { name: /参加する/i })).toHaveAttribute('href', '/join')
   })
 
   it('コミュニティリンクが表示される', () => {
