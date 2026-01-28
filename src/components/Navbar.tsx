@@ -5,6 +5,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
+import { useAuth } from '@/contexts/AuthContext'
+import { UserMenu } from '@/components/auth/UserMenu'
 
 const navLinks = [
   { href: '/about', label: 'DAOについて' },
@@ -17,6 +19,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
+  const { isAuthenticated, isLoading } = useAuth()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,12 +91,18 @@ export function Navbar() {
                 )}
               </Link>
             ))}
-            <Link
-              href="/join"
-              className="dao-btn-primary text-sm py-2 px-4"
-            >
-              参加する
-            </Link>
+            {isLoading ? (
+              <div className="w-8 h-8 rounded-full bg-muted animate-pulse" />
+            ) : isAuthenticated ? (
+              <UserMenu />
+            ) : (
+              <Link
+                href="/join"
+                className="dao-btn-primary text-sm py-2 px-4"
+              >
+                参加する
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -136,14 +145,22 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="/join"
-                role="menuitem"
-                className="dao-btn-primary text-sm py-2 px-4 text-center mt-2"
-                onClick={closeMobileMenu}
-              >
-                参加する
-              </Link>
+              {isLoading ? (
+                <div className="w-full h-10 rounded-lg bg-muted animate-pulse mt-2" />
+              ) : isAuthenticated ? (
+                <div className="mt-2 pt-2 border-t border-border/50">
+                  <UserMenu />
+                </div>
+              ) : (
+                <Link
+                  href="/join"
+                  role="menuitem"
+                  className="dao-btn-primary text-sm py-2 px-4 text-center mt-2"
+                  onClick={closeMobileMenu}
+                >
+                  参加する
+                </Link>
+              )}
             </div>
           </div>
         )}

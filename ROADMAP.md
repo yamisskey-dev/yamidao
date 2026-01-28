@@ -11,7 +11,7 @@
 
 ## Phase 2: 認証・プライバシー (2026) - 進行中
 
-- [ ] Misskey認証によるメンバー確認
+- [x] Misskey認証によるメンバー確認
 - [ ] Semaphoreによるゼロ知識証明（ZKP）匿名投票
 
 ### Misskey認証システム
@@ -32,7 +32,7 @@ OSSの理念に基づき、Misskeyアカウントを用いたメンバー認証�
 **対応予定:**
 - ブラウザウォレット (MetaMask等)
 - モバイルウォレット (WalletConnect)
-- やみすきー系インスタンス (yami.ski, test.yami.ski等)
+- やみすきー系インスタンス (yami.ski, beta.yami.ski等)
 
 ### Semaphore ZKP匿名投票
 

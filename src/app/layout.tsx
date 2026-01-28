@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Murecho } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 const murecho = Murecho({
   weight: ["400", "500", "700"],
@@ -63,7 +64,9 @@ export default function RootLayout({
           disableTransitionOnChange
           storageKey="yamidao-theme"
         >
-          {children}
+          <AuthProvider>
+            {children}
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -93,7 +93,7 @@ export function Roadmap() {
                   </p>
                   <ul className="space-y-1 text-sm text-muted-foreground">
                     <li className="flex items-center gap-2">
-                      <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
+                      <CheckCircle className="h-4 w-4 text-success shrink-0" />
                       <span>Misskey認証によるメンバー確認</span>
                     </li>
                     <li className="flex items-center gap-2">

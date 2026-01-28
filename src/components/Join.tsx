@@ -1,6 +1,12 @@
-import { Code, Users, Link2, Github, ExternalLink, Shield, Cloud } from 'lucide-react'
+'use client'
+
+import Image from 'next/image'
+import { Code, Users, Link2, Github, ExternalLink, Shield } from 'lucide-react'
+import { useAuth } from '@/contexts/AuthContext'
+import { LoginForm } from '@/components/auth/LoginForm'
 
 export function Join() {
+  const { user, isAuthenticated, isLoading } = useAuth()
   return (
     <section id="join" className="py-16 px-4 md:px-8 bg-primary/5">
       <div className="max-w-5xl mx-auto">
@@ -93,17 +99,48 @@ export function Join() {
           </div>
         </div>
 
-        {/* Misskeyアカウントで参加（Coming Soon） */}
-        <div className="dao-card glass animate-fade-in-up">
-          <div className="flex items-center gap-3 mb-3">
-            <Cloud className="h-5 w-5 text-primary" />
-            <h3 className="text-lg font-semibold">Misskey認証で参加</h3>
-            <span className="text-xs bg-muted px-2 py-1 rounded-full text-muted-foreground">Coming Soon</span>
+        {/* Misskey認証 / メンバーカード */}
+        {isLoading ? (
+          <div className="dao-card glass animate-fade-in-up">
+            <div className="flex items-center justify-center py-4">
+              <div className="h-6 w-6 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+            </div>
           </div>
-          <p className="text-muted-foreground text-sm">
-            やみすきーアカウントでDAOメンバーになれる機能を開発中です。
-          </p>
-        </div>
+        ) : isAuthenticated && user ? (
+          <div className="dao-card glass animate-fade-in-up overflow-hidden">
+            {/* Member card header */}
+            <div className="bg-linear-to-r from-primary/20 via-secondary/20 to-accent/20 -mx-6 -mt-6 px-6 py-4 mb-6">
+              <div className="flex items-center gap-2">
+                <Shield className="h-5 w-5 text-primary" />
+                <span className="text-sm font-semibold text-primary">YAMI DAO Member</span>
+              </div>
+            </div>
+
+            {/* User info */}
+            <div className="flex items-center gap-4">
+              {user.avatarUrl ? (
+                <Image
+                  src={user.avatarUrl}
+                  alt={user.displayName || user.account}
+                  width={64}
+                  height={64}
+                  className="rounded-full ring-4 ring-primary/20"
+                  unoptimized
+                />
+              ) : (
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center ring-4 ring-primary/20">
+                  <Users className="h-8 w-8 text-primary" />
+                </div>
+              )}
+              <div>
+                <h3 className="text-xl font-bold">{user.displayName || user.account}</h3>
+                <p className="text-sm text-muted-foreground">{user.handle}</p>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <LoginForm />
+        )}
 
       </div>
     </section>

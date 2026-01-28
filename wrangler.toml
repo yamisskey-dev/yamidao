@@ -1,0 +1,10 @@
+name = "yamidao"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "yamidao-db"
+database_id = "f22e9e73-30b9-41a2-98bf-f6a175aa3467"
+migrations_dir = "drizzle"
