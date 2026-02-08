@@ -16,14 +16,14 @@ export function Partner() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">パートナー</h2>
           <div className="section-divider mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl">
-            居場所であり続けながら、必要なときに外部支援へつながる導線。
+            YAMI DAOは居場所であり続け、パートナーが外部支援の窓口になる。
           </p>
         </div>
 
         {/* 掲載ポリシー */}
         <div className="dao-card mb-8 animate-fade-in-up">
           <ul className="text-muted-foreground text-sm space-y-2">
-            <li><span className="text-foreground font-medium">趣旨:</span> 掲載と引き換えに、外部支援窓口としての役割を担う</li>
+            <li><span className="text-foreground font-medium">趣旨:</span> パートナーは当サイトへの掲載と引き換えに、利用者への外部支援窓口としての役割を担う</li>
             <li><span className="text-foreground font-medium">条件:</span> 実在確認・理念理解・プライバシー方針に同意</li>
             <li><span className="text-foreground font-medium">掲載料:</span> 無料（広告ではない）</li>
           </ul>
