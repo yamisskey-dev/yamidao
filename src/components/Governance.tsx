@@ -51,7 +51,7 @@ export function Governance() {
             <div>
               <h4 className="font-semibold mb-2">資金の使途</h4>
               <p className="text-sm text-muted-foreground">
-                インフラ費・開発者報酬・コミュニティ支援に使用。Snapshotで決定。
+                インフラ費・開発報酬・運営報酬・コミュニティ支援に使用。使途はSnapshotで決定。
               </p>
             </div>
           </div>
