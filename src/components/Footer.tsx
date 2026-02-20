@@ -28,14 +28,14 @@ export function Footer() {
 
           {/* リンク */}
           <div>
-            <h4 className="font-semibold mb-4">リンク</h4>
+            <h4 className="font-semibold mb-4">ページ</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href="/about"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  DAOについて
+                  わたしたちについて
                 </Link>
               </li>
               <li>
@@ -43,7 +43,7 @@ export function Footer() {
                   href="/governance"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  ガバナンス
+                  しくみ
                 </Link>
               </li>
               <li>
@@ -51,7 +51,7 @@ export function Footer() {
                   href="/roadmap"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  ロードマップ
+                  これから
                 </Link>
               </li>
               <li>
@@ -59,7 +59,7 @@ export function Footer() {
                   href="/join"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  参加する
+                  はいる
                 </Link>
               </li>
               <li>
@@ -67,7 +67,7 @@ export function Footer() {
                   href="/partner"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  パートナー
+                  つながり
                 </Link>
               </li>
             </ul>

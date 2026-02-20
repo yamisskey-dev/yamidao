@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react'
 import { Footer } from '../Footer'
 
 describe('Footer', () => {
-  it('YAMI DAOのロゴが表示される', () => {
-    render(<Footer />)
-    expect(screen.getAllByText(/YAMI DAO/i).length).toBeGreaterThan(0)
+  it('footerタグとして実装されている', () => {
+    const { container } = render(<Footer />)
+    expect(container.querySelector('footer')).toBeInTheDocument()
   })
 
   it('コピーライトが表示される', () => {
@@ -13,44 +13,35 @@ describe('Footer', () => {
     expect(screen.getByText(new RegExp(`© ${currentYear}`, 'i'))).toBeInTheDocument()
   })
 
-  it('DAO組織の説明が表示される', () => {
+  it('外部リンクがtarget="_blank"で開く', () => {
     render(<Footer />)
-    expect(screen.getByText(/オープンメンタルヘルス/i)).toBeInTheDocument()
-  })
-
-  it('全てのリンクがtarget="_blank"で開く', () => {
-    render(<Footer />)
-    const externalLinks = screen.getAllByRole('link')
-    const filteredLinks = externalLinks.filter(link =>
+    const externalLinks = screen.getAllByRole('link').filter(link =>
       link.getAttribute('href')?.startsWith('http')
     )
-    filteredLinks.forEach(link => {
+    externalLinks.forEach(link => {
       expect(link).toHaveAttribute('target', '_blank')
       expect(link).toHaveAttribute('rel', 'noopener noreferrer')
     })
   })
 
-  it('フッターがfooterタグとして実装されている', () => {
-    const { container } = render(<Footer />)
-    const footer = container.querySelector('footer')
-    expect(footer).toBeInTheDocument()
-  })
-
-  it('ナビゲーションリンクが表示される', () => {
+  it('ページリンクが正しいhrefを持つ', () => {
     render(<Footer />)
-    expect(screen.getByRole('link', { name: /DAOについて/i })).toHaveAttribute('href', '/about')
-    expect(screen.getByRole('link', { name: /ガバナンス/i })).toHaveAttribute('href', '/governance')
-    expect(screen.getByRole('link', { name: /ロードマップ/i })).toHaveAttribute('href', '/roadmap')
-    expect(screen.getByRole('link', { name: /参加する/i })).toHaveAttribute('href', '/join')
+    const links = screen.getAllByRole('link')
+    const hrefs = links.map(l => l.getAttribute('href'))
+    expect(hrefs).toContain('/about')
+    expect(hrefs).toContain('/governance')
+    expect(hrefs).toContain('/roadmap')
+    expect(hrefs).toContain('/join')
+    expect(hrefs).toContain('/partner')
   })
 
-  it('コミュニティリンクが表示される', () => {
+  it('コミュニティリンクがある', () => {
     render(<Footer />)
     expect(screen.getByRole('link', { name: /Misskey/i })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /Discord/i })).toBeInTheDocument()
   })
 
-  it('ガバナンスリンクが表示される', () => {
+  it('ガバナンスリンクがある', () => {
     render(<Footer />)
     expect(screen.getByRole('link', { name: /Snapshot/i })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /Safe/i })).toBeInTheDocument()

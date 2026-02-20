@@ -6,10 +6,10 @@ export function Roadmap() {
       <div className="max-w-5xl mx-auto">
         {/* セクションヘッダー */}
         <div className="mb-12 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">ロードマップ</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">これから</h2>
           <div className="section-divider mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl">
-            YAMI DAOの開発計画
+            すこしずつ、いっしょに進んでいく
           </p>
         </div>
 
@@ -41,12 +41,12 @@ export function Roadmap() {
                     <h4 className="font-semibold">DAO立ち上げ</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">
-                    メンバーの自己負担で運営開始
+                    メンバーの持ち出しではじまりました
                   </p>
                   <ul className="space-y-1 text-sm text-muted-foreground">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-success shrink-0" />
-                      <span>ウェブサイト・コミュニティ基盤</span>
+                      <span>ウェブサイトとコミュニティの土台づくり</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-success shrink-0" />
@@ -54,11 +54,11 @@ export function Roadmap() {
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-success shrink-0" />
-                      <span>Snapshot統合（オフチェーン投票）</span>
+                      <span>Snapshot統合（みんなで投票できるように）</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-success shrink-0" />
-                      <span>Safe統合（Treasury管理）</span>
+                      <span>Safe統合（お金の管理をみんなで）</span>
                     </li>
                   </ul>
                 </div>
@@ -89,20 +89,20 @@ export function Roadmap() {
                     <h4 className="font-semibold">認証・プライバシー</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">
-                    1人1票の実現と匿名投票の導入
+                    ひとり1票と、匿名で投票できるしくみ
                   </p>
                   <ul className="space-y-1 text-sm text-muted-foreground">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-success shrink-0" />
-                      <span>Misskey認証によるメンバー確認</span>
+                      <span>Misskey認証でメンバーを確認</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-success shrink-0" />
-                      <span>ETHウォレット連携（Snapshot投票用）</span>
+                      <span>ETHウォレット連携（投票につかいます）</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
-                      <span>匿名投票システム</span>
+                      <span>匿名で投票できるしくみ</span>
                     </li>
                   </ul>
                 </div>
@@ -138,11 +138,11 @@ export function Roadmap() {
                     </li>
                     <li className="flex items-center gap-2">
                       <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
-                      <span>コントリビューター報酬自動配布</span>
+                      <span>がんばった人への報酬を自動で</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
-                      <span>エコシステム拡大</span>
+                      <span>エコシステムをひろげる</span>
                     </li>
                   </ul>
                 </div>
@@ -169,19 +169,19 @@ export function Roadmap() {
                 <div className="dao-card">
                   <div className="flex items-center gap-2 mb-3">
                     <Shield className="h-5 w-5 text-muted-foreground" />
-                    <h4 className="font-semibold">分散型モデレーション</h4>
+                    <h4 className="font-semibold">みんなで見守る</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">
-                    Misskeyサーバー運営とDAOガバナンスの統合
+                    Misskeyサーバーの運営とDAOのしくみをひとつに
                   </p>
                   <ul className="space-y-1 text-sm text-muted-foreground">
                     <li className="flex items-center gap-2">
                       <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
-                      <span>ポリシー決定のDAO化</span>
+                      <span>ルールをみんなで決める</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
-                      <span>匿名異議申立てシステム</span>
+                      <span>匿名で声をあげられるしくみ</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <Circle className="h-4 w-4 text-muted-foreground shrink-0" />

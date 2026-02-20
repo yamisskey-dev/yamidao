@@ -12,10 +12,10 @@ export function Join() {
       <div className="max-w-5xl mx-auto">
         {/* セクションヘッダー */}
         <div className="mb-12 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">参加する</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">はいる</h2>
           <div className="section-divider mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl">
-            プライバシーを守りながら、あなたの形で貢献できます
+            あなたのペースで、あなたのやり方で
           </p>
         </div>
 
@@ -23,10 +23,10 @@ export function Join() {
         <div className="dao-card glass mb-12 animate-fade-in-up">
           <div className="flex items-center gap-3 mb-3">
             <Shield className="h-5 w-5 text-primary" />
-            <h3 className="text-lg font-semibold">匿名で参加可能</h3>
+            <h3 className="text-lg font-semibold">名前を出さなくても大丈夫</h3>
           </div>
           <p className="text-muted-foreground text-sm">
-            ウォレットアドレスやGitHubアカウントのみで参加できます。実名・メールアドレスは不要です。
+            ウォレットアドレスやGitHubアカウントだけで参加できます。実名もメールアドレスもいりません。
           </p>
         </div>
 
@@ -40,7 +40,7 @@ export function Join() {
               </div>
               <h3 className="text-xl font-semibold mb-3">つくる</h3>
               <p className="text-muted-foreground text-sm mb-4">
-                コード・ドキュメント・翻訳で貢献
+                コード・ドキュメント・翻訳でかかわる
               </p>
               <a
                 href="https://github.com/yamisskey-dev"
@@ -62,7 +62,7 @@ export function Join() {
               </div>
               <h3 className="text-xl font-semibold mb-3">つかう</h3>
               <p className="text-muted-foreground text-sm mb-4">
-                やみすきーに登録してフィードバック
+                やみすきーに登録してつかってみる
               </p>
               <a
                 href="https://yami.ski"
@@ -84,7 +84,7 @@ export function Join() {
               </div>
               <h3 className="text-xl font-semibold mb-3">つなぐ</h3>
               <p className="text-muted-foreground text-sm mb-4">
-                ウォレット接続でメンバーシップ取得
+                ウォレットをつないでメンバーになる
               </p>
               <a
                 href="https://guild.xyz/yamidao"

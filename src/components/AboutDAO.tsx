@@ -6,10 +6,10 @@ export function AboutDAO() {
       <div className="max-w-5xl mx-auto">
         {/* セクションヘッダー */}
         <div className="mb-12 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">DAOについて</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">わたしたちについて</h2>
           <div className="section-divider mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl">
-            <a href="https://hub.yami.ski/guides/ecosystem/" target="_blank" rel="noopener noreferrer" className="external-link">YAMIエコシステム</a>のガバナンスDAO
+            <a href="https://hub.yami.ski/guides/ecosystem/" target="_blank" rel="noopener noreferrer" className="external-link">YAMIエコシステム</a>を、みんなで支えるしくみ
           </p>
         </div>
 
@@ -23,14 +23,14 @@ export function AboutDAO() {
                   <Heart className="h-5 w-5 text-accent shrink-0" />
                   <h4 className="font-semibold text-sm">メンタルファースト</h4>
                 </div>
-                <p className="text-xs text-muted-foreground">ユーザーの心の安全を最優先に</p>
+                <p className="text-xs text-muted-foreground">つかう人のこころの安全がいちばん</p>
               </div>
               <div className="dao-card border-l-2 border-l-primary hover-lift">
                 <div className="flex items-center gap-3 mb-2">
                   <Shield className="h-5 w-5 text-primary shrink-0" />
                   <h4 className="font-semibold text-sm">プライバシーファースト</h4>
                 </div>
-                <p className="text-xs text-muted-foreground">個人情報を収集しない設計</p>
+                <p className="text-xs text-muted-foreground">個人情報をあつめない設計</p>
               </div>
             </div>
           </div>
@@ -42,7 +42,7 @@ export function AboutDAO() {
                 <Users className="h-5 w-5 text-secondary shrink-0" />
                 <h4 className="font-semibold text-sm">コミュニティ主導</h4>
               </div>
-              <p className="text-xs text-muted-foreground">コミュニティ主導だからこそ、メンタルファーストとプライバシーファーストを守れる</p>
+              <p className="text-xs text-muted-foreground">みんなで決めるから、こころもプライバシーも守れる</p>
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@ export function AboutDAO() {
         <div className="animate-fade-in-up">
           <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
             <Layers className="h-5 w-5 text-primary" />
-            組織構成
+            なりたち
           </h3>
 
           <div className="rounded-lg border border-border overflow-hidden">
@@ -63,14 +63,14 @@ export function AboutDAO() {
                     <Server className="h-5 w-5 text-primary shrink-0" />
                     <h4 className="font-semibold text-sm">やみすきー運営部</h4>
                   </div>
-                  <p className="text-xs text-muted-foreground">サーバー運営・モデレーション</p>
+                  <p className="text-xs text-muted-foreground">サーバーの運営と見守り</p>
                 </div>
                 <div className="dao-card border-l-2 border-l-success">
                   <div className="flex items-center gap-3 mb-2">
                     <Code className="h-5 w-5 text-success shrink-0" />
                     <h4 className="font-semibold text-sm">yamisskey-dev</h4>
                   </div>
-                  <p className="text-xs text-muted-foreground">開発・技術判断</p>
+                  <p className="text-xs text-muted-foreground">開発とものづくり</p>
                 </div>
               </div>
             </div>
@@ -82,7 +82,7 @@ export function AboutDAO() {
                   <Vote className="h-5 w-5 text-secondary shrink-0" />
                   <h4 className="font-semibold text-sm">YAMI DAO</h4>
                 </div>
-                <p className="text-xs text-muted-foreground">予算配分・重大方針・紛争解決</p>
+                <p className="text-xs text-muted-foreground">お金のこと・だいじな方針・こまったときの対応</p>
               </div>
             </div>
           </div>

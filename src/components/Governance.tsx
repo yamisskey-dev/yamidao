@@ -6,10 +6,10 @@ export function Governance() {
       <div className="max-w-5xl mx-auto">
         {/* セクションヘッダー */}
         <div className="mb-12 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">ガバナンス</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">しくみ</h2>
           <div className="section-divider mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl">
-            透明で分散型の意思決定と資金管理
+            みんなで決めて、みんなで守る
           </p>
         </div>
 
@@ -17,19 +17,19 @@ export function Governance() {
         <div className="dao-card glass mb-12 animate-fade-in-up">
           <div className="flex items-center gap-3 mb-4">
             <Scale className="h-6 w-6 text-primary" />
-            <h3 className="text-lg font-semibold">意思決定方針</h3>
+            <h3 className="text-lg font-semibold">きめかた</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h4 className="font-semibold mb-2">投票ルール</h4>
+              <h4 className="font-semibold mb-2">投票のルール</h4>
               <p className="text-sm text-muted-foreground">
-                1人1票、平等な投票権。トークン保有量による重み付けはありません。
+                ひとり1票。トークンをたくさん持っていても、投票の重さは同じです。
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-2">提案プロセス</h4>
+              <h4 className="font-semibold mb-2">なりすまし対策</h4>
               <p className="text-sm text-muted-foreground">
-                Misskey認証とETHウォレット連携でSybil攻撃対策済み。投票権は投票時に自動確認されます。
+                Misskey認証とETHウォレット連携で、ひとり1票をまもっています。投票のときに自動で確認します。
               </p>
             </div>
           </div>
@@ -39,19 +39,19 @@ export function Governance() {
         <div className="dao-card glass mb-12 animate-fade-in-up">
           <div className="flex items-center gap-3 mb-4">
             <Wallet className="h-6 w-6 text-accent" />
-            <h3 className="text-lg font-semibold">資金運用方針</h3>
+            <h3 className="text-lg font-semibold">お金のつかいかた</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h4 className="font-semibold mb-2">完全非営利</h4>
+              <h4 className="font-semibold mb-2">非営利です</h4>
               <p className="text-sm text-muted-foreground">
-                収益化・見返り・特典は一切なし。支援の有無による待遇差もありません。
+                もうけも、見返りも、特典もなし。支援してもしなくても、みんな同じです。
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-2">資金の使途</h4>
+              <h4 className="font-semibold mb-2">なにに使うの？</h4>
               <p className="text-sm text-muted-foreground">
-                インフラ費・開発報酬・運営報酬・コミュニティ支援に使用。使途はSnapshotで決定。
+                サーバー代・開発や運営の報酬・コミュニティのために使います。つかいみちはSnapshotでみんなが決めます。
               </p>
             </div>
           </div>
@@ -67,7 +67,7 @@ export function Governance() {
               </div>
               <h3 className="text-xl font-semibold mb-3">きめる</h3>
               <p className="text-muted-foreground text-sm mb-4">
-                ガス代無料のオフチェーン投票
+                ガス代なしで投票できます
               </p>
               <a
                 href="https://snapshot.org/#/s:yamidao.eth"
@@ -89,7 +89,7 @@ export function Governance() {
               </div>
               <h3 className="text-xl font-semibold mb-3">まもる</h3>
               <p className="text-muted-foreground text-sm mb-4">
-                Safeマルチシグで透明な資金管理
+                みんなの承認で動かすお金の管理
               </p>
               <a
                 href="https://app.safe.global/home?safe=oeth:0x9D315c45B721132674D1aBED44F642b2dE24A1c2"

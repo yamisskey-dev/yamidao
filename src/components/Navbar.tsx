@@ -9,10 +9,10 @@ import { useAuth } from '@/contexts/AuthContext'
 import { UserMenu } from '@/components/auth/UserMenu'
 
 const navLinks = [
-  { href: '/about', label: 'DAOについて' },
-  { href: '/governance', label: 'ガバナンス' },
-  { href: '/roadmap', label: 'ロードマップ' },
-  { href: '/partner', label: 'パートナー' },
+  { href: '/about', label: 'わたしたちについて' },
+  { href: '/governance', label: 'しくみ' },
+  { href: '/roadmap', label: 'これから' },
+  { href: '/partner', label: 'つながり' },
 ]
 
 export function Navbar() {
@@ -100,7 +100,7 @@ export function Navbar() {
                 href="/join"
                 className="dao-btn-primary text-sm py-2 px-4"
               >
-                参加する
+                はいる
               </Link>
             )}
           </div>
@@ -158,7 +158,7 @@ export function Navbar() {
                   className="dao-btn-primary text-sm py-2 px-4 text-center mt-2"
                   onClick={closeMobileMenu}
                 >
-                  参加する
+                  はいる
                 </Link>
               )}
             </div>
