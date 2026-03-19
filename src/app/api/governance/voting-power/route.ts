@@ -156,7 +156,13 @@ export async function POST(req: NextRequest) {
   if (normalizedAddresses.length === 0) {
     const score = data.addresses
       .filter((addr) => typeof addr === "string" && addr.length === 42)
-      .map((addr) => ({ address: addr, score: 0 }));
+      .map((addr) => {
+        try {
+          return { address: getAddress(addr), score: "0" };
+        } catch {
+          return { address: addr, score: "0" };
+        }
+      });
     return NextResponse.json({ score }, { headers });
   }
 
@@ -177,7 +183,8 @@ export async function POST(req: NextRequest) {
     );
 
     // Build response in Snapshot api-post format
-    const score: { address: string; score: number }[] = [];
+    // address must be checksummed, score must be string for formatUnits
+    const score: { address: string; score: string }[] = [];
 
     for (const addr of data.addresses) {
       if (typeof addr !== "string" || addr.length !== 42) continue;
@@ -186,14 +193,14 @@ export async function POST(req: NextRequest) {
         if (isAddress(addr)) {
           const checksummed = getAddress(addr);
           score.push({
-            address: addr,
-            score: linkedSet.has(checksummed) ? 1 : 0,
+            address: checksummed,
+            score: linkedSet.has(checksummed) ? "1" : "0",
           });
         } else {
-          score.push({ address: addr, score: 0 });
+          score.push({ address: addr, score: "0" });
         }
       } catch {
-        score.push({ address: addr, score: 0 });
+        score.push({ address: addr, score: "0" });
       }
     }
 
