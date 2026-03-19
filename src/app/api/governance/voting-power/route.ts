@@ -15,10 +15,14 @@ const CACHE_TTL = 60; // Cache for 60 seconds
 const ALLOWED_ORIGINS = [
   "https://snapshot.org",
   "https://hub.snapshot.org",
+  "https://score.snapshot.org",
   "https://testnet.snapshot.org",
 ];
 
 interface VotingPowerRequest {
+  options?: Record<string, unknown>;
+  network?: string;
+  snapshot?: string | number;
   addresses: string[];
 }
 
@@ -53,8 +57,8 @@ export async function OPTIONS(req: NextRequest) {
  * Returns voting power for each address (1 = linked member, 0 = not linked)
  *
  * POST /api/governance/voting-power
- * Body: { "addresses": ["0x123...", "0x456..."] }
- * Response: { "0x123...": 1, "0x456...": 0 }
+ * Body: { "options": {...}, "network": "10", "snapshot": "latest", "addresses": ["0x123...", "0x456..."] }
+ * Response: { "score": [{ "address": "0x123...", "score": 1 }, { "address": "0x456...", "score": 0 }] }
  */
 export async function POST(req: NextRequest) {
   const origin = req.headers.get("origin");
@@ -113,7 +117,7 @@ export async function POST(req: NextRequest) {
   }
 
   if (data.addresses.length === 0) {
-    return NextResponse.json({}, { headers });
+    return NextResponse.json({ score: [] }, { headers });
   }
 
   if (data.addresses.length > MAX_ADDRESSES) {
@@ -150,14 +154,10 @@ export async function POST(req: NextRequest) {
   }
 
   if (normalizedAddresses.length === 0) {
-    // Return 0 for all original addresses
-    const result: Record<string, number> = {};
-    for (const addr of data.addresses) {
-      if (typeof addr === "string" && addr.length === 42) {
-        result[addr] = 0;
-      }
-    }
-    return NextResponse.json(result, { headers });
+    const score = data.addresses
+      .filter((addr) => typeof addr === "string" && addr.length === 42)
+      .map((addr) => ({ address: addr, score: 0 }));
+    return NextResponse.json({ score }, { headers });
   }
 
   try {
@@ -176,8 +176,8 @@ export async function POST(req: NextRequest) {
         .filter((addr): addr is string => addr !== null)
     );
 
-    // Build response: 1 for linked, 0 for not linked
-    const result: Record<string, number> = {};
+    // Build response in Snapshot api-post format
+    const score: { address: string; score: number }[] = [];
 
     for (const addr of data.addresses) {
       if (typeof addr !== "string" || addr.length !== 42) continue;
@@ -185,16 +185,19 @@ export async function POST(req: NextRequest) {
       try {
         if (isAddress(addr)) {
           const checksummed = getAddress(addr);
-          result[addr] = linkedSet.has(checksummed) ? 1 : 0;
+          score.push({
+            address: addr,
+            score: linkedSet.has(checksummed) ? 1 : 0,
+          });
         } else {
-          result[addr] = 0;
+          score.push({ address: addr, score: 0 });
         }
       } catch {
-        result[addr] = 0;
+        score.push({ address: addr, score: 0 });
       }
     }
 
-    return NextResponse.json(result, { headers });
+    return NextResponse.json({ score }, { headers });
   } catch (error) {
     console.error(
       "Voting power error:",
