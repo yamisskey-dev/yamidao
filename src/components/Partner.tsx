@@ -16,7 +16,7 @@ export function Partner() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">つながり</h2>
           <div className="section-divider mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl">
-            YAMI DAOはみんなの居場所。つながりのある団体が、外の世界への窓口です。
+            つながりのある団体が、外の世界への窓口です。
           </p>
         </div>
 

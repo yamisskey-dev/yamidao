@@ -38,7 +38,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-base md:text-lg text-muted-foreground/70 max-w-md mx-auto leading-relaxed">
-              ここは、あなたがあなたのままでいられる場所。
+              <a href="https://hub.yami.ski/guides/ecosystem/" target="_blank" rel="noopener noreferrer" className="external-link">YAMIエコシステム</a>のガバナンスDAO
             </p>
           </div>
 
