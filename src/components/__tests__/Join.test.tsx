@@ -32,6 +32,6 @@ describe('Join', () => {
   it('Guildへのリンクがある', () => {
     renderWithAuth(<Join />)
     const link = screen.getByRole('link', { name: /Guild/i })
-    expect(link).toHaveAttribute('href', 'https://guild.xyz/yamidao')
+    expect(link).toHaveAttribute('href', 'https://guild.xyz/yami')
   })
 })

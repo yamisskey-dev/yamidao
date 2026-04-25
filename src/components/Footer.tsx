@@ -148,7 +148,7 @@ export function Footer() {
                 <span>Safe</span>
               </a>
               <a
-                href="https://guild.xyz/yamidao"
+                href="https://guild.xyz/yami"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"

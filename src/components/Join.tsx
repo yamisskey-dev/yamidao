@@ -87,7 +87,7 @@ export function Join() {
                 ウォレットをつないでメンバーになる
               </p>
               <a
-                href="https://guild.xyz/yamidao"
+                href="https://guild.xyz/yami"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="dao-btn-primary w-full inline-flex items-center justify-center gap-2"
