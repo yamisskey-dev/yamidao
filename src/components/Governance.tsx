@@ -1,4 +1,4 @@
-import { Vote, ExternalLink, Shield, Wallet, Scale } from 'lucide-react'
+import { Vote, ExternalLink, Shield, Wallet, Scale, Eye } from 'lucide-react'
 
 export function Governance() {
   return (
@@ -57,8 +57,8 @@ export function Governance() {
           </div>
         </div>
 
-        {/* Snapshot + Treasury 並列表示 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in-up">
+        {/* Snapshot + Treasury + 透明性 並列表示 */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-up">
           {/* きめる */}
           <div className="dao-card hover-lift">
             <div className="text-center">
@@ -99,6 +99,28 @@ export function Governance() {
               >
                 <ExternalLink className="h-4 w-4" />
                 Safe
+              </a>
+            </div>
+          </div>
+
+          {/* みる */}
+          <div className="dao-card hover-lift">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-4">
+                <Eye className="h-8 w-8 text-accent" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">みる</h3>
+              <p className="text-muted-foreground text-sm mb-4">
+                お金の流れはぜんぶ公開されています
+              </p>
+              <a
+                href="https://etherscan.io/name-lookup-search?id=yami.eth"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="dao-btn-primary w-full inline-flex items-center justify-center gap-2"
+              >
+                <ExternalLink className="h-4 w-4" />
+                Etherscan
               </a>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Heart, MessageCircle, Users, MessageSquare, Cloud, Vote, Shield, KeyRound, Send } from 'lucide-react'
+import { Heart, MessageCircle, Users, MessageSquare, Cloud, Vote, Shield, KeyRound, Send, Eye } from 'lucide-react'
 import Image from 'next/image'
 
 export function Footer() {
@@ -155,6 +155,15 @@ export function Footer() {
               >
                 <KeyRound className="h-4 w-4" />
                 <span>Guild</span>
+              </a>
+              <a
+                href="https://etherscan.io/name-lookup-search?id=yami.eth"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Eye className="h-4 w-4" />
+                <span>Etherscan</span>
               </a>
             </div>
           </div>
