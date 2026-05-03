@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Navbar } from '@/components/Navbar'
 import { GitHubCorner } from '@/components/GitHubCorner'
 import { Footer } from '@/components/Footer'
-import { NetworkBackground } from '@/components/NetworkBackground'
+import { HoneycombBackground } from '@/components/HoneycombBackground'
 import { ArrowRight, Users } from 'lucide-react'
 
 export default function Home() {
@@ -20,14 +20,15 @@ export default function Home() {
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-breathe [animation-delay:2s]"></div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl animate-breathe [animation-delay:4s]"></div>
         </div>
-        {/* Background decoration: network constellation (front) */}
-        <NetworkBackground className="absolute inset-0 -z-10" />
+        {/* Background decoration: honeycomb grid (front) */}
+        <HoneycombBackground className="absolute inset-0 -z-10" />
 
         <div className="max-w-5xl mx-auto text-center relative">
           {/* Logo & Title */}
-          <div className="mb-8 animate-fade-in-up">
+          <div className="mb-8">
             <div className="flex justify-center mb-6">
               <Image
+                id="hero-logo"
                 src="https://raw.githubusercontent.com/yamisskey-dev/yamisskey-assets/main/yami-dao/yami-dao-icon.svg"
                 alt="YAMI DAO Logo"
                 width={120}
