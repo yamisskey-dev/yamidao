@@ -121,7 +121,7 @@ export function Footer() {
             <h4 className="font-semibold mb-4">ガバナンス</h4>
             <div className="space-y-3">
               <a
-                href="https://x.com/yamidao_eth"
+                href="https://x.com/yami_dao_eth"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
