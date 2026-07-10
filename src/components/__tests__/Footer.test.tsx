@@ -32,7 +32,6 @@ describe('Footer', () => {
     expect(hrefs).toContain('/governance')
     expect(hrefs).toContain('/roadmap')
     expect(hrefs).toContain('/join')
-    expect(hrefs).toContain('/partner')
   })
 
   it('コミュニティリンクがある', () => {

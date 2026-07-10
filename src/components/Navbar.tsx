@@ -12,7 +12,6 @@ const navLinks = [
   { href: '/about', label: 'わたしたちについて' },
   { href: '/governance', label: 'しくみ' },
   { href: '/roadmap', label: 'これから' },
-  { href: '/partner', label: 'つながり' },
 ]
 
 export function Navbar() {

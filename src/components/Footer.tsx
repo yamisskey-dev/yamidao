@@ -62,14 +62,6 @@ export function Footer() {
                   はいる
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/partner"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  つながり
-                </Link>
-              </li>
             </ul>
           </div>
 
