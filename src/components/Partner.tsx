@@ -39,7 +39,7 @@ export function Partner() {
             つながりに興味のある団体さんは、Xからご連絡ください。
           </p>
           <a
-            href="https://x.com/yami_dao_eth"
+            href="https://x.com/yamidao_eth"
             target="_blank"
             rel="noopener noreferrer"
             className="dao-btn-primary inline-flex items-center gap-2"
