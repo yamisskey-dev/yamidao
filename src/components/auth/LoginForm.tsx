@@ -29,10 +29,10 @@ export function LoginForm() {
   };
 
   return (
-    <div className="dao-card glass animate-fade-in-up">
+    <div className="yami-card">
       <div className="flex items-center gap-3 mb-4">
         <Cloud className="h-5 w-5 text-primary" />
-        <h3 className="text-lg font-semibold">Misskey認証で参加</h3>
+        <h3 className="text-lg font-bold">Misskey認証で参加</h3>
       </div>
 
       <p className="text-muted-foreground text-sm mb-6">
@@ -42,7 +42,7 @@ export function LoginForm() {
       <button
         onClick={handleLogin}
         disabled={isLoading}
-        className="dao-btn-primary w-full flex items-center justify-center gap-2 py-3"
+        className="yami-btn yami-btn-accent w-full py-3"
       >
         {isLoading ? (
           <Loader2 className="h-5 w-5 animate-spin" />

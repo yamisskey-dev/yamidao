@@ -1,0 +1,116 @@
+/* misskey-hub-next 風の hero。角丸の箱の中で blob がゆっくり回る。 */
+.hero {
+  position: relative;
+  border-radius: var(--yami-radius);
+  background-color: var(--yami-hero-bg);
+  overflow: clip;
+  padding: 2.5rem 1.5rem 8rem;
+  /* 直後のカードが hero の下端に重なるようにする */
+  margin-bottom: -7rem;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  width: 56rem;
+  height: 56rem;
+  opacity: 0.35;
+  color: var(--yami-blob);
+  animation: yami-spin linear infinite;
+}
+
+.blob1 {
+  top: -34rem;
+  right: -22rem;
+  animation-duration: 60s;
+}
+
+.blob2 {
+  top: 10rem;
+  left: -24rem;
+  animation-duration: 80s;
+  animation-direction: reverse;
+}
+
+.inner {
+  position: relative;
+  max-width: 66rem;
+  margin-inline: auto;
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--color-foreground);
+}
+
+.tagline {
+  margin-top: 1rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--color-muted-foreground);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/*
+ * ロゴ。ハニカムグリッドをロゴの六角形に揃えるため回転させない。
+ * misskey-hub-next と同じく 1200px 以下では出さない。
+ */
+.art {
+  display: none;
+  position: relative;
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+
+.art img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob {
+    animation: none;
+  }
+}
+
+@media (min-width: 50rem) {
+  .hero {
+    padding: 3rem 3rem 9rem;
+  }
+}
+
+/* Hub の desktop 切り替え (> 1200px) と同じ条件で 2 カラム + ロゴ */
+@media (width > 75rem) {
+  .inner {
+    grid-template-columns: 7fr 4fr;
+    text-align: start;
+    padding-block: 2rem;
+  }
+  .actions {
+    justify-content: flex-start;
+  }
+  .art {
+    display: block;
+    width: min(100%, 22rem);
+  }
+}

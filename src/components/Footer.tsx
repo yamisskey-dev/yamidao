@@ -1,173 +1,99 @@
 import Link from 'next/link'
-import { Heart, MessageCircle, Users, MessageSquare, Cloud, Vote, Shield, KeyRound, Send, Eye } from 'lucide-react'
 import Image from 'next/image'
+import { MessageCircle, Users, MessageSquare, Cloud, Vote, Shield, KeyRound, Eye } from 'lucide-react'
+
+const pageLinks = [
+  { href: '/about', label: 'わたしたちについて' },
+  { href: '/governance', label: 'しくみ' },
+  { href: '/roadmap', label: 'これから' },
+  { href: '/join', label: 'はいる' },
+]
+
+const communityLinks = [
+  { href: 'https://yami.ski', label: 'Misskey', Icon: Cloud },
+  { href: 'https://discord.gg/WMgzEBvr8b', label: 'Discord', Icon: MessageCircle },
+  { href: 'https://vrc.group/YMSKY.5787', label: 'VRChat', Icon: Users },
+  { href: 'https://chat.yami.ski', label: 'Element', Icon: MessageSquare },
+]
+
+const governanceLinks = [
+  { href: 'https://snapshot.org/#/s:yamidao.eth', label: 'Snapshot', Icon: Vote },
+  {
+    href: 'https://app.safe.global/home?safe=oeth:0x9D315c45B721132674D1aBED44F642b2dE24A1c2',
+    label: 'Safe',
+    Icon: Shield,
+  },
+  { href: 'https://guild.xyz/yami', label: 'Guild', Icon: KeyRound },
+  { href: 'https://etherscan.io/name-lookup-search?id=yami.eth', label: 'Etherscan', Icon: Eye },
+]
+
+const linkClass = 'inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="py-12 px-4 md:px-8 border-t border-border bg-muted/30">
-      <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+    <footer className="border-t border-border">
+      <div className="max-w-6xl mx-auto px-4 md:px-8 py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {/* ロゴ・説明 */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2 mb-3">
               <Image
                 src="https://raw.githubusercontent.com/yamisskey-dev/yamisskey-assets/main/yami-dao/yami-dao-icon.svg"
-                alt="YAMI DAO Logo"
-                width={40}
-                height={40}
-                className="w-10 h-10"
+                alt=""
+                width={32}
+                height={32}
+                className="w-8 h-8"
               />
-              <h3 className="text-xl font-bold">YAMI DAO</h3>
+              <span className="text-lg font-bold">YAMI DAO</span>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              オープンメンタルヘルス
-            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">オープンメンタルヘルス</p>
           </div>
 
-          {/* リンク */}
           <div>
-            <h4 className="font-semibold mb-4">ページ</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  href="/about"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  わたしたちについて
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/governance"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  しくみ
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/roadmap"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  これから
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/join"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  はいる
-                </Link>
-              </li>
+            <h4 className="font-bold mb-4 text-sm">ページ</h4>
+            <ul className="space-y-2">
+              {pageLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className={linkClass}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* コミュニティ */}
           <div>
-            <h4 className="font-semibold mb-4">コミュニティ</h4>
-            <div className="space-y-3">
-              <a
-                href="https://yami.ski"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Cloud className="h-4 w-4" />
-                <span>Misskey</span>
-              </a>
-              <a
-                href="https://discord.gg/WMgzEBvr8b"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                <MessageCircle className="h-4 w-4" />
-                <span>Discord</span>
-              </a>
-              <a
-                href="https://vrc.group/YMSKY.5787"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Users className="h-4 w-4" />
-                <span>VRChat</span>
-              </a>
-              <a
-                href="https://chat.yami.ski"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                <MessageSquare className="h-4 w-4" />
-                <span>Element</span>
-              </a>
-            </div>
+            <h4 className="font-bold mb-4 text-sm">コミュニティ</h4>
+            <ul className="space-y-2">
+              {communityLinks.map(({ href, label, Icon }) => (
+                <li key={href}>
+                  <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                    <Icon className="h-4 w-4" />
+                    <span>{label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* ガバナンス */}
           <div>
-            <h4 className="font-semibold mb-4">ガバナンス</h4>
-            <div className="space-y-3">
-              <a
-                href="https://x.com/yamidao_eth"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Send className="h-4 w-4" />
-                <span>X</span>
-              </a>
-              <a
-                href="https://snapshot.org/#/s:yamidao.eth"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Vote className="h-4 w-4" />
-                <span>Snapshot</span>
-              </a>
-              <a
-                href="https://app.safe.global/home?safe=oeth:0x9D315c45B721132674D1aBED44F642b2dE24A1c2"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Shield className="h-4 w-4" />
-                <span>Safe</span>
-              </a>
-              <a
-                href="https://guild.xyz/yami"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                <KeyRound className="h-4 w-4" />
-                <span>Guild</span>
-              </a>
-              <a
-                href="https://etherscan.io/name-lookup-search?id=yami.eth"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Eye className="h-4 w-4" />
-                <span>Etherscan</span>
-              </a>
-            </div>
+            <h4 className="font-bold mb-4 text-sm">ガバナンス</h4>
+            <ul className="space-y-2">
+              {governanceLinks.map(({ href, label, Icon }) => (
+                <li key={href}>
+                  <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                    <Icon className="h-4 w-4" />
+                    <span>{label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        {/* コピーライト */}
-        <div className="pt-8 border-t border-border text-center">
-          <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
-            <Heart className="h-4 w-4 text-accent" />
-            <span>© {currentYear} YAMI DAO. All rights reserved.</span>
-          </p>
-        </div>
+        <p className="mt-12 text-center text-sm text-muted-foreground">© {currentYear} YAMI DAO</p>
       </div>
     </footer>
   )

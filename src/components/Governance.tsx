@@ -1,33 +1,56 @@
 import { Vote, ExternalLink, Shield, Wallet, Scale, Eye } from 'lucide-react'
 
+const actions = [
+  {
+    Icon: Vote,
+    title: 'きめる',
+    description: 'ガス代なしで投票できます',
+    label: 'Snapshot',
+    href: 'https://snapshot.org/#/s:yamidao.eth',
+  },
+  {
+    Icon: Shield,
+    title: 'まもる',
+    description: 'みんなの承認で動かすお金の管理',
+    label: 'Safe',
+    href: 'https://app.safe.global/home?safe=oeth:0x9D315c45B721132674D1aBED44F642b2dE24A1c2',
+  },
+  {
+    Icon: Eye,
+    title: 'みる',
+    description: 'お金の流れはぜんぶ公開されています',
+    label: 'Etherscan',
+    href: 'https://etherscan.io/name-lookup-search?id=yami.eth',
+  },
+]
+
 export function Governance() {
   return (
-    <section id="governance" className="py-16 px-4 md:px-8 bg-muted/20">
-      <div className="max-w-5xl mx-auto">
+    <section id="governance" className="py-12 md:py-16 px-4 md:px-8">
+      <div className="max-w-6xl mx-auto">
         {/* セクションヘッダー */}
-        <div className="mb-12 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">しくみ</h2>
-          <div className="section-divider mb-8"></div>
-          <p className="text-xl text-muted-foreground max-w-3xl">
-            みんなで決めて、みんなで守る
-          </p>
+        <div className="mb-12">
+          <h2 className="yami-section-title">
+            <span>しくみ</span>
+          </h2>
+          <p className="mt-6 text-lg text-muted-foreground max-w-3xl">みんなで決めて、みんなで守る</p>
         </div>
 
         {/* 意思決定方針 */}
-        <div className="dao-card glass mb-12 animate-fade-in-up">
+        <div className="yami-card mb-6">
           <div className="flex items-center gap-3 mb-4">
             <Scale className="h-6 w-6 text-primary" />
-            <h3 className="text-lg font-semibold">きめかた</h3>
+            <h3 className="text-lg font-bold">きめかた</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h4 className="font-semibold mb-2">投票のルール</h4>
+              <h4 className="font-bold mb-2">投票のルール</h4>
               <p className="text-sm text-muted-foreground">
                 ひとり1票。トークンをたくさん持っていても、投票の重さは同じです。
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-2">なりすまし対策</h4>
+              <h4 className="font-bold mb-2">なりすまし対策</h4>
               <p className="text-sm text-muted-foreground">
                 Misskey認証とETHウォレット連携で、ひとり1票をまもっています。投票のときに自動で確認します。
               </p>
@@ -36,20 +59,20 @@ export function Governance() {
         </div>
 
         {/* 資金運用方針 */}
-        <div className="dao-card glass mb-12 animate-fade-in-up">
+        <div className="yami-card mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <Wallet className="h-6 w-6 text-accent" />
-            <h3 className="text-lg font-semibold">お金のつかいかた</h3>
+            <Wallet className="h-6 w-6 text-primary" />
+            <h3 className="text-lg font-bold">お金のつかいかた</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h4 className="font-semibold mb-2">非営利です</h4>
+              <h4 className="font-bold mb-2">非営利です</h4>
               <p className="text-sm text-muted-foreground">
                 もうけも、見返りも、特典もなし。支援してもしなくても、みんな同じです。
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-2">なにに使うの？</h4>
+              <h4 className="font-bold mb-2">なにに使うの？</h4>
               <p className="text-sm text-muted-foreground">
                 サーバー代・開発や運営の報酬・コミュニティのために使います。つかいみちはSnapshotでみんなが決めます。
               </p>
@@ -57,73 +80,21 @@ export function Governance() {
           </div>
         </div>
 
-        {/* Snapshot + Treasury + 透明性 並列表示 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-up">
-          {/* きめる */}
-          <div className="dao-card hover-lift">
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
-                <Vote className="h-8 w-8 text-primary" />
+        {/* Snapshot + Treasury + 透明性 */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {actions.map(({ Icon, title, description, label, href }) => (
+            <div key={href} className="yami-card flex flex-col items-center text-center">
+              <div className="inline-grid place-items-center w-16 h-16 rounded-full bg-primary/15 text-primary mb-4">
+                <Icon className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">きめる</h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                ガス代なしで投票できます
-              </p>
-              <a
-                href="https://snapshot.org/#/s:yamidao.eth"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="dao-btn-primary w-full inline-flex items-center justify-center gap-2"
-              >
+              <h3 className="text-xl font-bold mb-2">{title}</h3>
+              <p className="text-muted-foreground text-sm mb-5 flex-1">{description}</p>
+              <a href={href} target="_blank" rel="noopener noreferrer" className="yami-btn yami-btn-accent w-full">
                 <ExternalLink className="h-4 w-4" />
-                Snapshot
+                {label}
               </a>
             </div>
-          </div>
-
-          {/* まもる */}
-          <div className="dao-card hover-lift">
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary/10 mb-4">
-                <Shield className="h-8 w-8 text-secondary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">まもる</h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                みんなの承認で動かすお金の管理
-              </p>
-              <a
-                href="https://app.safe.global/home?safe=oeth:0x9D315c45B721132674D1aBED44F642b2dE24A1c2"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="dao-btn-primary w-full inline-flex items-center justify-center gap-2"
-              >
-                <ExternalLink className="h-4 w-4" />
-                Safe
-              </a>
-            </div>
-          </div>
-
-          {/* みる */}
-          <div className="dao-card hover-lift">
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-4">
-                <Eye className="h-8 w-8 text-accent" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">みる</h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                お金の流れはぜんぶ公開されています
-              </p>
-              <a
-                href="https://etherscan.io/name-lookup-search?id=yami.eth"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="dao-btn-primary w-full inline-flex items-center justify-center gap-2"
-              >
-                <ExternalLink className="h-4 w-4" />
-                Etherscan
-              </a>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

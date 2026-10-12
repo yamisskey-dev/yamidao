@@ -71,14 +71,14 @@ function CallbackContent() {
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center p-4">
-        <div className="dao-card max-w-md w-full text-center">
+        <div className="yami-card max-w-md w-full text-center">
           <h1 className="text-xl font-bold text-destructive mb-4">
             認証エラー
           </h1>
           <p className="text-muted-foreground mb-6">{error}</p>
           <button
             onClick={() => router.push("/join")}
-            className="dao-btn-primary"
+            className="yami-btn yami-btn-accent"
           >
             戻る
           </button>
@@ -89,7 +89,7 @@ function CallbackContent() {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="dao-card max-w-md w-full text-center">
+      <div className="yami-card max-w-md w-full text-center">
         <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-primary" />
         <h1 className="text-xl font-bold mb-2">認証中...</h1>
         <p className="text-muted-foreground">
@@ -103,7 +103,7 @@ function CallbackContent() {
 function LoadingFallback() {
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="dao-card max-w-md w-full text-center">
+      <div className="yami-card max-w-md w-full text-center">
         <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-primary" />
         <h1 className="text-xl font-bold mb-2">読み込み中...</h1>
       </div>

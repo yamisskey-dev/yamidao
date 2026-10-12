@@ -2,15 +2,14 @@ import { Rocket, Key, Vote, Shield, CheckCircle, Circle } from 'lucide-react'
 
 export function Roadmap() {
   return (
-    <section id="roadmap" className="py-16 px-4 md:px-8 bg-muted/20">
-      <div className="max-w-5xl mx-auto">
+    <section id="roadmap" className="py-12 md:py-16 px-4 md:px-8">
+      <div className="max-w-6xl mx-auto">
         {/* セクションヘッダー */}
-        <div className="mb-12 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">これから</h2>
-          <div className="section-divider mb-8"></div>
-          <p className="text-xl text-muted-foreground max-w-3xl">
-            すこしずつ、いっしょに進んでいく
-          </p>
+        <div className="mb-12">
+          <h2 className="yami-section-title">
+            <span>これから</span>
+          </h2>
+          <p className="mt-6 text-lg text-muted-foreground max-w-3xl">すこしずつ、いっしょに進んでいく</p>
         </div>
 
         {/* タイムライン */}
@@ -19,7 +18,7 @@ export function Roadmap() {
           <div className="absolute left-8 md:left-[40%] top-24 md:top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent"></div>
 
           {/* Phase 1 */}
-          <div className="relative mb-12 animate-fade-in-up">
+          <div className="relative mb-12">
             <div className="md:flex md:items-start md:gap-8">
               <div className="md:w-[40%] md:text-right md:pr-8">
                 <div className="mb-4 md:mb-0">
@@ -35,10 +34,10 @@ export function Roadmap() {
               <div className="absolute left-8 md:left-[40%] w-6 h-6 rounded-full bg-primary border-4 border-background -translate-x-1/2"></div>
 
               <div className="md:w-2/5 ml-16 md:ml-0 md:pl-8">
-                <div className="dao-card">
+                <div className="yami-card">
                   <div className="flex items-center gap-2 mb-3">
                     <Rocket className="h-5 w-5 text-primary" />
-                    <h4 className="font-semibold">DAO立ち上げ</h4>
+                    <h4 className="font-bold">DAO立ち上げ</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">
                     メンバーの持ち出しではじまりました
@@ -67,7 +66,7 @@ export function Roadmap() {
           </div>
 
           {/* Phase 2 */}
-          <div className="relative mb-12 animate-fade-in-up">
+          <div className="relative mb-12">
             <div className="md:flex md:items-start md:gap-8">
               <div className="md:w-[40%] md:text-right md:pr-8">
                 <div className="mb-4 md:mb-0">
@@ -83,10 +82,10 @@ export function Roadmap() {
               <div className="absolute left-8 md:left-[40%] w-6 h-6 rounded-full bg-secondary border-4 border-background -translate-x-1/2"></div>
 
               <div className="md:w-2/5 ml-16 md:ml-0 md:pl-8">
-                <div className="dao-card">
+                <div className="yami-card">
                   <div className="flex items-center gap-2 mb-3">
                     <Key className="h-5 w-5 text-secondary" />
-                    <h4 className="font-semibold">認証・プライバシー</h4>
+                    <h4 className="font-bold">認証・プライバシー</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">
                     ひとり1票と、匿名で投票できるしくみ
@@ -111,7 +110,7 @@ export function Roadmap() {
           </div>
 
           {/* Phase 3 */}
-          <div className="relative mb-12 animate-fade-in-up">
+          <div className="relative mb-12">
             <div className="md:flex md:items-start md:gap-8">
               <div className="md:w-[40%] md:text-right md:pr-8">
                 <div className="mb-4 md:mb-0">
@@ -126,10 +125,10 @@ export function Roadmap() {
               <div className="absolute left-8 md:left-[40%] w-6 h-6 rounded-full bg-accent border-4 border-background -translate-x-1/2"></div>
 
               <div className="md:w-2/5 ml-16 md:ml-0 md:pl-8">
-                <div className="dao-card">
+                <div className="yami-card">
                   <div className="flex items-center gap-2 mb-3">
                     <Vote className="h-5 w-5 text-accent" />
-                    <h4 className="font-semibold">フルDAO化</h4>
+                    <h4 className="font-bold">フルDAO化</h4>
                   </div>
                   <ul className="space-y-1 text-sm text-muted-foreground">
                     <li className="flex items-center gap-2">
@@ -151,7 +150,7 @@ export function Roadmap() {
           </div>
 
           {/* Phase 4 */}
-          <div className="relative animate-fade-in-up">
+          <div className="relative">
             <div className="md:flex md:items-start md:gap-8">
               <div className="md:w-[40%] md:text-right md:pr-8">
                 <div className="mb-4 md:mb-0">
@@ -166,10 +165,10 @@ export function Roadmap() {
               <div className="absolute left-8 md:left-[40%] w-6 h-6 rounded-full bg-muted-foreground border-4 border-background -translate-x-1/2"></div>
 
               <div className="md:w-2/5 ml-16 md:ml-0 md:pl-8">
-                <div className="dao-card">
+                <div className="yami-card">
                   <div className="flex items-center gap-2 mb-3">
                     <Shield className="h-5 w-5 text-muted-foreground" />
-                    <h4 className="font-semibold">みんなで見守る</h4>
+                    <h4 className="font-bold">みんなで見守る</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">
                     Misskeyサーバーの運営とDAOのしくみをひとつに
