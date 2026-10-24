@@ -14,6 +14,9 @@ export interface MisskeyApiError {
   };
 }
 
+// Timeout for outbound requests to Misskey instances
+const FETCH_TIMEOUT_MS = 10_000;
+
 export class MisskeyApiClient {
   constructor(private host: string) {}
 
@@ -22,6 +25,8 @@ export class MisskeyApiClient {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
+      redirect: "error",
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     });
 
     if (!res.ok) {

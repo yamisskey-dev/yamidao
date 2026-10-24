@@ -6,6 +6,7 @@ import { getAuthSession, deleteAuthSession } from "@/lib/auth/session";
 import { hashToken } from "@/lib/auth/crypto";
 import { createJWT, createTokenCookie } from "@/lib/auth/jwt";
 import { MisskeyApiClient } from "@/lib/misskey/api";
+import { isAllowedHost } from "@/lib/misskey/detect-instance";
 import { UserService } from "@/lib/services/user";
 
 export const runtime = "edge";
@@ -34,7 +35,17 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const { token, host } = data;
+  const { token } = data;
+  // Normalize the same way as misskey-login so it matches the stored session host
+  const host = data.host.toLowerCase().trim();
+
+  // Re-check the allow list so the callback cannot be used with an arbitrary host
+  if (!isAllowedHost(host)) {
+    return NextResponse.json(
+      { error: "Host is not allowed" },
+      { status: 403 }
+    );
+  }
 
   try {
     const { db, jwtSecret, isProduction } = getAppContext();
@@ -44,6 +55,14 @@ export async function POST(req: NextRequest) {
     if (!sessionData) {
       return NextResponse.json(
         { error: "Session expired or invalid" },
+        { status: 401 }
+      );
+    }
+
+    // The host must match the one the session was created for
+    if (sessionData.host !== host) {
+      return NextResponse.json(
+        { error: "Session host mismatch" },
         { status: 401 }
       );
     }

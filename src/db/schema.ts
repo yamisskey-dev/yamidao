@@ -6,6 +6,7 @@ export const servers = sqliteTable("servers", {
   instances: text("instances").notNull().unique(), // hostname (e.g., "yami.ski")
   instanceType: text("instance_type").notNull(), // misskey, cherrypick, sharkey, etc.
   appSecret: text("app_secret"), // Misskey app secret for this instance
+  callbackUrl: text("callback_url"), // callbackUrl the app was registered with (baked into appSecret)
   createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
   updatedAt: integer("updated_at", { mode: "timestamp" }).notNull(),
 });

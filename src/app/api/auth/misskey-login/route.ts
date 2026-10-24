@@ -61,15 +61,17 @@ export async function POST(req: NextRequest) {
     });
 
     const client = new MisskeyApiClient(misskeyHost);
+    const callbackUrl = `${webUrl}/misskey-callback`;
 
-    // If no app exists or appSecret is invalid, create new app
-    if (!server || !server.appSecret) {
+    // If no app exists, appSecret is invalid, or the app was registered with a
+    // different callbackUrl (it is baked into the app), create new app
+    if (!server || !server.appSecret || server.callbackUrl !== callbackUrl) {
       try {
         const appData = await client.createApp({
           name: "YAMI DAO",
           description: "YAMI DAO - Misskey認証によるメンバー確認",
           permission: ["read:account"],
-          callbackUrl: `${webUrl}/misskey-callback`,
+          callbackUrl,
         });
 
         const appSecret = appData.secret;
@@ -81,12 +83,13 @@ export async function POST(req: NextRequest) {
             .update(servers)
             .set({
               appSecret,
+              callbackUrl,
               instanceType,
               updatedAt: now,
             })
             .where(eq(servers.id, server.id));
 
-          server = { ...server, appSecret, instanceType };
+          server = { ...server, appSecret, callbackUrl, instanceType };
         } else {
           // Create new server record
           const newServer = {
@@ -94,6 +97,7 @@ export async function POST(req: NextRequest) {
             instances: misskeyHost,
             instanceType,
             appSecret,
+            callbackUrl,
             createdAt: now,
             updatedAt: now,
           };

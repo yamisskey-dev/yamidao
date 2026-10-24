@@ -2,23 +2,40 @@ import type { InstanceType, MisskeyMeta } from "./types";
 
 // Allowed Misskey instances for YAMI DAO authentication
 // Only these hosts can authenticate with the DAO
-const ALLOWED_HOSTS = [
-  "yami.ski",
-  "beta.yami.ski",
+const ALLOWED_HOSTS = ["yami.ski", "beta.yami.ski"] as const;
+
+// Local hosts are only allowed outside production
+const LOCAL_HOSTS = [
   "localhost",
   "localhost:3000",
   "127.0.0.1",
   "127.0.0.1:3000",
 ] as const;
 
+// Timeout for outbound requests to Misskey instances
+const FETCH_TIMEOUT_MS = 10_000;
+
+function fetchOptions(init?: RequestInit): RequestInit {
+  return {
+    ...init,
+    redirect: "error",
+    signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+  };
+}
+
 export function isAllowedHost(host: string): boolean {
   const normalizedHost = host.toLowerCase().trim();
-  return ALLOWED_HOSTS.some(
-    (allowed) =>
-      normalizedHost === allowed ||
-      normalizedHost.startsWith(`${allowed}:`) ||
-      (allowed === "localhost" && normalizedHost.startsWith("localhost"))
-  );
+
+  // Exact match only: prefix matching would allow e.g. "yami.ski.evil.com"
+  if (ALLOWED_HOSTS.some((allowed) => normalizedHost === allowed)) {
+    return true;
+  }
+
+  if (process.env.NODE_ENV !== "production") {
+    return LOCAL_HOSTS.some((allowed) => normalizedHost === allowed);
+  }
+
+  return false;
 }
 
 interface NodeInfo {
@@ -55,11 +72,14 @@ export async function detectInstance(host: string): Promise<InstanceType | null>
 
 async function detectMisskeyByApi(host: string): Promise<InstanceType | null> {
   try {
-    const metaResponse = await fetch(`https://${host}/api/meta`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: "{}",
-    });
+    const metaResponse = await fetch(
+      `https://${host}/api/meta`,
+      fetchOptions({
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: "{}",
+      })
+    );
 
     if (!metaResponse.ok) {
       return null;
@@ -97,7 +117,10 @@ async function detectMisskeyByApi(host: string): Promise<InstanceType | null> {
 
 async function detectByNodeInfo(host: string): Promise<InstanceType | null> {
   try {
-    const nodeInfoResponse = await fetch(`https://${host}/.well-known/nodeinfo`);
+    const nodeInfoResponse = await fetch(
+      `https://${host}/.well-known/nodeinfo`,
+      fetchOptions()
+    );
 
     if (!nodeInfoResponse.ok) {
       return null;
@@ -116,7 +139,7 @@ async function detectByNodeInfo(host: string): Promise<InstanceType | null> {
       return null;
     }
 
-    const infoResponse = await fetch(nodeInfoUrl);
+    const infoResponse = await fetch(nodeInfoUrl, fetchOptions());
     if (!infoResponse.ok) {
       return null;
     }
