@@ -14,11 +14,15 @@ const LOCAL_HOSTS = [
 
 // Timeout for outbound requests to Misskey instances
 const FETCH_TIMEOUT_MS = 10_000;
+const USER_AGENT = "yamidao/1.0 (+https://github.com/yamisskey-dev/yamidao)";
 
+// Workers runtime rejects redirect: "error"; use "manual" so a 3xx comes back
+// as a non-ok response instead of being followed to another host
 function fetchOptions(init?: RequestInit): RequestInit {
   return {
     ...init,
-    redirect: "error",
+    headers: { "User-Agent": USER_AGENT, ...(init?.headers ?? {}) },
+    redirect: "manual",
     signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
   };
 }
