@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "YAMI DAO",
     description: "Open Mental Health - Privacy-focused DAO building open-source mental health technology",
-    url: "https://yamidao.yami.ski",
+    url: "https://dao.yami.ski",
     siteName: "YAMI DAO",
     images: [
       {
