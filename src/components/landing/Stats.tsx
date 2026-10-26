@@ -1,15 +1,12 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Section } from './Section'
 
 // 公開 API の取得に失敗したときに出す値（2026-10-26 時点）
 const FALLBACK = {
   proposals: 4,
   votes: 8,
   users: 839,
-  notes: 170180,
-  instances: 1904,
   repos: 33,
 }
 
@@ -18,9 +15,7 @@ type StatsData = typeof FALLBACK
 const tiles: { key: keyof StatsData; label: string; source: string; href: string }[] = [
   { key: 'proposals', label: '提案', source: 'Snapshot', href: 'https://snapshot.org/#/s:yamidao.eth' },
   { key: 'votes', label: '投票', source: 'Snapshot', href: 'https://snapshot.org/#/s:yamidao.eth' },
-  { key: 'users', label: 'やみすきーの住人', source: 'yami.ski', href: 'https://yami.ski' },
-  { key: 'notes', label: 'つぶやかれたノート', source: 'yami.ski', href: 'https://yami.ski' },
-  { key: 'instances', label: 'つながるサーバー', source: 'Fediverse', href: 'https://yami.ski' },
+  { key: 'users', label: '支えている住人', source: 'yami.ski', href: 'https://yami.ski' },
   { key: 'repos', label: '公開リポジトリ', source: 'GitHub', href: 'https://github.com/yamisskey-dev' },
 ]
 
@@ -42,8 +37,8 @@ async function fetchMisskey(): Promise<Partial<StatsData>> {
     body: '{}',
   })
   if (!res.ok) throw new Error(`misskey ${res.status}`)
-  const data = (await res.json()) as { originalUsersCount: number; originalNotesCount: number; instances: number }
-  return { users: data.originalUsersCount, notes: data.originalNotesCount, instances: data.instances }
+  const data = (await res.json()) as { originalUsersCount: number }
+  return { users: data.originalUsersCount }
 }
 
 async function fetchGitHub(): Promise<Partial<StatsData>> {
@@ -53,6 +48,7 @@ async function fetchGitHub(): Promise<Partial<StatsData>> {
   return { repos: data.public_repos }
 }
 
+// hero の下端に重なる数字タイル（やみはぶの 3 枚カードと同じ位置）
 export function Stats() {
   const [stats, setStats] = useState<StatsData>(FALLBACK)
   const [live, setLive] = useState(false)
@@ -75,8 +71,8 @@ export function Stats() {
   }, [])
 
   return (
-    <Section id="stats" title="数字でみる">
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+    <div id="stats" className="relative">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         {tiles.map(({ key, label, source, href }) => (
           <a
             key={key}
@@ -91,17 +87,17 @@ export function Stats() {
           </a>
         ))}
       </div>
-      <p className="mt-6 flex items-center justify-center gap-2 text-xs text-muted-foreground">
+      <p className="mt-4 flex items-center justify-center gap-2 text-xs text-muted-foreground">
         {live ? (
           <>
             <span className="yami-live-dot" aria-hidden="true" />
             <span>live</span>
-            <span>· Snapshot / やみすきー / GitHub の公開 API から取得</span>
+            <span>· 公開 API から取得</span>
           </>
         ) : (
-          <span>2026-10-26 時点の値。ページを開くと公開 API から最新の数字を取得します</span>
+          <span>2026-10-26 時点の値</span>
         )}
       </p>
-    </Section>
+    </div>
   )
 }

@@ -11,7 +11,6 @@ describe('Stats', () => {
   it('取得に失敗してもフォールバックの数字を表示する', async () => {
     global.fetch = jest.fn().mockRejectedValue(new Error('offline')) as unknown as typeof fetch
     render(<Stats />)
-    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('数字でみる')
     expect(screen.getByText('提案')).toBeInTheDocument()
     expect(screen.getByText('4')).toBeInTheDocument()
     expect(screen.getByText('839')).toBeInTheDocument()

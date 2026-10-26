@@ -27,6 +27,16 @@ const steps = [
 
 const proofs = [
   {
+    label: 'Snapshot',
+    href: 'https://snapshot.org/#/s:yamidao.eth',
+    note: '提案と投票の記録',
+  },
+  {
+    label: 'Safe',
+    href: 'https://app.safe.global/home?safe=oeth:0x9D315c45B721132674D1aBED44F642b2dE24A1c2',
+    note: 'Treasury の残高と送金履歴',
+  },
+  {
     label: 'voting-power API',
     href: 'https://dao.yami.ski/api/governance/voting-power',
     note: 'Snapshot が参照する投票権エンドポイント',
@@ -35,11 +45,6 @@ const proofs = [
     label: 'GOVERNANCE.md',
     href: 'https://github.com/yamisskey-dev/yamidao/blob/main/GOVERNANCE.md',
     note: '提案のルールと開発委託規定',
-  },
-  {
-    label: 'src/app/api/governance',
-    href: 'https://github.com/yamisskey-dev/yamidao/tree/main/src/app/api/governance',
-    note: '判定ロジックのソースコード（AGPL-3.0）',
   },
 ]
 
@@ -66,7 +71,7 @@ export function HowItWorks() {
           <FileCode2 className="h-4 w-4 text-primary" aria-hidden="true" />
           「信じて」じゃなくて、確かめられる
         </div>
-        <ul className="grid gap-2 md:grid-cols-3">
+        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {proofs.map(({ label, href, note }) => (
             <li key={href} className="text-sm">
               <a
