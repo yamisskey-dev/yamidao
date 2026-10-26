@@ -12,6 +12,7 @@
 ## Phase 2: 認証・プライバシー (2026) - 進行中
 
 - [x] Misskey認証によるメンバー確認
+- [x] Snapshot api-post strategy による投票権の自動判定（[#4](https://github.com/yamisskey-dev/yamidao/issues/4)）
 - [ ] Semaphoreによるゼロ知識証明（ZKP）匿名投票
 - [ ] Optimism Retro Funding への申請（[#5](https://github.com/yamisskey-dev/yamidao/issues/5)）
 
@@ -63,7 +64,7 @@ OSSの理念に基づき、Misskeyアカウントを用いたメンバー認証�
 
 ## Phase 3: フルDAO化 (2027以降) - 予定
 
-- [ ] オンチェーン投票
+- [ ] オンチェーン投票（[#1](https://github.com/yamisskey-dev/yamidao/issues/1)）
 - [ ] コントリビューター報酬自動配布
 - [ ] Yamix の YAMI トークン経済との連携（[#6](https://github.com/yamisskey-dev/yamidao/issues/6)）
 - [ ] エコシステム拡大

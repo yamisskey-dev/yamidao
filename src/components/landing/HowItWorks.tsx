@@ -6,22 +6,22 @@ const steps = [
   {
     Icon: LogIn,
     title: 'Misskey でログイン',
-    description: 'やみすきーのアカウントで本人確認（MiAuth）。メールも実名もいりません。',
+    description: 'やみすきーのアカウントで本人確認。メールも実名もいりません。',
   },
   {
     Icon: Wallet,
     title: 'ウォレットをつなぐ',
-    description: '1 アカウントにつき 1 アドレスだけ。署名で持ち主を確認します（SIWE）。',
+    description: '1 アカウントに 1 アドレス。署名で持ち主を確認。',
   },
   {
     Icon: Vote,
     title: 'Snapshot で投票',
-    description: 'ひとり 1 票、ガス代 0。投票権はこのサイトの API が自動で判定します。',
+    description: 'ひとり 1 票、ガス代 0。投票権は API が自動で判定。',
   },
   {
     Icon: ShieldCheck,
     title: 'Safe で執行',
-    description: '可決したお金の動きは Optimism 上の 2/2 マルチシグで実行。履歴は全部オンチェーン。',
+    description: '可決したお金は 2/2 マルチシグで動かす。履歴はオンチェーン。',
   },
 ]
 
@@ -39,12 +39,12 @@ const proofs = [
   {
     label: 'voting-power API',
     href: 'https://dao.yami.ski/api/governance/voting-power',
-    note: 'Snapshot が参照する投票権エンドポイント',
+    note: '投票権を判定するエンドポイント',
   },
   {
     label: 'GOVERNANCE.md',
     href: 'https://github.com/yamisskey-dev/yamidao/blob/main/GOVERNANCE.md',
-    note: '提案のルールと開発委託規定',
+    note: '提案と投票のルール',
   },
 ]
 
@@ -69,7 +69,7 @@ export function HowItWorks() {
       <div className="yami-acrylic mt-6 px-6 py-6">
         <div className="mb-3 flex items-center gap-2 text-sm font-bold text-foreground">
           <FileCode2 className="h-4 w-4 text-primary" aria-hidden="true" />
-          「信じて」じゃなくて、確かめられる
+          ぜんぶ確かめられる
         </div>
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {proofs.map(({ label, href, note }) => (

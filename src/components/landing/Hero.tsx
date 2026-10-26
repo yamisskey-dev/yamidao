@@ -2,9 +2,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, ExternalLink, Hexagon } from 'lucide-react'
 import { HoneycombBackground } from '@/components/HoneycombBackground'
+import { OptimismMark } from '@/components/OptimismMark'
 import styles from './Hero.module.css'
 
-const chips = ['Optimism L2', 'ひとり 1 票', '非営利', 'AGPL-3.0']
+const chips = ['ひとり 1 票', '非営利']
 
 export function Hero() {
   return (
@@ -32,6 +33,10 @@ export function Hero() {
               <Hexagon className="h-3 w-3" aria-hidden="true" />
               yamidao.eth
             </span>
+            <span className="yami-chip">
+              <OptimismMark className="h-3.5 w-3.5" />
+              Optimism
+            </span>
             {chips.map((chip) => (
               <span key={chip} className="yami-chip">
                 {chip}
@@ -41,8 +46,6 @@ export function Hero() {
           <h1 className={styles.title}>YAMI DAO</h1>
           <p className={`${styles.headline} yami-gradient-text`}>Open Mental Health.</p>
           <p className={styles.tagline}>
-            病んでいい場所を、みんなで持つ。
-            <br className="hidden sm:inline" />
             <a
               href="https://hub.yami.ski/guides/ecosystem/"
               target="_blank"
@@ -51,7 +54,9 @@ export function Hero() {
             >
               YAMIエコシステム
             </a>
-            のサーバー代も、ルールも、コードも、Optimism の上でみんなで決めて、ぜんぶ公開する DAO。
+            のガバナンス DAO。
+            <br className="hidden sm:inline" />
+            お金も、ルールも、コードも、みんなで決めて、ぜんぶ公開。
           </p>
           <div className={styles.actions}>
             <Link href="/join" className="yami-btn yami-btn-accent text-base">

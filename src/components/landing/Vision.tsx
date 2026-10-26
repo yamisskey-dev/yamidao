@@ -1,7 +1,8 @@
-import type { LucideIcon } from 'lucide-react'
-import { Landmark, Coins, EyeOff, Blocks, DoorOpen, Scale, ExternalLink } from 'lucide-react'
+import type { ComponentType } from 'react'
+import { Coins, EyeOff, Blocks, DoorOpen, Scale, ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 import { Section } from './Section'
+import { OptimismMark } from '@/components/OptimismMark'
 
 type Status = 'active' | 'preparing' | 'planned'
 
@@ -12,7 +13,7 @@ const statusLabel: Record<Status, { text: string; className: string }> = {
 }
 
 interface VisionItem {
-  Icon: LucideIcon
+  Icon: ComponentType<{ className?: string }>
   status: Status
   title: string
   description: React.ReactNode
@@ -22,13 +23,13 @@ interface VisionItem {
 // GitHub issues と ROADMAP.md に書いてある展望を、ひとつずつカードにする。
 const items: VisionItem[] = [
   {
-    Icon: Landmark,
+    Icon: OptimismMark,
     status: 'preparing',
     title: 'Optimism の公共財になる',
     description: (
       <>
-        Optimism の <strong>Retro Funding</strong> は「すでに役に立った公共財に、あとから報いる」しくみ。
-        Optimism 上で動く非営利のメンタルヘルス OSS として、インパクトを示して申請をめざします。
+        Optimism の <strong>Retro Funding</strong> は、役に立った公共財にあとから報いるしくみ。
+        非営利のメンタルヘルス OSS として申請をめざします。
       </>
     ),
     links: [
@@ -42,8 +43,8 @@ const items: VisionItem[] = [
     title: '「承認」を経済にする',
     description: (
       <>
-        Yamix は menhera.jp の精神を継ぐ人生相談。気持ちを受け止める「承認」を <strong>YAMI トークン</strong>
-        にして、相談する人と答える人のあいだで循環させます。ためこむと減る、減価通貨の設計。
+        Yamix は menhera.jp の精神を継ぐ人生相談。「承認」を <strong>YAMI トークン</strong>
+        にして、相談する人と答える人のあいだで循環させます。
       </>
     ),
     links: [
@@ -58,7 +59,7 @@ const items: VisionItem[] = [
     description: (
       <>
         ゼロ知識証明（<strong>Semaphore</strong>）で、メンバーであることだけを証明して投票。
-        「誰が何に入れたか」を誰も追えないから、センシティブな議題でも率直に決められます。
+        誰が何に入れたか、誰にも追えません。
       </>
     ),
     links: [{ label: 'ROADMAP.md', href: 'https://github.com/yamisskey-dev/yamidao/blob/main/ROADMAP.md' }],
@@ -70,7 +71,7 @@ const items: VisionItem[] = [
     description: (
       <>
         Snapshot のオフチェーン投票から、<strong>Optimism 上のオンチェーン投票</strong>へ。
-        SBT でメンバーシップを証明し、可決した報酬はコントラクトが自動で配ります。
+        報酬の配布もコントラクトが自動で。
       </>
     ),
     links: [{ label: 'issue #1', href: 'https://github.com/yamisskey-dev/yamidao/issues/1' }],
@@ -81,8 +82,8 @@ const items: VisionItem[] = [
     title: 'だれでも入れる DAO',
     description: (
       <>
-        手作業のホワイトリストはやめました。Misskey 認証だけで投票権が付くように。
-        つぎは、やみすきー以外のサーバーからも参加できるしくみへ。
+        手作業のホワイトリストはやめ、Misskey 認証だけで投票権が付くように。
+        つぎは、ほかのサーバーからも。
       </>
     ),
     links: [{ label: 'issue #4', href: 'https://github.com/yamisskey-dev/yamidao/issues/4' }],
@@ -93,8 +94,7 @@ const items: VisionItem[] = [
     title: 'モデレーションをみんなで',
     description: (
       <>
-        ルールは投票で決める。緊急対応は運営が即時に。異議申立ては匿名で審議して、結果はオンチェーンに。
-        「完全民主制」と「安全」を両立する 3 層モデル。
+        ルールは投票で、緊急対応は即時に、異議申立ては匿名で。結果はオンチェーンに。
       </>
     ),
     links: [{ label: 'これから', href: '/roadmap' }],
@@ -105,7 +105,7 @@ export function Vision() {
   return (
     <Section id="vision" title="めざすところ" dots>
       <p className="mx-auto -mt-4 mb-8 max-w-2xl text-center text-sm text-muted-foreground">
-        Optimism の上で、メンタルヘルスの公共財をつくる。できていないことも、ぜんぶ issue に書いてあります。
+        メンタルヘルスの公共財を、Optimism の上に。できていないことも issue に書いてあります。
       </p>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {items.map(({ Icon, status, title, description, links }) => (

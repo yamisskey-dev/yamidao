@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { MessageCircle, Users, MessageSquare, Cloud, Vote, Shield, KeyRound, Eye } from 'lucide-react'
+import { OptimismMark } from '@/components/OptimismMark'
 
 const pageLinks = [
   { href: '/about', label: 'わたしたちについて' },
@@ -49,6 +50,15 @@ export function Footer() {
               <span className="text-lg font-bold">YAMI DAO</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">オープンメンタルヘルス</p>
+            <a
+              href="https://www.optimism.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-primary transition-colors"
+            >
+              <OptimismMark className="h-4 w-4" />
+              Built on Optimism
+            </a>
           </div>
 
           <div>
