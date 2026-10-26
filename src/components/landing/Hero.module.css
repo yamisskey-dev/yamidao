@@ -47,12 +47,29 @@
   text-align: center;
 }
 
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
 .title {
   font-size: clamp(2.5rem, 6vw, 4rem);
   line-height: 1.1;
   font-weight: 800;
   letter-spacing: -0.01em;
   color: var(--color-foreground);
+}
+
+/* 英語の一行見出し。NoteDeck 風にキャッチを英語、補足を日本語にする */
+.headline {
+  margin-top: 0.5rem;
+  font-size: clamp(1.75rem, 4.5vw, 3rem);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .tagline {
@@ -67,6 +84,27 @@
   justify-content: center;
   gap: 1rem;
   margin-top: 1.5rem;
+}
+
+/* Treasury アドレスなどのオンチェーン情報 */
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  color: var(--color-muted-foreground);
+}
+
+.meta a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-underline-offset: 3px;
+}
+
+.meta a:hover {
+  color: var(--color-primary);
 }
 
 /*
@@ -106,7 +144,9 @@
     text-align: start;
     padding-block: 2rem;
   }
-  .actions {
+  .actions,
+  .chips,
+  .meta {
     justify-content: flex-start;
   }
   .art {

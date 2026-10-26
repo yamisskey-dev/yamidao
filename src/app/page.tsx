@@ -3,6 +3,10 @@ import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { Hero } from '@/components/landing/Hero'
 import { Features } from '@/components/landing/Features'
+import { Stats } from '@/components/landing/Stats'
+import { HowItWorks } from '@/components/landing/HowItWorks'
+import { Ecosystem } from '@/components/landing/Ecosystem'
+import { Vision } from '@/components/landing/Vision'
 import { Section } from '@/components/landing/Section'
 import { LinkCard } from '@/components/landing/LinkCard'
 import { GetStarted } from '@/components/landing/GetStarted'
@@ -32,8 +36,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 md:px-8 pt-4 md:pt-6">
           <Hero />
           <Features />
+          <Stats />
+          <HowItWorks />
 
-          <Section id="tools" title="ガバナンス" dots>
+          <Section id="tools" title="ガバナンスツール">
             <div className="grid gap-4 sm:grid-cols-2">
               {tools.map((tool) => (
                 <LinkCard key={tool.href} {...tool} />
@@ -41,6 +47,8 @@ export default function Home() {
             </div>
           </Section>
 
+          <Ecosystem />
+          <Vision />
           <GetStarted />
         </div>
       </main>

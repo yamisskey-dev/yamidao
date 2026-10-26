@@ -13,6 +13,7 @@
 
 - [x] Misskey認証によるメンバー確認
 - [ ] Semaphoreによるゼロ知識証明（ZKP）匿名投票
+- [ ] Optimism Retro Funding への申請（[#5](https://github.com/yamisskey-dev/yamidao/issues/5)）
 
 ### Misskey認証システム
 
@@ -64,6 +65,7 @@ OSSの理念に基づき、Misskeyアカウントを用いたメンバー認証�
 
 - [ ] オンチェーン投票
 - [ ] コントリビューター報酬自動配布
+- [ ] Yamix の YAMI トークン経済との連携（[#6](https://github.com/yamisskey-dev/yamidao/issues/6)）
 - [ ] エコシステム拡大
 
 ### 技術拡張

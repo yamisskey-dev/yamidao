@@ -333,6 +333,73 @@
     color: var(--color-muted-foreground);
   }
 
+  /* ------------------------------------------------------------ */
+  /* DAO 向けの小物（チップ・グラデ文字・等幅・ライブ表示）           */
+  /* ------------------------------------------------------------ */
+  .yami-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    padding: 0.3em 0.85em;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    background-color: var(--yami-chip-bg);
+    color: var(--color-foreground);
+    white-space: nowrap;
+  }
+
+  .yami-chip-accent {
+    background-image: var(--yami-gradient);
+    color: #fff;
+  }
+
+  .yami-gradient-text {
+    background-image: var(--yami-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .yami-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.01em;
+  }
+
+  .yami-live-dot {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background-color: var(--color-success);
+    animation: yami-pulse 2s ease-out infinite;
+  }
+
+  /* 数字タイル（ライブ統計） */
+  .yami-stat-value {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* しくみの手順番号 */
+  .yami-step-number {
+    display: inline-grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 999px;
+    background-image: var(--yami-gradient);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.95rem;
+    box-shadow: var(--yami-accent-shadow);
+  }
+
   /* 外部リンク（矢印付き） */
   .external-link {
     color: var(--color-primary);
@@ -353,6 +420,15 @@
 }
 
 /* アニメーション */
+@keyframes yami-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-success) 60%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 0.6rem transparent;
+  }
+}
+
 @keyframes yami-spin {
   from {
     transform: rotate(0deg);

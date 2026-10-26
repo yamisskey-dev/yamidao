@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ExternalLink, Hexagon } from 'lucide-react'
 import { HoneycombBackground } from '@/components/HoneycombBackground'
 import styles from './Hero.module.css'
+
+const chips = ['Optimism L2', 'ひとり 1 票', '非営利', 'AGPL-3.0']
 
 export function Hero() {
   return (
@@ -25,8 +27,22 @@ export function Hero() {
       <HoneycombBackground className="absolute inset-0" />
       <div className={styles.inner}>
         <div>
+          <div className={styles.chips}>
+            <span className="yami-chip yami-chip-accent">
+              <Hexagon className="h-3 w-3" aria-hidden="true" />
+              yamidao.eth
+            </span>
+            {chips.map((chip) => (
+              <span key={chip} className="yami-chip">
+                {chip}
+              </span>
+            ))}
+          </div>
           <h1 className={styles.title}>YAMI DAO</h1>
+          <p className={`${styles.headline} yami-gradient-text`}>Open Mental Health.</p>
           <p className={styles.tagline}>
+            病んでいい場所を、みんなで持つ。
+            <br className="hidden sm:inline" />
             <a
               href="https://hub.yami.ski/guides/ecosystem/"
               target="_blank"
@@ -35,19 +51,36 @@ export function Hero() {
             >
               YAMIエコシステム
             </a>
-            のガバナンスDAO。
-            <br className="hidden sm:inline" />
-            みんなの居場所を、みんなで支えるしくみ。
+            のサーバー代も、ルールも、コードも、Optimism の上でみんなで決めて、ぜんぶ公開する DAO。
           </p>
           <div className={styles.actions}>
             <Link href="/join" className="yami-btn yami-btn-accent text-base">
               はいる
               <ArrowRight className="h-5 w-5" />
             </Link>
-            <Link href="/about" className="yami-btn yami-btn-plain text-base">
-              わたしたちについて
-            </Link>
+            <a
+              href="https://snapshot.org/#/s:yamidao.eth"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="yami-btn yami-btn-plain text-base"
+            >
+              投票を見る
+              <ExternalLink className="h-4 w-4" />
+            </a>
           </div>
+          <p className={`${styles.meta} yami-mono`}>
+            <a
+              href="https://app.safe.global/home?safe=oeth:0x9D315c45B721132674D1aBED44F642b2dE24A1c2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Treasury 0x9D31…A1c2
+            </a>
+            <span aria-hidden="true">·</span>
+            <span>Safe 2/2 multisig</span>
+            <span aria-hidden="true">·</span>
+            <span>Optimism</span>
+          </p>
         </div>
         <div className={styles.art}>
           <Image

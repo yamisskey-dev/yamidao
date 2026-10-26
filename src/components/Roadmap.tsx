@@ -103,6 +103,10 @@ export function Roadmap() {
                       <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
                       <span>匿名で投票できるしくみ</span>
                     </li>
+                    <li className="flex items-center gap-2">
+                      <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
+                      <span>Optimism Retro Funding に申請（公共財として認めてもらう）</span>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -138,6 +142,10 @@ export function Roadmap() {
                     <li className="flex items-center gap-2">
                       <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
                       <span>がんばった人への報酬を自動で</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
+                      <span>Yamix の YAMI トークン経済とつなぐ</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
