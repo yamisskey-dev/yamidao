@@ -24,8 +24,8 @@ export function Hero() {
           />
         </svg>
       </div>
-      {/* blob の手前にハニカムグリッド。ロゴ (#hero-logo) の六角形にセルを揃える */}
-      <HoneycombBackground className="absolute inset-0" />
+      {/* blob の手前にハニカムグリッド。ロゴ (#hero-logo) の六角形にセルを揃えるので、ロゴと同じく 2 カラム時だけ出す */}
+      <HoneycombBackground className={`absolute inset-0 ${styles.honeycomb}`} />
       <div className={styles.inner}>
         <div>
           <div className={styles.chips}>

@@ -48,7 +48,8 @@ async function fetchGitHub(): Promise<Partial<StatsData>> {
   return { repos: data.public_repos }
 }
 
-// hero の下端に重なる数字タイル（やみはぶの 3 枚カードと同じ位置）
+// hero の下端に重なる数字タイル（やみはぶの 3 枚カードと同じ位置）。
+// スマホでは misskey-hub-next のモバイル版と同じく 1 列に積み、先頭のタイルだけが hero に重なるようにする
 export function Stats() {
   const [stats, setStats] = useState<StatsData>(FALLBACK)
   const [live, setLive] = useState(false)
@@ -72,7 +73,7 @@ export function Stats() {
 
   return (
     <div id="stats" className="relative">
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+      <div className="grid gap-4 md:grid-cols-4">
         {tiles.map(({ key, label, source, href }) => (
           <a
             key={key}
